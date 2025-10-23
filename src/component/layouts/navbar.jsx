@@ -20,7 +20,6 @@ export default function Navbar() {
           <div className="logo-container">
             <div className="logo-text">
               <span className="brand-name">LOKALOKE</span>
-              <span className="brand-tagline">TEMUKAN YANG OKE DI SEKITARMU</span>
             </div>
           </div>
         </div>

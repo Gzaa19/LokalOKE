@@ -1,4 +1,4 @@
-import umkmBg from '../assets/hero.jpg';
+import umkmBg from '../../assets/hero.jpg';
 
 export default function Hero() {
   return (

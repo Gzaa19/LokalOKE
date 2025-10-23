@@ -1,7 +1,7 @@
 import './global.css'
-import Navbar from './component/navbar'
-import Hero from './component/hero'
-import Footer from './component/footer'
+import Navbar from './component/layouts/navbar'
+import Hero from './component/home/hero'
+import Footer from './component/layouts/footer'
 
 function App() {
   return (
