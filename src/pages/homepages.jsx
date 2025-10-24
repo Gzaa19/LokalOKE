@@ -3,6 +3,7 @@ import Hero from '../components/home/hero';
 import Features from '../components/home/features';
 import Newsletter from '../components/home/newsletter';
 import Footer from '../components/layouts/footer';
+import UmkmCard from '../components/umkm/umkmcard';
 
 export default function HomePage() {
   return (
@@ -11,6 +12,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <Features />
+        <UmkmCard />
         <Newsletter />
       </main>
       <Footer />
