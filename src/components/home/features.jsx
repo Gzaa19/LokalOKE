@@ -4,14 +4,14 @@ import { faStar, faHeart } from '@fortawesome/free-regular-svg-icons'
 export default function Features() {
     return (
         <section id="features" class="container mx-auto px-4 space-y-6 pt-10 pb-14">
-            <div class="mx-auto flex max-w-[58rem] flex-col items-center space-y-3 text-center">
+            <div class="mx-auto flex max-w-232 flex-col items-center space-y-3 text-center">
                 <h2 class="font-bold text-2xl sm:text-3xl md:text-5xl lg:text-4xl leading-[1.2] mt-12 sm:mt-16">Semua Jadi Mudah & OKE</h2>
                 <p class="text-sm sm:text-base md:text-xl leading-6 sm:leading-7 max-w-[750px] text-slate-600">
                     Kami merancang setiap fitur untuk membuat penjelajahan UMKM lokal jadi lebih cepat, akurat, dan menyenangkan.
                 </p>
             </div>
 
-            <div class="mx-auto grid justify-center gap-6 sm:grid-cols-2 md:max-w-[72rem] md:grid-cols-3">
+            <div class="mx-auto grid justify-center gap-6 sm:grid-cols-2 md:max-w-6xl md:grid-cols-3">
                 <div class="relative overflow-hidden rounded-xl border border-[#E8E8E8] bg-white/85 shadow-lg select-none p-3 md:p-4 transition duration-300 hover:border-[#7A7A7A] hover:shadow-lg hover:shadow-[#7A7A7A] hover:-translate-y-0.5">
                   <div class="relative min-h-[75px] rounded-md p-6 md:p-7 lg:p-8">
                     <FontAwesomeIcon icon={faMapLocationDot} className="absolute top-6 left-6 md:top-7 md:left-7 lg:top-8 lg:left-8 text-2xl text-black shrink-0 leading-none" />
