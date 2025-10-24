@@ -3,15 +3,16 @@ import React, { useState, useEffect } from 'react';
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.scrollY;
-            const threshold = 30; // Lebih responsif dengan threshold yang lebih kecil
+            const threshold = 30; 
             setIsScrolled(scrollTop > threshold);
         };
 
-        // Throttle scroll event untuk performa yang lebih baik
         let ticking = false;
         const throttledHandleScroll = () => {
             if (!ticking) {
@@ -31,85 +32,37 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-                isScrolled
-                    ? 'bg-white/10 backdrop-blur-xl border-b border-white/20 shadow-2xl shadow-black/10'
-                    : 'bg-transparent border-b border-transparent'
-            }`}
-        >
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-sm border-b border-white/30 transition-all duration-700">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
-                        <span
-                            className={`font-bold text-2xl tracking-wide transition-all duration-500 ${
-                                isScrolled
-                                    ? 'text-white drop-shadow-lg'
-                                    : 'text-white drop-shadow-lg'
-                            }`}
-                        >
-                            LOKALOKE
-                        </span>
+                        <span className="font-russo text-sky-800 text-2xl md:text-3xl tracking-wide drop-shadow-sm transition-all duration-500">LOKALOKE</span>
                     </div>
 
                     <div className="absolute left-1/2 transform -translate-x-1/2">
                         <div className="hidden md:flex items-center">
-                            <div
-                                className={`backdrop-blur-xl rounded-full px-3 py-2 flex items-center space-x-2 transition-all duration-700 ${
-                                    isScrolled
-                                        ? 'bg-white/15 border border-white/30 shadow-lg shadow-black/5'
-                                        : 'bg-white/10 border border-white/20'
-                                }`}
-                            >
-                                <a
-                                    href="#beranda"
-                                    className="bg-linear-to-r from-blue-500 to-blue-600 text-white px-5 py-2 rounded-full transition-all duration-300 font-semibold text-sm shadow-md hover:shadow-lg hover:from-blue-600 hover:to-blue-700 transform hover:scale-105"
-                                >
+                            <div className="bg-white/80 border-white/50 shadow-sm backdrop-blur-sm rounded-full md:px-2 lg:px-3 md:py-1.5 lg:py-2 flex items-center md:space-x-1 lg:space-x-2 whitespace-nowrap transition-all duration-300">
+                                <a href="#beranda" className="rounded-full text-white font-semibold md:text-xs lg:text-sm bg-gradient-to-r from-sky-700 to-sky-900 md:px-3 md:py-1.5 lg:px-5 lg:py-2">
                                     Beranda
                                 </a>
-                                <a
-                                    href="#tentang-kami"
-                                    className={`px-5 py-2 rounded-full transition-all duration-300 font-medium text-sm backdrop-blur-sm ${
-                                        isScrolled
-                                            ? 'text-white/95 hover:text-white hover:bg-white/20'
-                                            : 'text-white/90 hover:text-white hover:bg-white/20'
-                                    }`}
-                                >
-                                    Tentang Kami
+                                <a href="#tentang-kami" className="relative overflow-hidden group px-5 py-2 rounded-full text-sky-800 font-medium text-sm transition-all">
+                                    <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out"></span>
+                                    <span className="relative z-10 group-hover:text-white">Tentang Kami</span>
                                 </a>
-                                <a
-                                    href="#faq"
-                                    className={`px-5 py-2 rounded-full transition-all duration-300 font-medium text-sm backdrop-blur-sm ${
-                                        isScrolled
-                                            ? 'text-white/95 hover:text-white hover:bg-white/20'
-                                            : 'text-white/90 hover:text-white hover:bg-white/20'
-                                    }`}
-                                >
-                                    FAQ
+                                <a href="#faq" className="relative overflow-hidden group px-5 py-2 rounded-full text-sky-800 font-medium text-sm transition-all">
+                                    <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out"></span>
+                                    <span className="relative z-10 group-hover:text-white">FAQ</span>
                                 </a>
-                                <a
-                                    href="#kontak"
-                                    className={`px-5 py-2 rounded-full transition-all duration-300 font-medium text-sm backdrop-blur-sm ${
-                                        isScrolled
-                                            ? 'text-white/95 hover:text-white hover:bg-white/20'
-                                            : 'text-white/90 hover:text-white hover:bg-white/20'
-                                    }`}
-                                >
-                                    Kontak
+                                <a href="#kontak" className="relative overflow-hidden group px-5 py-2 rounded-full text-sky-800 font-medium text-sm transition-all">
+                                    <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out"></span>
+                                    <span className="relative z-10 group-hover:text-white">Kontak</span>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    {/* Dark Mode Toggle - Desktop */}
-                    <div className="hidden md:flex items-center">
-                        <button
-                            className={`transition-all duration-300 p-2 rounded-lg backdrop-blur-sm ${
-                                isScrolled
-                                    ? 'text-white/90 hover:text-white hover:bg-white/20 border border-white/30 hover:border-white/50'
-                                    : 'text-white/80 hover:text-white hover:bg-white/20 border border-white/10 hover:border-white/30'
-                            }`}
-                        >
+                    <div className="hidden md:flex items-center gap-2">
+                        <button className="px-3 py-2 rounded-full text-white font-semibold text-sm bg-gradient-to-r from-sky-700 to-sky-900 transition-all hover:from-sky-800 hover:to-sky-950 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-white/40" aria-label="Toggle theme">
                             <svg
                                 className="w-5 h-5"
                                 fill="none"
@@ -124,81 +77,97 @@ const Navbar = () => {
                                 />
                             </svg>
                         </button>
+
+                        <div className="relative flex items-center">
+                            <button
+                                className="px-3 py-2 rounded-full text-white font-semibold text-sm bg-gradient-to-r from-sky-700 to-sky-900 transition-all hover:from-sky-800 hover:to-sky-950 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-white/40"
+                                onClick={() => { setIsSearchOpen(!isSearchOpen); setIsMobileMenuOpen(false); }} aria-label="Open search"
+                            >
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35m1.35-5.65a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+                            </button>
+                            <div className={`absolute left-1/2 -translate-x-1/2 -ml-48 top-full mt-5 z-[60] transition-all duration-300 ${isSearchOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
+                                <form onSubmit={(e)=>{e.preventDefault();}}>
+                                    <div className="flex items-center bg-white/95 border border-white/40 rounded-xl shadow-lg px-3 py-2 w-[min(90vw,28rem)]">
+                                        <input
+                                            type="text"
+                                            value={searchQuery}
+                                            onChange={(e) => setSearchQuery(e.target.value)}
+                                            placeholder="Temukan UMKM di LOKALOKE....."
+                                            aria-label="Search input"
+                                            className="flex-1 rounded-md px-2 py-2 text-sm outline-none bg-transparent text-slate-900"
+                                        />
+                                        <button type="submit" className="ml-2 px-3 py-2 rounded-lg text-white font-semibold text-sm bg-gradient-to-r from-sky-700 to-sky-900 transition-all hover:from-sky-800 hover:to-sky-950">
+                                            Cari
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="md:hidden">
-                        <button
-                            className={`transition-all duration-300 p-2 rounded-lg ${
-                                isScrolled
-                                    ? 'text-white/90 hover:text-white hover:bg-white/20'
-                                    : 'text-white/80 hover:text-white hover:bg-white/20'
-                            }`}
-                            onClick={() =>
-                                setIsMobileMenuOpen(!isMobileMenuOpen)
-                            }
-                        >
-                            <svg
-                                className="w-6 h-6"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
+                    <div className="md:hidden flex items-center gap-2">
+                        <button className="px-3 py-2 rounded-full text-white font-semibold text-sm bg-gradient-to-r from-sky-700 to-sky-900 transition-all hover:from-sky-800 hover:to-sky-950 hover:shadow-md" aria-label="Toggle theme">
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                            </svg>
+                        </button>
+                        <div className="relative">
+                            <button
+                                className="px-3 py-2 rounded-full text-white font-semibold text-sm bg-gradient-to-r from-sky-700 to-sky-900 transition-all hover:from-sky-800 hover:to-sky-950 hover:shadow-md"
+                                onClick={() => { setIsSearchOpen(!isSearchOpen); setIsMobileMenuOpen(false); }} aria-label="Open search"
                             >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M4 6h16M4 12h16M4 18h16"
-                                />
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35m1.35-5.65a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+                            </button>
+                            <div className={`absolute left-1/2 -translate-x-1/2 -ml-28 top-full mt-5 z-[60] transition-all duration-300 md:hidden ${isSearchOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
+                                <form onSubmit={(e)=>{e.preventDefault();}}>
+                                    <div className="flex items-center bg-white/95 border border-white/40 rounded-xl shadow-lg px-3 py-2 w-[min(90vw,28rem)]">
+                                        <input
+                                            type="text"
+                                            value={searchQuery}
+                                            onChange={(e) => setSearchQuery(e.target.value)}
+                                            placeholder="Temukan UMKM di LOKALOKE....."
+                                            aria-label="Search input"
+                                            className="flex-1 rounded-md px-2 py-2 text-sm outline-none bg-transparent text-slate-900"
+                                        />
+                                        <button type="submit" className="ml-2 px-3 py-2 rounded-lg text-white font-semibold text-sm bg-gradient-to-r from-sky-700 to-sky-900 transition-all hover:from-sky-800 hover:to-sky-950">
+                                            Cari
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <button
+                            className="px-3 py-2 rounded-full text-white font-semibold text-sm bg-gradient-to-r from-sky-700 to-sky-900 transition-all hover:from-sky-800 hover:to-sky-950 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-white/40"
+                            onClick={() => { setIsMobileMenuOpen(!isMobileMenuOpen); setIsSearchOpen(false); }}
+                            aria-label="Toggle mobile menu"
+                        >
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16"/>
                             </svg>
                         </button>
                     </div>
                 </div>
             </div>
-            <div
-                className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}
-            >
-                <div
-                    className={`px-4 pt-3 pb-4 space-y-2 backdrop-blur-xl transition-all duration-700 ${
-                        isScrolled
-                            ? 'bg-white/15 border-t border-white/30'
-                            : 'bg-gradient-to-b from-blue-900/95 to-slate-900/95 border-t border-blue-500/30'
-                    }`}
-                >
-                    <a
-                        href="#beranda"
-                        className="block px-4 py-3 text-white bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-lg hover:from-blue-500/30 hover:to-blue-600/30 transition-all duration-300 font-semibold border border-blue-400/20"
-                    >
+            <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`} >
+                <div className="px-4 pt-3 pb-4 space-y-2 backdrop-blur-xl transition-all duration-700 bg-white/85 border-t border-white/40 shadow-lg">
+                    <a href="#beranda" className="block px-4 py-3 text-white font-semibold rounded-lg bg-gradient-to-r from-sky-700 to-sky-900">
                         Beranda
                     </a>
-                    <a
-                        href="#tentang-kami"
-                        className={`block px-4 py-3 rounded-lg transition-all duration-300 font-medium ${
-                            isScrolled
-                                ? 'text-white/95 hover:text-white hover:bg-white/20'
-                                : 'text-white/90 hover:text-white hover:bg-white/10'
-                        }`}
-                    >
-                        Tentang Kami
+                    <a href="#tentang-kami" className="relative overflow-hidden group block px-4 py-3 rounded-lg transition-all duration-500 ease-out font-medium text-sky-900 bg-gradient-to-r from-sky-600/10 to-sky-700/10 hover:from-sky-600/20 hover:to-sky-700/20 border border-sky-400/30">
+                        <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out" />
+                        <span className="relative z-10 group-hover:text-white">Tentang Kami</span>
                     </a>
-                    <a
-                        href="#faq"
-                        className={`block px-4 py-3 rounded-lg transition-all duration-300 font-medium ${
-                            isScrolled
-                                ? 'text-white/90 hover:text-white hover:bg-slate-700/50'
-                                : 'text-white/90 hover:text-white hover:bg-white/10'
-                        }`}
-                    >
-                        FAQ
+                    <a href="#faq" className="relative overflow-hidden group block px-4 py-3 rounded-lg transition-all duration-500 ease-out font-medium text-sky-900 bg-gradient-to-r from-sky-600/10 to-sky-700/10 hover:from-sky-600/20 hover:to-sky-700/20 border border-sky-400/30" >
+                        <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out" />
+                        <span className="relative z-10 group-hover:text-white">FAQ</span>
                     </a>
-                    <a
-                        href="#kontak"
-                        className={`block px-4 py-3 rounded-lg transition-all duration-300 font-medium ${
-                            isScrolled
-                                ? 'text-white/90 hover:text-white hover:bg-slate-700/50'
-                                : 'text-white/90 hover:text-white hover:bg-white/10'
-                        }`}
-                    >
-                        Kontak
+                    <a href="#kontak" className="relative overflow-hidden group block px-4 py-3 rounded-lg transition-all duration-500 ease-out font-medium text-sky-900 bg-gradient-to-r from-sky-600/10 to-sky-700/10 hover:from-sky-600/20 hover:to-sky-700/20 border border-sky-400/30">
+                        <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out" />
+                        <span className="relative z-10 group-hover:text-white">Kontak</span>
                     </a>
                 </div>
             </div>

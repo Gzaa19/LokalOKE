@@ -1,8 +1,9 @@
 import './global.css'
-import Navbar from './component/layouts/navbar'
-import Hero from './component/home/hero'
-import Search from './component/home/search'
-import Footer from './component/layouts/footer'
+import Navbar from './components/layouts/navbar'
+import Hero from './components/home/hero'
+import Footer from './components/layouts/footer'
+import Features from './components/home/features'
+import Newsletter from './components/home/newsletter'
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <Search />
+        <Features />
+        <Newsletter />
       </main>
       <Footer />
     </>
