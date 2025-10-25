@@ -1,18 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  /* Ini adalah penulisan yang benar untuk gradien di CSS.
-    "gradient-to-r" menjadi "linear-gradient(to right, ...)"
-  */
-  --bg: linear-gradient(to right, #cbd5e1, #94a3b8, #64748b);
-  --text: #0f172a;      /* (Ini slate-900) */
-  --muted: #6b84a3;     /* (Ini custom, dekat ke slate-500/600) */
+  --bg: #F5F5F0;
+  --text: #0f172a;      
+  --muted: #6b84a3;     
   --primary: #2d9cdb;
   --primary-dark: #1060b0;
   --accent: #74c0ff;
 }
 
-/* Utility font class for Russo One */
 .font-russo {
   font-family: 'Russo One', sans-serif;
 }

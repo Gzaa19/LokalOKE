@@ -3,7 +3,7 @@ import Hero from '../components/home/hero';
 import Features from '../components/home/features';
 import Newsletter from '../components/home/newsletter';
 import Footer from '../components/layouts/footer';
-import UmkmCard from '../components/umkm/umkmcard';
+import UmkmCard from '../components/home/umkmcard';
 
 export default function HomePage() {
   return (

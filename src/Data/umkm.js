@@ -33,14 +33,15 @@ const umkmData = [
     phone: "0897-7995-274",
     images: [
       "/src/assets/Toko_1/Toko_1-1.jpg",
-      "/src/assets/Toko_1/Toko_1-2.jpg"
+      "/src/assets/Toko_1/Toko_1-2.jpg",
+      "/src/assets/Toko_1/Toko_1-3.jpg"
     ],
     location: {
       lat: -7.067765541379144,
       lng: 110.4410449223468
     },
     rating: 4.4,
-    priceRange: "Rp 25.000 - Rp 200.000"
+    priceRange: "Rp 1.500 - Rp 20.000"
   },
   {
     id: "2",
@@ -58,7 +59,7 @@ const umkmData = [
       lng: 110.44109570885428
     },
     rating: 4.6,
-    priceRange: "Rp 1 – Rp 25.000"
+    priceRange: "Rp 1.000 - Rp 25.000"
   },
   {
     id: "3",

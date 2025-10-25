@@ -51,7 +51,7 @@ const Navbar = () => {
                                 </a>
                                 <a href="#faq" className="relative overflow-hidden group px-5 py-2 rounded-full text-sky-800 font-medium text-sm transition-all">
                                     <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out"></span>
-                                    <span className="relative z-10 group-hover:text-white">FAQ</span>
+                                    <span className="relative z-10 group-hover:text-white">Produk</span>
                                 </a>
                                 <a href="#kontak" className="relative overflow-hidden group px-5 py-2 rounded-full text-sky-800 font-medium text-sm transition-all">
                                     <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out"></span>

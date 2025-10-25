@@ -1,85 +1,85 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { umkmData } from '../../Data/umkm.js';
+import { Star, MapPin, Phone } from "lucide-react";
 
-export default function UmkmCard() {
-    const [hoveredCard, setHoveredCard] = useState(null);
+export default function UMKMCard({ umkm }) {
+  const renderStars = (rating) => {
+    const stars = [];
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
+    
+    for (let i = 0; i < fullStars; i++) {
+      stars.push(
+        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+      );
+    }
+    
+    if (hasHalfStar) {
+      stars.push(
+        <Star key="half" className="w-4 h-4 fill-yellow-400 text-yellow-400 opacity-50" />
+      );
+    }
+    
+    const emptyStars = 5 - Math.ceil(rating);
+    for (let i = 0; i < emptyStars; i++) {
+      stars.push(
+        <Star key={`empty-${i}`} className="w-4 h-4 text-gray-300" />
+      );
+    }
+    
+    return stars;
+  };
 
-    const renderWarungCards = () => (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-            {umkmData.map((warung) => (
-                <div
-                    key={warung.id}
-                    className="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl hover:scale-[1.02] transition-all duration-300 ease-in-out flex flex-col group"
-                    onMouseEnter={() => setHoveredCard(warung.id)}
-                    onMouseLeave={() => setHoveredCard(null)}
-                >
-                    <div className="h-48 shrink-0">
-                        <img
-                            src={warung.images[0]}
-                            alt={warung.name}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
-                    </div>
-
-                    <div className="p-4 flex flex-col grow">
-                        <div className="grow flex flex-col justify-end">
-                            <h3 className="text-lg font-bold text-gray-900 line-clamp-2" title={warung.name}>
-                                {warung.name}
-                            </h3>
-                            <div className="flex items-center text-sm text-gray-600 mt-1">
-                                <svg
-                                    className="w-4 h-4 text-gray-500 mr-1 shrink-0"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                                <span>{warung.category}</span>
-                            </div>
-                        </div>
-
-                        <div className="flex justify-end pt-4">
-                            <Link to={`/umkm/${warung.id}`}>
-                                <button
-                                    className={`w-10 h-10 bg-[#07416b] text-white rounded-full flex items-center justify-center transition-all duration-500 ease-out shrink-0 transform ${
-                                        hoveredCard === warung.id 
-                                            ? 'opacity-100 translate-x-0 scale-110 shadow-lg' 
-                                            : 'opacity-0 translate-x-4 scale-95'
-                                    }`}
-                                    aria-label={`Lihat detail untuk ${warung.name}`}
-                                >
-                                    <svg
-                                        className="w-5 h-5 transition-transform duration-300"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="M9 5l7 7-7 7"
-                                        />
-                                    </svg>
-                                </button>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            ))}
+  return (
+    <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+      {/* Image Section */}
+      <div className="relative h-48 overflow-hidden">
+        <img 
+          src={umkm.images[0]} 
+          alt={umkm.name}
+          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+        />
+        <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
+          <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+          <span className="text-sm font-medium text-gray-800">{umkm.rating}</span>
         </div>
-    );
+      </div>
 
-    return (
-        <section className="py-16 px-4">
-            <div className="container mx-auto">
-                {renderWarungCards()}
+      {/* Content Section */}
+      <div className="p-5">
+        {/* Title and Rating */}
+        <div className="mb-3">
+          <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-1">
+            {umkm.name}
+          </h3>
+          <div className="flex items-center gap-2 mb-2">
+            <div className="flex items-center gap-1">
+              {renderStars(umkm.rating)}
             </div>
-        </section>
-    );
+            <span className="text-sm text-gray-600">{umkm.rating}</span>
+          </div>
+        </div>
+
+        {/* Location and Price */}
+        <div className="mb-3 space-y-2">
+          <div className="flex items-start gap-2">
+            <MapPin className="w-4 h-4 text-gray-500 mt-0.5 flex-shrink-0" />
+            <span className="text-sm text-gray-600 line-clamp-2">{umkm.address}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Phone className="w-4 h-4 text-gray-500" />
+            <span className="text-sm font-medium text-gray-800">{umkm.priceRange}</span>
+          </div>
+        </div>
+
+        {/* Description */}
+        <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
+          {umkm.description}
+        </p>
+
+        {/* Button */}
+        <button className="w-full bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 text-white font-medium py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl">
+          Lihat Detail
+        </button>
+      </div>
+    </div>
+  );
 }
