@@ -100,37 +100,37 @@ const UMKMDetail = () => {
           </Link>
         </div>
         
-        <div className="bg-white min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] grid items-start grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 shadow-xl rounded-xl">
+        <div className="bg-white min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] grid items-start grid-cols-1 lg:grid-cols-2 gap-0 shadow-xl rounded-xl overflow-hidden">
             <div className="h-full">
-                <div className="p-3 sm:p-4 lg:p-6 relative h-full flex items-center justify-center">
+                <div className="relative h-full flex items-center justify-center">
                     {umkm.images && umkm.images.length > 0 ? (
                       <>
                         <img 
                           src={umkm.images[currentImageIndex]} 
                           alt={`${umkm.name} - ${currentImageIndex + 1}`} 
-                          className="w-full h-[250px] sm:h-[300px] lg:h-full lg:w-4/5 rounded-xl object-cover sm:object-contain" 
+                          className="w-full h-[250px] sm:h-[300px] lg:h-full object-cover" 
                         />
                         {umkm.images.length > 1 && (
                           <>
                             <button
                               onClick={prevImage}
-                              className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-1.5 sm:p-2 rounded-full hover:bg-opacity-70 transition-all"
+                              className="absolute left-4 sm:left-6 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-1.5 sm:p-2 rounded-full hover:bg-opacity-70 transition-all z-10"
                             >
                               <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
                             </button>
                             <button
                               onClick={nextImage}
-                              className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-1.5 sm:p-2 rounded-full hover:bg-opacity-70 transition-all"
+                              className="absolute right-4 sm:right-6 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-1.5 sm:p-2 rounded-full hover:bg-opacity-70 transition-all z-10"
                             >
                               <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
                             </button>
-                            <div className="flex items-center justify-center gap-3 absolute md:bottom-6 bottom-0 left-0 right-0 mx-auto">
+                            <div className="flex items-center justify-center gap-3 absolute bottom-4 sm:bottom-6 left-0 right-0 mx-auto z-10">
                               {umkm.images.map((_, index) => (
                                 <div 
                                   key={index}
                                   onClick={() => setCurrentImageIndex(index)}
                                   className={`w-3.5 h-3.5 shrink-0 rounded-full cursor-pointer transition-colors ${
-                                    index === currentImageIndex ? 'bg-blue-600' : 'bg-gray-300'
+                                    index === currentImageIndex ? 'bg-white shadow-lg' : 'bg-white bg-opacity-50'
                                   }`}
                                 ></div>
                               ))}
@@ -139,7 +139,7 @@ const UMKMDetail = () => {
                         )}
                       </>
                     ) : (
-                      <div className="lg:w-4/5 w-full h-full rounded-xl bg-gray-200 flex items-center justify-center">
+                      <div className="w-full h-full bg-gray-200 flex items-center justify-center">
                         <span className="text-gray-500">Tidak ada gambar</span>
                       </div>
                     )}
