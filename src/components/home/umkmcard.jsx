@@ -1,20 +1,27 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { umkmData } from '../../Data/umkm.js';
+import { ArrowRight, Star } from 'lucide-react';
 
 export default function UmkmCard() {
     const [hoveredCard, setHoveredCard] = useState(null);
 
     const renderWarungCards = () => (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {umkmData.map((warung) => (
                 <div
                     key={warung.id}
-                    className="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl hover:scale-[1.02] transition-all duration-300 ease-in-out flex flex-col group"
+                    className="
+                        bg-white shadow-lg overflow-hidden 
+                        hover:shadow-xl hover:scale-[1.02] 
+                        transition-all duration-300 ease-in-out 
+                        flex flex-col group h-full
+                        rounded-tl-[50px] rounded-br-[50px] tr bl
+                    "
                     onMouseEnter={() => setHoveredCard(warung.id)}
                     onMouseLeave={() => setHoveredCard(null)}
                 >
-                    <div className="h-48 shrink-0">
+                    <div className="h-64 shrink-0 rounded-tl-[50px] overflow-hidden">
                         <img
                             src={warung.images[0]}
                             alt={warung.name}
@@ -22,12 +29,19 @@ export default function UmkmCard() {
                         />
                     </div>
 
-                    <div className="p-4 flex flex-col grow">
-                        <div className="grow flex flex-col justify-end">
-                            <h3 className="text-lg font-bold text-gray-900 line-clamp-2" title={warung.name}>
-                                {warung.name}
-                            </h3>
-                            <div className="flex items-center text-sm text-gray-600 mt-1">
+                    <div className="p-4 flex flex-col grow justify-between">
+                        <div className="flex flex-col">
+                            <div className="flex justify-between items-start mb-1">
+                                <h3 className="text-lg font-bold text-gray-900 line-clamp-2" title={warung.name}>
+                                    {warung.name}
+                                </h3>
+                                <div className="flex items-center text-sm font-semibold text-yellow-600 ml-4 shrink-0">
+                                    <Star size={16} fill="currentColor" className="mr-1" />
+                                    {warung.rating.toFixed(1)}
+                                </div>
+                            </div>
+
+                            <div className="flex items-center text-sm text-gray-600 mb-2">
                                 <svg
                                     className="w-4 h-4 text-gray-500 mr-1 shrink-0"
                                     fill="currentColor"
@@ -41,35 +55,41 @@ export default function UmkmCard() {
                                 </svg>
                                 <span>{warung.category}</span>
                             </div>
+
+                            <p className="text-sm text-gray-500 mt-1 line-clamp-2" title={warung.description}>
+                                {warung.description}
+                            </p>
                         </div>
 
-                        <div className="flex justify-end pt-4">
-                            <Link to={`/umkm/${warung.id}`}>
-                                <button
-                                    className={`w-10 h-10 bg-[#07416b] text-white rounded-full flex items-center justify-center transition-all duration-500 ease-out shrink-0 transform ${
-                                        hoveredCard === warung.id 
-                                            ? 'opacity-100 translate-x-0 scale-110 shadow-lg' 
-                                            : 'opacity-0 translate-x-4 scale-95'
-                                    }`}
-                                    aria-label={`Lihat detail untuk ${warung.name}`}
-                                >
-                                    <svg
-                                        className="w-5 h-5 transition-transform duration-300"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="M9 5l7 7-7 7"
-                                        />
-                                    </svg>
-                                </button>
-                            </Link>
+                        <div className="mt-3 pt-3 border-t border-gray-100">
+                            <span className="text-base font-bold text-[#07416b]">
+                                {warung.priceRange}
+                            </span>
                         </div>
                     </div>
+
+                    <Link to={`/umkm/${warung.id}`} className="w-full mt-auto">
+                        <button
+                            className={`
+                                bg-[#07416b] text-white 
+                                py-3 w-full 
+                                flex items-center justify-center 
+                                transition-all duration-500 ease-out shrink-0 transform 
+                                text-base font-semibold 
+                                rounded-br-[50px] bl rounded-tr-none rounded-tl-none
+                                ${hoveredCard === warung.id
+                                    ? 'opacity-100 translate-x-0 scale-100 shadow-xl'
+                                    : 'opacity-0 translate-x-4 scale-95'
+                                }
+                            `}
+                            aria-label={`Lihat detail untuk ${warung.name}`}
+                        >
+                            <span className="flex items-center justify-center space-x-2">
+                                Lihat Detail
+                                <ArrowRight size={20} />
+                            </span>
+                        </button>
+                    </Link>
                 </div>
             ))}
         </div>
