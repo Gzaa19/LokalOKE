@@ -31,7 +31,7 @@ export default function Footer() {
             </svg>
           </a>
         </div>
-        <div className="text-slate-400 text-xs">© 2025 LOKALOKE. All Rights Reserved.</div>
+        <div className="text-slate-400 text-xs">© 2025 LOKALOKE-ANTEK JAYA. All Rights Reserved.</div>
       </div>
     </footer>
   );
