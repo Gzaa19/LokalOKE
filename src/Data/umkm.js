@@ -33,12 +33,11 @@ const umkmData = [
     phone: "0897-7995-274",
     images: [
       "/src/assets/Toko_1/Toko_1-1.jpg",
-      "/src/assets/Toko_1/Toko_1-2.jpg",
-      "/src/assets/Toko_1/Toko_1-3.jpg"
+      "/src/assets/Toko_1/Toko_1-2.jpg"
     ],
     location: {
-      lat: -7.067765541379144,
-      lng: 110.4410449223468
+      lat: -7.067943719679567,
+      lng: 110.44110827492295
     },
     rating: 4.4,
     priceRange: "Rp 1.500 - Rp 20.000"
@@ -66,25 +65,25 @@ const umkmData = [
     name: "Penyet Bu Nur",
     category: "Makanan",
     description: "Salon kecantikan dengan layanan lengkap mulai dari potong rambut, creambath, hingga treatment wajah. Didukung oleh tenaga profesional berpengalaman.",
-    address: "Jl. Kartini No. 88, Jakarta Barat",
-    phone: "0813-2468-1357",
+    address: "Jl. Mulawarman Utara Dalam II, Bulusan, Kec. Tembalang, Kota Semarang, Jawa Tengah 50277",
+    phone: "0813-2844-8929",
     images: [
       "/src/assets/hero4.jpg",
       "/src/assets/hero4.jpg"
     ],
     location: {
-      lat: -6.1751,
-      lng: 106.8650,
+      lat: -7.066817363154133,
+      lng: 110.44042001807144
     },
     rating: 4.7,
-    priceRange: "Rp 50.000 - Rp 300.000"
+    priceRange: "Rp 1.000 - Rp 25.000"
   },
   {
     id: "4",
-    name: "Toko Batik Nusantara",
+    name: "Toko Rockstar",
     category: "Fashion",
     description: "Menjual berbagai macam batik dari seluruh nusantara dengan motif tradisional dan kontemporer. Tersedia batik tulis, cap, dan printing dengan harga bersahabat.",
-    address: "Jl. Sudirman No. 156, Jakarta Pusat",
+    address: "Jl. Gerung No.25, Bulusan, Kec. Tembalang, Kota Semarang, Jawa Tengah 50277",
     phone: "0856-7890-1234",
     images: [
       "/src/assets/hero4.jpg",
