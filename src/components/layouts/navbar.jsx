@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -42,9 +44,19 @@ const Navbar = () => {
                     <div className="absolute left-1/2 transform -translate-x-1/2">
                         <div className="hidden md:flex items-center">
                             <div className="bg-white/80 border-white/50 shadow-sm backdrop-blur-sm rounded-full md:px-2 lg:px-3 md:py-1.5 lg:py-2 flex items-center md:space-x-1 lg:space-x-2 whitespace-nowrap transition-all duration-300">
-                                <a href="#beranda" className="rounded-full text-white font-semibold md:text-xs lg:text-sm bg-gradient-to-r from-sky-700 to-sky-900 md:px-3 md:py-1.5 lg:px-5 lg:py-2">
-                                    Beranda
-                                </a>
+                                <Link 
+                                    to="/" 
+                                    className={`rounded-full font-semibold md:text-xs lg:text-sm md:px-3 md:py-1.5 lg:px-5 lg:py-2 transition-all ${
+                                        location.pathname === '/' 
+                                            ? 'text-white bg-gradient-to-r from-sky-700 to-sky-900' 
+                                            : 'relative overflow-hidden group text-sky-800 font-medium'
+                                    }`}
+                                >
+                                    {location.pathname !== '/' && (
+                                        <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out"></span>
+                                    )}
+                                    <span className={`${location.pathname !== '/' ? 'relative z-10 group-hover:text-white' : ''}`}>Beranda</span>
+                                </Link>
                                 <a href="#tentang-kami" className="relative overflow-hidden group px-5 py-2 rounded-full text-sky-800 font-medium text-sm transition-all">
                                     <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out"></span>
                                     <span className="relative z-10 group-hover:text-white">Tentang Kami</span>
@@ -53,10 +65,19 @@ const Navbar = () => {
                                     <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out"></span>
                                     <span className="relative z-10 group-hover:text-white">Produk</span>
                                 </a>
-                                <a href="#kontak" className="relative overflow-hidden group px-5 py-2 rounded-full text-sky-800 font-medium text-sm transition-all">
-                                    <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out"></span>
-                                    <span className="relative z-10 group-hover:text-white">Kontak</span>
-                                </a>
+                                <Link 
+                                    to="/kontak" 
+                                    className={`rounded-full font-semibold md:text-xs lg:text-sm md:px-3 md:py-1.5 lg:px-5 lg:py-2 transition-all ${
+                                        location.pathname === '/kontak' 
+                                            ? 'text-white bg-gradient-to-r from-sky-700 to-sky-900' 
+                                            : 'relative overflow-hidden group text-sky-800 font-medium'
+                                    }`}
+                                >
+                                    {location.pathname !== '/kontak' && (
+                                        <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out"></span>
+                                    )}
+                                    <span className={`${location.pathname !== '/kontak' ? 'relative z-10 group-hover:text-white' : ''}`}>Kontak</span>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -154,9 +175,19 @@ const Navbar = () => {
             </div>
             <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`} >
                 <div className="px-4 pt-3 pb-4 space-y-2 backdrop-blur-xl transition-all duration-700 bg-white/85 border-t border-white/40 shadow-lg">
-                    <a href="#beranda" className="block px-4 py-3 text-white font-semibold rounded-lg bg-gradient-to-r from-sky-700 to-sky-900">
-                        Beranda
-                    </a>
+                    <Link 
+                        to="/" 
+                        className={`block px-4 py-3 rounded-lg font-semibold transition-all duration-500 ease-out ${
+                            location.pathname === '/' 
+                                ? 'text-white bg-gradient-to-r from-sky-700 to-sky-900' 
+                                : 'relative overflow-hidden group font-medium text-sky-900 bg-gradient-to-r from-sky-600/10 to-sky-700/10 hover:from-sky-600/20 hover:to-sky-700/20 border border-sky-400/30'
+                        }`}
+                    >
+                        {location.pathname !== '/' && (
+                            <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out" />
+                        )}
+                        <span className={`${location.pathname !== '/' ? 'relative z-10 group-hover:text-white' : ''}`}>Beranda</span>
+                    </Link>
                     <a href="#tentang-kami" className="relative overflow-hidden group block px-4 py-3 rounded-lg transition-all duration-500 ease-out font-medium text-sky-900 bg-gradient-to-r from-sky-600/10 to-sky-700/10 hover:from-sky-600/20 hover:to-sky-700/20 border border-sky-400/30">
                         <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out" />
                         <span className="relative z-10 group-hover:text-white">Tentang Kami</span>
@@ -165,10 +196,19 @@ const Navbar = () => {
                         <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out" />
                         <span className="relative z-10 group-hover:text-white">FAQ</span>
                     </a>
-                    <a href="#kontak" className="relative overflow-hidden group block px-4 py-3 rounded-lg transition-all duration-500 ease-out font-medium text-sky-900 bg-gradient-to-r from-sky-600/10 to-sky-700/10 hover:from-sky-600/20 hover:to-sky-700/20 border border-sky-400/30">
-                        <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out" />
-                        <span className="relative z-10 group-hover:text-white">Kontak</span>
-                    </a>
+                    <Link 
+                        to="/kontak" 
+                        className={`block px-4 py-3 rounded-lg font-semibold transition-all duration-500 ease-out ${
+                            location.pathname === '/kontak' 
+                                ? 'text-white bg-gradient-to-r from-sky-700 to-sky-900' 
+                                : 'relative overflow-hidden group font-medium text-sky-900 bg-gradient-to-r from-sky-600/10 to-sky-700/10 hover:from-sky-600/20 hover:to-sky-700/20 border border-sky-400/30'
+                        }`}
+                    >
+                        {location.pathname !== '/kontak' && (
+                            <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out" />
+                        )}
+                        <span className={`${location.pathname !== '/kontak' ? 'relative z-10 group-hover:text-white' : ''}`}>Kontak</span>
+                    </Link>
                 </div>
             </div>
         </nav>

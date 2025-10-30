@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { umkmData } from "../../Data/umkm.js";
 import { ArrowLeft, MapPin, Phone, Star, ChevronLeft, ChevronRight, Heart } from "lucide-react";
 
@@ -8,6 +8,11 @@ const UMKMDetail = () => {
   const umkm = umkmData.find((u) => u.id.toString() === id);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [activeTab, setActiveTab] = useState('deskripsi');
+
+  // Scroll to top when component mounts or id changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
   const nextImage = () => {
     setCurrentImageIndex((prev) =>
@@ -101,14 +106,14 @@ const UMKMDetail = () => {
         </div>
         
         <div className="bg-white min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] grid items-start grid-cols-1 lg:grid-cols-2 gap-0 shadow-xl rounded-xl overflow-hidden">
-            <div className="h-full">
+            <div className="h-[400px] sm:h-[500px] lg:h-[600px]">
                 <div className="relative h-full flex items-center justify-center">
                     {umkm.images && umkm.images.length > 0 ? (
                       <>
                         <img 
                           src={umkm.images[currentImageIndex]} 
                           alt={`${umkm.name} - ${currentImageIndex + 1}`} 
-                          className="w-full h-[250px] sm:h-[300px] lg:h-full object-cover" 
+                          className="w-full h-full object-cover" 
                         />
                         {umkm.images.length > 1 && (
                           <>

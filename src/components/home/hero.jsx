@@ -10,7 +10,6 @@ export default function Hero() {
             id="home"
             className="relative min-h-screen pt-20"
         >
-            {/* Grid Background dengan 4 gambar */}
             <div className="absolute inset-0 grid grid-cols-2 grid-rows-2">
                 <div 
                     className="bg-cover bg-center brightness-105 saturate-105"
@@ -35,7 +34,7 @@ export default function Hero() {
                 <div className="container flex justify-center">
                     <div className="flex flex-col items-center text-center text-white max-w-[900px] mx-auto px-5">
                         <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-[0.18em] sm:tracking-[0.25em] uppercase text-white/90 font-medium">
-                            DISCOVER YOUR NEXT
+                            YANG DEKAT, YANG OKE
                         </h1>
                         <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl max-[430px]:text-4xl max-[390px]:text-[2.25rem] max-[375px]:text-[2.125rem] tracking-[0.18em] sm:tracking-[0.24em] md:tracking-[0.28em] lg:tracking-[0.30em] xl:tracking-[0.32em] font-black leading-none uppercase text-white drop-shadow-lg mt-2">
                             LOKALOKE
