@@ -8,7 +8,6 @@ export default function UmkmCard() {
     const [hoveredCard, setHoveredCard] = useState(null);
     const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || 'Semua');
 
-    // Filter UMKM berdasarkan kategori
     const filteredUmkmData = selectedCategory === 'Semua'
         ? umkmData
         : selectedCategory === 'Kuliner'

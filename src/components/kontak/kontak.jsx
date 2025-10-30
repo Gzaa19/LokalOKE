@@ -36,7 +36,6 @@ export default function Kontak({ title, description, icon }) {
         }
     };
 
-    // Auto-hide popup after 4 seconds
     useEffect(() => {
         if (showPopup && result) {
             const timer = setTimeout(() => {
@@ -130,8 +129,7 @@ export default function Kontak({ title, description, icon }) {
                 </form>
             </div>
 
-            {/* Popup Notification */}
-             {showPopup && result && (
+            {showPopup && result && (
                  <div className={`fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg max-w-sm transform transition-all duration-300 ease-out animate-in slide-in-from-right ${
                      result.includes('berhasil') 
                          ? 'bg-green-500 text-white' 
