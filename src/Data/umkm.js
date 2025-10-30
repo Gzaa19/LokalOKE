@@ -16,10 +16,10 @@ const UMKM = {
 
 const categories = [
   "Semua",
-  "Makanan",
-  "Kedai Kopi",
+  "Kuliner",
+  "Kost",
   "Jasa",
-  "Fashion",
+  "Toko Kelontong",
   "Kerajinan"
 ];
 
@@ -81,26 +81,26 @@ const umkmData = [
   {
     id: "4",
     name: "Toko Rockstar",
-    category: "Fashion",
+    category: "Toko Kelontong",
     description: "Menjual berbagai macam batik dari seluruh nusantara dengan motif tradisional dan kontemporer. Tersedia batik tulis, cap, dan printing dengan harga bersahabat.",
     address: "Jl. Gerung No.25, Bulusan, Kec. Tembalang, Kota Semarang, Jawa Tengah 50277",
-    phone: "0856-7890-1234",
+    phone: "0895-3094-2567",
     images: [
       "/src/assets/hero4.jpg",
       "/src/assets/hero4.jpg"
     ],
     location: {
-      lat: -6.2293,
-      lng: 106.8183,
+      lat: -7.05693315773418,
+      lng: 110.4434802733048
     },
     rating: 4.7,
-    priceRange: "Rp 150.000 - Rp 800.000"
+    priceRange: "Rp 1.000 - Rp 100.000"
   },
   {
     id: "5",
-    name: "Kerajinan Anyaman Bamboo",
-    category: "Kerajinan",
-    description: "Pengrajin anyaman bambu yang memproduksi berbagai produk ramah lingkungan seperti tas, tempat tissue, dan dekorasi rumah dengan kualitas terbaik.",
+    name: "Alfarizqy",
+    category: "Toko Kelontong",
+    description: "",
     address: "Jl. Kerajinan No. 23, Jakarta Timur",
     phone: "0822-3456-7891",
     images: [
@@ -116,39 +116,39 @@ const umkmData = [
   },
   {
     id: "6",
-    name: "Nasi Goreng Kampung Bu Lastri",
-    category: "Makanan",
-    description: "Nasi goreng dengan bumbu rahasia yang telah melegenda selama 20 tahun. Porsi besar dengan harga terjangkau, cocok untuk makan malam keluarga.",
-    address: "Jl. Raya Kampung No. 67, Jakarta Utara",
-    phone: "0815-6789-0123",
+    name: "Kost Venuar UNDIP Tembalang",
+    category: "Kost",
+    description: "",
+    address: "Jl. Klentengsari Sel., Pedalangan, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50268",
+    phone: "0812-2506-0984",
     images: [
       "/src/assets/hero4.jpg",
       "/src/assets/hero4.jpg"
     ],
     location: {
-      lat: -6.2145,
-      lng: 106.8451,
+      lat: -7.058554187823217,
+      lng: 110.42415347946783
     },
-    rating: 4.9,
-    priceRange: "Rp 18.000 - Rp 35.000"
+    rating: 4.5,
+    priceRange: "Rp 800.000 - Rp 1.300.000"
   },
   {
     id: "7",
-    name: "Es Teh Manis Segar",
-    category: "Minuman",
-    description: "Warung es teh dengan berbagai varian rasa dan topping. Minuman segar yang sempurna untuk cuaca panas dengan harga yang sangat bersahabat.",
-    address: "Jl. Raya Utama No. 34, Jakarta Selatan",
+    name: "Kost putri alesha",
+    category: "Kost",
+    description: "",
+    address: "Jl. Gerungsari No.1/no.7, Bulusan, Kec. Tembalang, Kota Semarang, Jawa Tengah 50277",
     phone: "0878-9012-3456",
     images: [
       "/src/assets/hero4.jpg",
       "/src/assets/hero4.jpg"
     ],
     location: {
-      lat: -6.2707,
-      lng: 106.8050
+      lat: -7.056885352618713,
+      lng: 110.44525598383011
     },
-    rating: 4.3,
-    priceRange: "Rp 8.000 - Rp 25.000"
+    rating: 4.8,
+    priceRange: "Rp 800.000 - Rp 1.300.000"
   },
   {
     id: "8",
