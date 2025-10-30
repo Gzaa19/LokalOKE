@@ -1,14 +1,14 @@
-import Navbar from '../components/layouts/navbar';
-import UMKMDetail from '../components/detailproduk/detail';
-import Footer from '../components/layouts/footer';
-import CTA from '../components/detailproduk/cta';
+import Navbar from '../components/layout/Navbar';
+import UmkmDetail from '../features/umkm-detail/UmkmDetail';
+import Footer from '../components/layout/Footer';
+import CTA from '../features/umkm-detail/cta';
 
 export default function detailpages() {
   return (
     <>
       <Navbar />
       <main>
-        <UMKMDetail />
+        <UmkmDetail />
         <CTA />
       </main>
       <Footer />

@@ -1,9 +1,9 @@
-import Navbar from '../components/layouts/navbar';
+import Navbar from '../components/layout/Navbar';
 import Hero from '../components/home/hero';
 import Features from '../components/home/features';
 import Newsletter from '../components/home/newsletter';
-import Footer from '../components/layouts/footer';
-import UmkmCard from '../components/home/umkmcard';
+import Footer from '../components/layout/Footer';
+import UmkmDirectory from '../features/umkm-directory/UmkmDirectory';
 
 export default function HomePage() {
   return (
@@ -12,7 +12,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <Features />
-        <UmkmCard />
+        <UmkmDirectory />
         <Newsletter />
       </main>
       <Footer />

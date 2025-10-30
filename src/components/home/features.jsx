@@ -1,9 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapLocationDot, faCircleInfo, faMagnifyingGlass, faPercent } from '@fortawesome/free-solid-svg-icons'
 import { faStar, faHeart } from '@fortawesome/free-regular-svg-icons'
+import AnimatedCard from '../ui/Card'
+import AnimatedContainer from '../ui/Container'
 export default function Features() {
     return (
-        <section id="features" className="container mx-auto px-4 space-y-6 pt-20 pb-14">
+        <AnimatedContainer 
+            variant="fadeIn" 
+            className="container mx-auto px-4 space-y-6 pt-20 pb-14"
+        >
             <div className="mx-auto flex max-w-232 flex-col items-center space-y-3 text-center">
                 <h2 className="font-bold text-2xl sm:text-3xl md:text-5xl lg:text-4xl leading-[1.2] mt-12 sm:mt-16">Semua Jadi Mudah & OKE</h2>
                 <p className="text-sm sm:text-base md:text-xl leading-6 sm:leading-7 max-w-[750px] text-slate-600">
@@ -12,27 +17,42 @@ export default function Features() {
             </div>
 
             <div className="mx-auto grid justify-center gap-6 sm:grid-cols-2 md:max-w-6xl md:grid-cols-3">
-                <div className="relative overflow-hidden rounded-xl border border-[#E8E8E8] bg-white/85 shadow-lg select-none p-3 md:p-4 transition duration-300 hover:border-[#7A7A7A] hover:shadow-lg hover:shadow-[#7A7A7A] hover:-translate-y-0.5">
+                <AnimatedCard
+                    hoverEffect="lift"
+                    entranceAnimation="slideUp"
+                    delay={0.1}
+                    className="relative overflow-hidden rounded-xl border border-[#E8E8E8] bg-white/85 shadow-lg select-none p-3 md:p-4"
+                >
                   <div className="relative min-h-[75px] rounded-md p-6 md:p-7 lg:p-8">
                     <FontAwesomeIcon icon={faMapLocationDot} className="absolute top-6 left-6 md:top-7 md:left-7 lg:top-8 lg:left-8 text-2xl text-black shrink-0 leading-none" />
                     <div className="space-y-2 flex-1 pt-10">
                       <h3 className="font-bold text-base md:text-lg">Lokasi OKE</h3>
-                      <p className="text-sm text-muted-foreground">Kami menyajikan data lokasi yang akurat. Temukan UMKM terdekat Anda dengan peta interaktif dan petunjuk arah yang jelas.</p>
+                      <p className="text-sm text-muted-foreground">Temukan UMKM terdekat dengan mudah. Lihat lokasi pasti, jarak, dan rute terbaik untuk sampai ke tempat yang Anda inginkan.</p>
                     </div>
                   </div>
-                </div>
+                </AnimatedCard>
 
-                <div className="relative overflow-hidden rounded-xl border border-[#E8E8E8] bg-white/85 shadow-lg select-none p-3 md:p-4 transition duration-300 hover:border-[#7A7A7A] hover:shadow-lg hover:shadow-[#7A7A7A] hover:-translate-y-0.5">
+                <AnimatedCard
+                    hoverEffect="lift"
+                    entranceAnimation="slideUp"
+                    delay={0.2}
+                    className="relative overflow-hidden rounded-xl border border-[#E8E8E8] bg-white/85 shadow-lg select-none p-3 md:p-4"
+                >
                   <div className="relative min-h-[75px] rounded-md p-6 md:p-7 lg:p-8">
                     <FontAwesomeIcon icon={faCircleInfo} className="absolute top-6 left-6 md:top-7 md:left-7 lg:top-8 lg:left-8 text-2xl text-black shrink-0 leading-none" />
                     <div className="space-y-2 flex-1 pt-10">
-                      <h3 className="font-bold text-base md:text-lg">Informasi OKE</h3>
-                      <p className="text-sm">Informasi lengkap dan terverifikasi. Lihat jam buka, daftar menu/jasa, fasilitas (parkir, WiFi, dll), dan info kontak yang up-to-date.</p>
+                      <h3 className="font-bold text-base md:text-lg">Info Lengkap</h3>
+                      <p className="text-sm text-muted-foreground">Dapatkan informasi detail tentang produk, layanan, jam operasional, dan kontak. Semua yang Anda butuhkan dalam satu tempat.</p>
                     </div>
                   </div>
-                </div>
+                </AnimatedCard>
 
-                <div className="relative overflow-hidden rounded-xl border border-[#E8E8E8] bg-white/85 shadow-lg select-none p-3 md:p-4 transition duration-300 hover:border-[#7A7A7A] hover:shadow-lg hover:shadow-[#7A7A7A] hover:-translate-y-0.5">
+                <AnimatedCard
+                    hoverEffect="lift"
+                    entranceAnimation="slideUp"
+                    delay={0.3}
+                    className="relative overflow-hidden rounded-xl border border-[#E8E8E8] bg-white/85 shadow-lg select-none p-3 md:p-4"
+                >
                   <div className="relative min-h-[75px] rounded-md p-6 md:p-7 lg:p-8">
                     <FontAwesomeIcon icon={faStar} className="absolute top-6 left-6 md:top-7 md:left-7 lg:top-8 lg:left-8 text-2xl text-black shrink-0 leading-none" />
                     <div className="space-y-2 flex-1 pt-10">
@@ -40,29 +60,44 @@ export default function Features() {
                       <p className="text-sm text-muted-foreground">Lihat apa kata komunitas. Baca ulasan dan rating jujur dari pengunjung lain untuk membantu Anda menentukan pilihan terbaik.</p>
                     </div>
                   </div>
-                </div>
+                </AnimatedCard>
 
-                <div className="relative overflow-hidden rounded-xl border border-[#E8E8E8] bg-white/85 shadow-lg select-none p-3 md:p-4 transition duration-300 hover:border-[#7A7A7A] hover:shadow-lg hover:shadow-[#7A7A7A] hover:-translate-y-0.5">
+                <AnimatedCard
+                    hoverEffect="lift"
+                    entranceAnimation="slideUp"
+                    delay={0.4}
+                    className="relative overflow-hidden rounded-xl border border-[#E8E8E8] bg-white/85 shadow-lg select-none p-3 md:p-4"
+                >
                   <div className="relative min-h-[75px] rounded-md p-6 md:p-7 lg:p-8">
                     <FontAwesomeIcon icon={faMagnifyingGlass} className="absolute top-6 left-6 md:top-7 md:left-7 lg:top-8 lg:left-8 text-2xl text-black shrink-0 leading-none" />
                     <div className="space-y-2 flex-1 pt-10">
                       <h3 className="font-bold text-base md:text-lg">Pencarian Mudah</h3>
-                      <p className="text-sm text-muted-foreground">Temukan yang Anda cari dengan cepat. Gunakan filter canggih berdasarkan kategori, lokasi, rating, atau yang sedang buka saat ini.</p>
+                      <p className="text-sm text-muted-foreground">Cari berdasarkan kategori, lokasi, atau nama. Filter canggih membantu Anda menemukan persis apa yang dicari dengan cepat.</p>
                     </div>
                   </div>
-                </div>
+                </AnimatedCard>
 
-                <div className="relative overflow-hidden rounded-xl border border-[#E8E8E8] bg-white/85 shadow-lg select-none p-3 md:p-4 transition duration-300 hover:border-[#7A7A7A] hover:shadow-lg hover:shadow-[#7A7A7A] hover:-translate-y-0.5">
+                <AnimatedCard
+                    hoverEffect="lift"
+                    entranceAnimation="slideUp"
+                    delay={0.5}
+                    className="relative overflow-hidden rounded-xl border border-[#E8E8E8] bg-white/85 shadow-lg select-none p-3 md:p-4"
+                >
                   <div className="relative min-h-[75px] rounded-md p-6 md:p-7 lg:p-8">
                     <FontAwesomeIcon icon={faPercent} className="absolute top-6 left-6 md:top-7 md:left-7 lg:top-8 lg:left-8 text-2xl text-black shrink-0 leading-none" />
                     <div className="space-y-2 flex-1 pt-10">
-                      <h3 className="font-bold text-base md:text-lg">Info Promo Terbaru</h3>
-                      <p className="text-sm text-muted-foreground">Jangan lewatkan penawaran menarik. Dapatkan info promo spesial, diskon, atau produk baru langsung dari pemilik UMKM.</p>
+                      <h3 className="font-bold text-base md:text-lg">Promo & Diskon</h3>
+                      <p className="text-sm text-muted-foreground">Jangan lewatkan penawaran menarik! Temukan promo eksklusif dan diskon khusus dari UMKM favorit Anda.</p>
                     </div>
                   </div>
-                </div>
-                
-                <div className="relative overflow-hidden rounded-xl border border-[#E8E8E8] bg-white/85 shadow-lg select-none p-3 md:p-4 transition duration-300 hover:border-[#7A7A7A] hover:shadow-lg hover:shadow-[#7A7A7A] hover:-translate-y-0.5">
+                </AnimatedCard>
+
+                <AnimatedCard
+                    hoverEffect="lift"
+                    entranceAnimation="slideUp"
+                    delay={0.6}
+                    className="relative overflow-hidden rounded-xl border border-[#E8E8E8] bg-white/85 shadow-lg select-none p-3 md:p-4"
+                >
                   <div className="relative min-h-[75px] rounded-md p-6 md:p-7 lg:p-8">
                     <FontAwesomeIcon icon={faHeart} className="absolute top-6 left-6 md:top-7 md:left-7 lg:top-8 lg:left-8 text-2xl text-black shrink-0 leading-none" />
                     <div className="space-y-2 flex-1 pt-10">
@@ -70,8 +105,8 @@ export default function Features() {
                       <p className="text-sm text-muted-foreground">Setiap pencarian, kunjungan, dan ulasan Anda adalah bentuk dukungan nyata untuk pertumbuhan bisnis tetangga dan ekonomi lokal Anda.</p>
                     </div>
                   </div>
-                </div>
+                </AnimatedCard>
             </div>
-        </section>
+        </AnimatedContainer>
     )
 }

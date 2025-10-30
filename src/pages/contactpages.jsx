@@ -1,6 +1,6 @@
-import Navbar from '../components/layouts/navbar';
-import Kontak from '../components/kontak/kontak';
-import Footer from '../components/layouts/footer';
+import Navbar from '../components/layout/Navbar';
+import Kontak from '../features/kontak/kontak';
+import Footer from '../components/layout/Footer';
 
 export default function detailpages() {
   return (

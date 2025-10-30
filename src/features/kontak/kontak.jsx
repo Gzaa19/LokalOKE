@@ -1,54 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useKontak } from '../../hooks/useKontak';
+import AnimatedContainer from '../../components/ui/Container';
+import AnimatedButton from '../../components/ui/Button';
 
 export default function Kontak({ title, description, icon }) {
-    const [result, setResult] = useState("");
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [showPopup, setShowPopup] = useState(false);
-
-    const onSubmit = async (event) => {
-        event.preventDefault();
-        setIsSubmitting(true);
-        setResult("");
-        setShowPopup(false);
-
-        const formData = new FormData(event.target);
-        formData.append("access_key", "69a48724-faef-4053-814c-59c73b649b3c");
-
-        try {
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                body: formData
-            });
-
-            const data = await response.json();
-
-            if (data.success) {
-                setResult("Pesan berhasil dikirim! Terima kasih telah menghubungi kami.");
-                event.target.reset();
-            } else {
-                setResult("Terjadi kesalahan. Silakan coba lagi.");
-            }
-        } catch (error) {
-            setResult("Terjadi kesalahan. Silakan coba lagi.");
-        } finally {
-            setIsSubmitting(false);
-            setShowPopup(true);
-        }
-    };
-
-    useEffect(() => {
-        if (showPopup && result) {
-            const timer = setTimeout(() => {
-                setShowPopup(false);
-                setResult("");
-            }, 4000);
-
-            return () => clearTimeout(timer);
-        }
-    }, [showPopup, result]);
+    const { result, isSubmitting, showPopup, onSubmit, closePopup } = useKontak();
 
     return (
-        <div className="p-4 pt-30 pb-20">
+        <AnimatedContainer 
+            variant="fadeIn" 
+            className="p-4 pt-30 pb-20"
+        >
             <div className="grid lg:grid-cols-2 items-start gap-12 p-8 mx-auto max-w-4xl max-lg:max-w-2xl bg-white [box-shadow:0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md">
                 <div>
                     <h2 className="text-slate-900 text-3xl font-bold">Mari Terhubung!</h2>
@@ -118,14 +79,18 @@ export default function Kontak({ title, description, icon }) {
                         className="w-full text-slate-900 rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-0 focus:border-blue-500" required/>
                     <textarea name='message' placeholder='Tuliskan pesan, pertanyaan, atau masukan Anda di sini...' rows="6"
                         className="w-full text-slate-900 rounded-md px-4 border border-gray-300 text-sm pt-2.5 outline-0 focus:border-blue-500" required></textarea>
-                    <button type='submit' disabled={isSubmitting}
+                    <AnimatedButton
+                        variant="lift"
+                        type='submit' 
+                        disabled={isSubmitting}
                         className={`text-white rounded-md text-sm font-medium px-4 py-2.5 w-full cursor-pointer border-0 mt-2 transition-colors ${
                             isSubmitting 
                                 ? 'bg-gray-400 cursor-not-allowed' 
                                 : 'bg-blue-600 hover:bg-blue-700'
-                        }`}>
+                        }`}
+                    >
                         {isSubmitting ? 'Mengirim...' : 'Kirim Pesan'}
-                    </button>
+                    </AnimatedButton>
                 </form>
             </div>
 
@@ -148,20 +113,18 @@ export default function Kontak({ title, description, icon }) {
                             )}
                             <span className="text-sm font-medium">{result}</span>
                         </div>
-                        <button 
-                            onClick={() => {
-                                setShowPopup(false);
-                                setResult("");
-                            }}
+                        <AnimatedButton 
+                            variant="scale"
+                            onClick={closePopup}
                             className="ml-2 text-white hover:text-gray-200 transition-colors"
                         >
                             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                 <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                             </svg>
-                        </button>
+                        </AnimatedButton>
                     </div>
                 </div>
             )}
-        </div>
+        </AnimatedContainer>
     );
 }
