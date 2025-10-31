@@ -7,7 +7,7 @@ export default function Features() {
     return (
         <AnimatedContainer 
             variant="fadeIn" 
-            className="container mx-auto px-4 space-y-6 pt-20 pb-14"
+            className="container mx-auto px-4 space-y-6 pt-20 pb-5"
         >
             <div className="mx-auto flex max-w-232 flex-col items-center space-y-3 text-center">
                 <h2 className="font-bold text-2xl sm:text-3xl md:text-5xl lg:text-4xl leading-[1.2] mt-12 sm:mt-16">Semua Jadi Mudah & OKE</h2>

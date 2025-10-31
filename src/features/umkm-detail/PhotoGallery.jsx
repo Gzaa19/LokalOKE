@@ -12,11 +12,11 @@ const PhotoGallery = ({
 }) => {
   const { getResponsiveClasses, getResponsiveValue } = useResponsiveDesign();
 
-  // Responsive image height
-  const imageHeight = getResponsiveClasses({
-    default: "h-[250px]",
-    sm: "h-[250px] sm:h-[300px]",
-    lg: "h-[250px] sm:h-[300px] lg:h-full"
+  // Tetapkan tinggi galeri agar konsisten di semua gambar dan breakpoint
+  const galleryHeightClasses = getResponsiveClasses({
+    default: "h-[400px]",
+    sm: "h-[500px]",
+    lg: "h-[625px]"
   });
 
   // Responsive button positioning and size
@@ -45,14 +45,14 @@ const PhotoGallery = ({
     sm: "bottom-4 sm:bottom-6"
   });
   return (
-    <div className="h-full">
+    <div className={`${galleryHeightClasses}`}>
       <div className="relative h-full flex items-center justify-center">
         {images && images.length > 0 ? (
           <>
             <img 
               src={images[currentImageIndex]} 
               alt={`${name} - ${currentImageIndex + 1}`} 
-              className={`w-full object-cover ${imageHeight}`}
+              className={`w-full h-full object-cover`}
             />
             {images.length > 1 && (
               <>

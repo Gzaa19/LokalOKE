@@ -8,7 +8,7 @@ export default function Kontak({ title, description, icon }) {
     return (
         <AnimatedContainer 
             variant="fadeIn" 
-            className="p-4 pt-30 pb-20"
+            className="p-4 pt-30 pb-10 md:pb-14 lg:pb-20"
         >
             <div className="grid lg:grid-cols-2 items-start gap-12 p-8 mx-auto max-w-4xl max-lg:max-w-2xl bg-white [box-shadow:0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md">
                 <div>
@@ -37,7 +37,7 @@ export default function Kontak({ title, description, icon }) {
                         <h2 className="text-slate-900 text-base font-semibold">Media Sosial</h2>
                         <ul className="flex mt-4 space-x-4">
                         <li className="bg-gray-200 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                            <a href="javascript:void(0)">
+                            <a href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill='#000'
                                 viewBox="0 0 24 24">
                                 <path
@@ -47,7 +47,7 @@ export default function Kontak({ title, description, icon }) {
                             </a>
                         </li>
                         <li className="bg-gray-200 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                            <a href="javascript:void(0)">
+                            <a href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill='#000'
                                 viewBox="0 0 511 512">
                                 <path
@@ -57,7 +57,7 @@ export default function Kontak({ title, description, icon }) {
                             </a>
                         </li>
                         <li className="bg-gray-200 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                            <a href="javascript:void(0)">
+                            <a href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill='#000'
                                 viewBox="0 0 24 24">
                                 <path
@@ -79,18 +79,17 @@ export default function Kontak({ title, description, icon }) {
                         className="w-full text-slate-900 rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-0 focus:border-blue-500" required/>
                     <textarea name='message' placeholder='Tuliskan pesan, pertanyaan, atau masukan Anda di sini...' rows="6"
                         className="w-full text-slate-900 rounded-md px-4 border border-gray-300 text-sm pt-2.5 outline-0 focus:border-blue-500" required></textarea>
-                    <AnimatedButton
-                        variant="lift"
+                    <button
                         type='submit' 
                         disabled={isSubmitting}
-                        className={`text-white rounded-md text-sm font-medium px-4 py-2.5 w-full cursor-pointer border-0 mt-2 transition-colors ${
+                        className={`text-white rounded-lg text-sm font-medium px-4 py-2.5 w-full cursor-pointer border-0 mt-2 transition-colors duration-200 ${
                             isSubmitting 
                                 ? 'bg-gray-400 cursor-not-allowed' 
-                                : 'bg-blue-600 hover:bg-blue-700'
+                                : 'bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'
                         }`}
                     >
                         {isSubmitting ? 'Mengirim...' : 'Kirim Pesan'}
-                    </AnimatedButton>
+                    </button>
                 </form>
             </div>
 

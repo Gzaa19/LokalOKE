@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Star } from "lucide-react";
 import { useUmkmDetail } from "../../hooks/useUmkmDetail";
@@ -19,6 +19,11 @@ const UmkmDetail = () => {
     goToImage,
     setActiveTab
   } = useUmkmDetail();
+
+  // Pastikan halaman selalu mulai dari atas saat masuk ke halaman detail
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const renderTabContent = () => {
     if (!umkm) return null;
@@ -97,7 +102,7 @@ const UmkmDetail = () => {
           </Link>
         </div>
         
-        <div className="bg-white min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] grid items-start grid-cols-1 lg:grid-cols-2 gap-0 shadow-xl rounded-xl overflow-hidden">
+        <div className="bg-white min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] grid items-start grid-cols-1 lg:grid-cols-2 gap-0 shadow-xl rounded-3xl overflow-hidden">
               <PhotoGallery 
                 images={umkm.images}
                 name={umkm.name}
@@ -107,7 +112,7 @@ const UmkmDetail = () => {
                 goToImage={goToImage}
               />
 
-            <div className="bg-[#465C88] py-4 sm:py-6 px-4 sm:px-6 lg:px-8 h-full shadow-xl rounded-xl">
+            <div className="bg-[#465C88] py-4 sm:py-6 px-4 sm:px-6 lg:px-8 h-full shadow-xl rounded-r-3xl">
                 <div>
                     <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-white">{umkm.name}</h2>
                     <p className="text-sm sm:text-base lg:text-lg text-gray-400 mt-1 sm:mt-2">{umkm.category}</p>
