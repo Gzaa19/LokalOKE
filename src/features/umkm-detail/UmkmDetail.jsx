@@ -103,7 +103,7 @@ const UmkmDetail = () => {
         </div>
         
         <div className="bg-white min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] grid items-start grid-cols-1 lg:grid-cols-2 gap-0 shadow-xl rounded-3xl overflow-hidden">
-              <PhotoGallery 
+              <PhotoGallery
                 images={umkm.images}
                 name={umkm.name}
                 currentImageIndex={currentImageIndex}

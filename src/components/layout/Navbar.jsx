@@ -30,31 +30,40 @@ const Navbar = () => {
                                     to="/" 
                                     className={`rounded-full font-semibold md:text-xs lg:text-sm md:px-3 md:py-1.5 lg:px-5 lg:py-2 transition-all ${
                                         location.pathname === '/' 
-                                            ? 'text-white bg-gradient-to-r from-sky-700 to-sky-900' 
+                                            ? 'text-white bg-linear-to-r from-sky-700 to-sky-900'
                                             : 'relative overflow-hidden group text-sky-800 font-medium'
                                     }`}
                                 >
                                     {location.pathname !== '/' && (
-                                        <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out"></span>
+                                        <span className="absolute inset-0 w-0 group-hover:w-full bg-linear-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out"></span>
                                     )}
                                     <span className={`${location.pathname !== '/' ? 'relative z-10 group-hover:text-white' : ''}`}>Beranda</span>
                                 </Link>
-                                <a href="#tentang-kami" className="relative overflow-hidden group px-5 py-2 rounded-full text-sky-800 font-medium text-sm transition-all">
-                                    <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out"></span>
-                                    <span className="relative z-10 group-hover:text-white">Tentang Kami</span>
-                                </a>
-                                <Link
-                                    to="/produk"
+                                <Link 
+                                    to="/tentang" 
                                     className={`rounded-full font-semibold md:text-xs lg:text-sm md:px-3 md:py-1.5 lg:px-5 lg:py-2 transition-all ${
-                                        location.pathname === '/produk'
+                                        location.pathname === '/tentang' 
+                                            ? 'text-white bg-gradient-to-r from-sky-700 to-sky-900' 
+                                            : 'relative overflow-hidden group text-sky-800 font-medium'
+                                    }`}
+                                >
+                                    {location.pathname !== '/tentang' && (
+                                        <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out"></span>
+                                    )}
+                                    <span className={`${location.pathname !== '/tentang' ? 'relative z-10 group-hover:text-white' : ''}`}>Tentang Kami</span>
+                                </Link>
+                                <Link
+                                    to="/umkm"
+                                    className={`rounded-full font-semibold md:text-xs lg:text-sm md:px-3 md:py-1.5 lg:px-5 lg:py-2 transition-all ${
+                                        location.pathname === '/umkm'
                                             ? 'text-white bg-gradient-to-r from-sky-700 to-sky-900'
                                             : 'relative overflow-hidden group text-sky-800 font-medium'
                                     }`}
                                 >
-                                    {location.pathname !== '/produk' && (
+                                    {location.pathname !== '/umkm' && (
                                         <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out"></span>
                                     )}
-                                    <span className={`${location.pathname !== '/produk' ? 'relative z-10 group-hover:text-white' : ''}`}>Produk</span>
+                                    <span className={`${location.pathname !== '/umkm' ? 'relative z-10 group-hover:text-white' : ''}`}>UMKM</span>
                                 </Link>
                                 <Link 
                                     to="/kontak" 
@@ -179,22 +188,31 @@ const Navbar = () => {
                         )}
                         <span className={`${location.pathname !== '/' ? 'relative z-10 group-hover:text-white' : ''}`}>Beranda</span>
                     </Link>
-                    <a href="#tentang-kami" className="relative overflow-hidden group block px-4 py-3 rounded-lg transition-all duration-500 ease-out font-medium text-sky-900 bg-gradient-to-r from-sky-600/10 to-sky-700/10 hover:from-sky-600/20 hover:to-sky-700/20 border border-sky-400/30">
-                        <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out" />
-                        <span className="relative z-10 group-hover:text-white">Tentang Kami</span>
-                    </a>
-                    <Link
-                        to="/produk"
+                    <Link 
+                        to="/tentang" 
                         className={`block px-4 py-3 rounded-lg font-semibold transition-all duration-500 ease-out ${
-                            location.pathname === '/produk'
+                            location.pathname === '/tentang' 
+                                ? 'text-white bg-gradient-to-r from-sky-700 to-sky-900' 
+                                : 'relative overflow-hidden group font-medium text-sky-900 bg-gradient-to-r from-sky-600/10 to-sky-700/10 hover:from-sky-600/20 hover:to-sky-700/20 border border-sky-400/30'
+                        }`}
+                    >
+                        {location.pathname !== '/tentang' && (
+                            <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out" />
+                        )}
+                        <span className={`${location.pathname !== '/tentang' ? 'relative z-10 group-hover:text-white' : ''}`}>Tentang Kami</span>
+                    </Link>
+                    <Link
+                        to="/umkm"
+                        className={`block px-4 py-3 rounded-lg font-semibold transition-all duration-500 ease-out ${
+                            location.pathname === '/umkm'
                                 ? 'text-white bg-gradient-to-r from-sky-700 to-sky-900'
                                 : 'relative overflow-hidden group font-medium text-sky-900 bg-gradient-to-r from-sky-600/10 to-sky-700/10 hover:from-sky-600/20 hover:to-sky-700/20 border border-sky-400/30'
                         }`}
                     >
-                        {location.pathname !== '/produk' && (
+                        {location.pathname !== '/umkm' && (
                             <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out" />
                         )}
-                        <span className={`${location.pathname !== '/produk' ? 'relative z-10 group-hover:text-white' : ''}`}>Produk</span>
+                        <span className={`${location.pathname !== '/umkm' ? 'relative z-10 group-hover:text-white' : ''}`}>UMKM</span>
                     </Link>
                     <Link 
                         to="/kontak" 

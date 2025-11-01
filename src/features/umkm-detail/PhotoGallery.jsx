@@ -5,12 +5,12 @@ import { useResponsiveDesign } from "../../hooks/useResponsiveDesign";
 const PhotoGallery = ({ 
   images, 
   name, 
-  currentImageIndex, 
+  currentImageIndex,
   nextImage, 
   prevImage, 
   goToImage 
 }) => {
-  const { getResponsiveClasses, getResponsiveValue } = useResponsiveDesign();
+  const { getResponsiveClasses } = useResponsiveDesign();
 
   // Tetapkan tinggi galeri agar konsisten di semua gambar dan breakpoint
   const galleryHeightClasses = getResponsiveClasses({
@@ -44,50 +44,59 @@ const PhotoGallery = ({
     default: "bottom-4",
     sm: "bottom-4 sm:bottom-6"
   });
+
   return (
-    <div className={`${galleryHeightClasses}`}>
-      <div className="relative h-full flex items-center justify-center">
-        {images && images.length > 0 ? (
-          <>
-            <img 
-              src={images[currentImageIndex]} 
-              alt={`${name} - ${currentImageIndex + 1}`} 
-              className={`w-full h-full object-cover`}
-            />
-            {images.length > 1 && (
-              <>
-                <button
-                  onClick={prevImage}
-                  className={`${buttonClasses} ${leftButtonPosition}`}
-                >
-                  <ChevronLeft className={iconSize} />
-                </button>
-                <button
-                  onClick={nextImage}
-                  className={`${buttonClasses} ${rightButtonPosition}`}
-                >
-                  <ChevronRight className={iconSize} />
-                </button>
-                <div className={`flex items-center justify-center gap-3 absolute ${indicatorPosition} left-0 right-0 mx-auto z-10`}>
-                  {images.map((_, index) => (
-                    <div 
-                      key={index}
-                      onClick={() => goToImage(index)}
-                      className={`w-3.5 h-3.5 shrink-0 rounded-full cursor-pointer transition-colors ${
-                        index === currentImageIndex ? 'bg-white shadow-lg' : 'bg-white bg-opacity-50'
-                      }`}
-                    ></div>
-                  ))}
-                </div>
-              </>
-            )}
-          </>
-        ) : (
-          <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-            <span className="text-gray-500">Tidak ada gambar</span>
-          </div>
-        )}
-      </div>
+    <div className={`relative w-full ${galleryHeightClasses} bg-gray-100 rounded-lg overflow-hidden`}>
+      {images && images.length > 0 ? (
+        <>
+          {/* Gambar utama */}
+          <img
+            src={images[currentImageIndex]}
+            alt={`${name} - ${currentImageIndex + 1}`}
+            className="w-full h-full object-cover"
+          />
+
+          {/* Tombol navigasi - hanya tampil jika ada lebih dari 1 gambar */}
+          {images.length > 1 && (
+            <>
+              {/* Tombol Previous */}
+              <button
+                onClick={prevImage}
+                className={`${buttonClasses} ${leftButtonPosition}`}
+              >
+                <ChevronLeft className={iconSize} />
+              </button>
+
+              {/* Tombol Next */}
+              <button
+                onClick={nextImage}
+                className={`${buttonClasses} ${rightButtonPosition}`}
+              >
+                <ChevronRight className={iconSize} />
+              </button>
+
+              {/* Indikator */}
+              <div className={`flex items-center justify-center gap-3 absolute ${indicatorPosition} left-0 right-0 mx-auto z-10`}>
+                {images.map((_, index) => (
+                  <div
+                    key={index}
+                    onClick={() => goToImage(index)}
+                    className={`w-3 h-3 shrink-0 rounded-full cursor-pointer transition-all duration-200 ${
+                      index === currentImageIndex
+                        ? "bg-blue-500 scale-110"
+                        : "bg-white bg-opacity-60 hover:bg-opacity-80"
+                    }`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
+        </>
+      ) : (
+        <div className="flex items-center justify-center h-full text-gray-500">
+          <p>Tidak ada gambar tersedia</p>
+        </div>
+      )}
     </div>
   );
 };
