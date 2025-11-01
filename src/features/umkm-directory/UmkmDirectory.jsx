@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ShoppingBag, Utensils, Wrench, Home } from 'lucide-react';
 import { useUmkmCard } from '../../hooks/useUmkmCard';
 import UmkmCard from '../../components/umkm/umkmcard';
@@ -107,6 +108,13 @@ const UmkmDirectory = () => {
                     >
                         Kos
                     </button>
+                    {/* LIHAT SEMUA */}
+                    <Link
+                        to="/produk"
+                        className="py-2 px-5 rounded-lg font-semibold text-sm transition-all duration-200 bg-gradient-to-r from-green-600 to-green-800 text-white hover:from-green-700 hover:to-green-900"
+                    >
+                        Lihat Semua
+                    </Link>
                 </div>
                 {renderWarungCards()}
             </div>

@@ -17,7 +17,7 @@ const UMKM = {
 const categories = [
   "Semua",
   "Kuliner",
-  "Kost",
+  "Kos",
   "Jasa",
   "Toko Kelontong",
   "Kerajinan"
