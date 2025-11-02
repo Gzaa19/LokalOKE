@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingBag, Utensils, Wrench, Home } from 'lucide-react';
+import { ShoppingBag, Utensils, Wrench, Home, ArrowRight } from 'lucide-react';
 import { useUmkmCard } from '../../hooks/useUmkmCard';
 import UmkmCard from '../../components/umkm/umkmcard';
 import AnimatedContainer from '../../components/ui/Container';
@@ -32,7 +32,7 @@ const UmkmDirectory = () => {
     );
 
     return (
-        <section className="mt-5">
+        <section id="umkm" className="mt-5" data-section="umkm">
             <div className="container mx-auto">
                 <div className="relative w-full flex justify-center items-center my-8 sm:my-12 md:my-16 px-4 overflow-hidden">
                     <h2 className="
@@ -64,7 +64,7 @@ const UmkmDirectory = () => {
                         <button
                             onClick={() => setSelectedCategory('Semua')}
                             className={`
-                            py-2 px-3 sm:px-5 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-200 whitespace-nowrap
+                            py-3 px-4 sm:px-10 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-200 whitespace-nowrap
                             ${selectedCategory === 'Semua'
                                 ? 'bg-gradient-to-r from-sky-700 to-sky-900 text-white'
                                 : 'bg-gray-100 text-gray-700 border-2 border-sky-800 hover:bg-gradient-to-r from-sky-700 to-sky-900 hover:text-white'}
@@ -76,7 +76,7 @@ const UmkmDirectory = () => {
                         <button
                             onClick={() => setSelectedCategory('Kuliner')}
                             className={`
-                            py-2 px-3 sm:px-5 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-200 whitespace-nowrap
+                            py-3 px-4 sm:px-10 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-200 whitespace-nowrap
                             ${selectedCategory === 'Kuliner'
                                 ? 'bg-gradient-to-r from-sky-700 to-sky-900 text-white'
                                 : 'bg-gray-100 text-gray-700 border-2 border-sky-800 hover:bg-gradient-to-r from-sky-700 to-sky-900 hover:text-white'}
@@ -89,7 +89,7 @@ const UmkmDirectory = () => {
                         <button
                             onClick={() => setSelectedCategory('Jasa')}
                             className={`
-                            py-2 px-3 sm:px-5 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-200 whitespace-nowrap
+                            py-3 px-4 sm:px-10 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-200 whitespace-nowrap
                             ${selectedCategory === 'Jasa'
                                 ? 'bg-gradient-to-r from-sky-700 to-sky-900 text-white'
                                 : 'bg-gray-100 text-gray-700 border-2 border-sky-800 hover:bg-gradient-to-r from-sky-700 to-sky-900 hover:text-white'}
@@ -101,7 +101,7 @@ const UmkmDirectory = () => {
                         <button
                             onClick={() => setSelectedCategory('Kos')}
                             className={`
-                            py-2 px-3 sm:px-5 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-200 whitespace-nowrap
+                            py-3 px-4 sm:px-10 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-200 whitespace-nowrap
                             ${selectedCategory === 'Kos'
                                 ? 'bg-gradient-to-r from-sky-700 to-sky-900 text-white'
                                 : 'bg-gray-100 text-gray-700 border-2 border-sky-800 hover:bg-gradient-to-r from-sky-700 to-sky-900 hover:text-white'}
@@ -109,16 +109,20 @@ const UmkmDirectory = () => {
                         >
                             Kos
                         </button>
-                        {/* LIHAT SEMUA */}
-                        <Link
-                            to="/produk"
-                            className="py-2 px-3 sm:px-5 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-200 bg-gradient-to-r from-green-600 to-green-800 text-white hover:from-green-700 hover:to-green-900 whitespace-nowrap"
-                        >
-                            Lihat Semua
-                        </Link>
                     </div>
                 </div>
                 {renderWarungCards()}
+                
+                {/* Button Lihat Semua - Centered */}
+                <div className="flex justify-center mt-12 mb-8">
+                    <Link
+                        to="/produk"
+                        className="group inline-flex items-center gap-2 py-3 px-6 sm:px-8 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 bg-gradient-to-r from-green-600 to-green-800 text-white hover:from-green-700 hover:to-green-900 hover:shadow-lg hover:scale-105 transform"
+                    >
+                        Lihat Semua
+                        <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1" />
+                    </Link>
+                </div>
             </div>
         </section>
     );

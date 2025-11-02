@@ -36,14 +36,14 @@ export default function Newsletter() {
                 className="w-full bg-slate-700 text-white placeholder:text-slate-400 px-3 py-2 sm:py-2.5 md:py-3 outline-none focus:ring-2 focus:ring-emerald-400"
                 required
               />
-              <AnimatedButton
+              <button
                 variant="lift"
                 type="submit"
                 className="bg-slate-100 hover:bg-slate-200 text-slate-900 font-semibold px-4 py-2 sm:px-5 sm:py-3 whitespace-nowrap"
                 aria-label="Subscribe"
               >
                 Ikuti Sekarang
-              </AnimatedButton>
+              </button>
             </div>
           </form>
         </div>
