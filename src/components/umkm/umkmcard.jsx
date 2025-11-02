@@ -96,11 +96,11 @@ const UmkmCard = ({
           variant="scale"
           size="lg"
           className={`
-            bg-[#07416b] text-white 
-            py-3 w-full 
-            flex items-center justify-center 
-            text-base font-semibold 
-            rounded-br-[50px] bl rounded-tr-none rounded-tl-none
+            bg-[#07416b] text-white
+            py-3 w-full
+            flex items-center justify-center
+            text-base font-semibold
+            rounded-br-[50px] bl rounded-tr-none rounded-tl-none cursor-pointer
             ${isHovered
               ? 'opacity-100 translate-x-0 scale-100 shadow-xl'
               : 'opacity-0 translate-x-4 scale-95'

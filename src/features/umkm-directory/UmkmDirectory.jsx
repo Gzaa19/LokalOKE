@@ -116,8 +116,8 @@ const UmkmDirectory = () => {
                 {/* Button Lihat Semua - Centered */}
                 <div className="flex justify-center mt-12 mb-8">
                     <Link
-                        to="/produk"
-                        className="group inline-flex items-center gap-2 py-3 px-6 sm:px-8 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 bg-gradient-to-r from-green-600 to-green-800 text-white hover:from-green-700 hover:to-green-900 hover:shadow-lg hover:scale-105 transform"
+                        to="/umkm"
+                        className="group inline-flex items-center gap-2 py-3 px-6 sm:px-8 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 bg-gradient-to-r from-green-600 to-green-800 text-white hover:from-green-700 hover:to-green-900 hover:shadow-lg hover:scale-105 transform cursor-pointer"
                     >
                         Lihat Semua
                         <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1" />

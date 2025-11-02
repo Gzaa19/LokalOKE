@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Filter, ShoppingBag, Utensils, Wrench, Home, Building2 } from 'lucide-react';
 import { useUmkmList } from '../../hooks/useUmkmList';
@@ -11,10 +11,16 @@ const UmkmList = ({
   setHoveredCard
 }) => {
   const { selectedCategory, filteredUMKM, categories, handleCategoryChange } = useUmkmList();
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsSidebarVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section className="mt-5 pb-16">
-      <div className="container mx-auto">
+      <div className="w-full px-8 xl:px-16">
         <div className="relative w-full flex justify-center items-center my-4 sm:my-6 md:my-8 px-4">
           <h2 className="
             font-bold leading-[1]
@@ -41,13 +47,13 @@ const UmkmList = ({
 
         <div className="flex flex-col lg:flex-row gap-8 mt-8 mb-10">
           {/* Filter Sidebar */}
-          <div className="lg:w-64 flex-shrink-0">
+          <div className={`lg:w-64 flex-shrink-0 transition-transform duration-500 ease-out ${isSidebarVisible ? 'translate-x-0' : '-translate-x-full'}`}>
             <div className="bg-white rounded-lg shadow-lg p-6 sticky top-20">
               {/* Tombol Kembali */}
               <div className="mb-6">
                 <Link
                   to="/"
-                  className="relative inline-flex items-center gap-2 bg-gradient-to-r from-sky-600 to-sky-800 text-white px-4 py-3 rounded-lg overflow-hidden group transition-all duration-300 ease-out hover:scale-105 w-full justify-center"
+                  className="relative inline-flex items-center gap-2 bg-gradient-to-r from-sky-600 to-sky-800 text-white px-4 py-3 rounded-lg overflow-hidden group transition-all duration-300 ease-out hover:scale-105 w-full justify-center cursor-pointer"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-sky-700 to-sky-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out"></span>
                   <ArrowLeft className="w-4 h-4 relative z-10" />
@@ -86,7 +92,7 @@ const UmkmList = ({
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                       }}
                       className={`
-                      w-full py-3 px-4 rounded-lg font-semibold text-sm transition-all duration-200 text-left flex items-center gap-3
+                      w-full py-3 px-4 rounded-lg font-semibold text-sm transition-all duration-200 text-left flex items-center gap-3 cursor-pointer
                       ${selectedCategory === category
                         ? 'bg-gradient-to-r from-sky-700 to-sky-900 text-white shadow-md'
                         : 'bg-gray-100 text-gray-700 border-2 border-sky-800 hover:bg-gradient-to-r hover:from-sky-700 hover:to-sky-900 hover:text-white hover:shadow-md'}
