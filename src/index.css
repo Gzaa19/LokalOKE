@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --bg: #F5F5F0;
   --text: #0f172a;      
@@ -20,13 +21,11 @@
 
 /* Ensure no element exceeds viewport width */
 body, html {
-  overflow-x: hidden !important;
   position: relative;
 }
 
 html, body, #root {
   height: 100%;
-  overflow-x: hidden;
 }
 
 body {
@@ -34,14 +33,12 @@ body {
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
   color: var(--text);
   background: var(--bg);
-  overflow-x: hidden;
 }
 
 #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  overflow-x: hidden;
   max-width: 100vw;
 }
 

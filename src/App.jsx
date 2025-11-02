@@ -1,10 +1,11 @@
-import './global.css'
+import './index.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import HomePage from './pages/homepages'
 import UMKMDetail from './pages/detailpages'
 import ContactPage from './pages/contactpages'
 import UmkmPage from './pages/umkmpages'
 import AboutPage from './pages/aboutpages'
+
 
 function App() {
   return (
