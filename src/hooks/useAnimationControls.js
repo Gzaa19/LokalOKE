@@ -86,7 +86,7 @@ export const useAnimationControls = (options = {}) => {
  * @param {boolean} options.smooth - Apakah menggunakan smooth scrolling
  */
 export const useScrollAnimation = (options = {}) => {
-  const { offset = 0, smooth = true } = options;
+  const { smooth = true } = options;
   const [scrollY, setScrollY] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
 

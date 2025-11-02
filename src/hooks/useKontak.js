@@ -28,7 +28,7 @@ export const useKontak = () => {
       } else {
         setResult("Terjadi kesalahan. Silakan coba lagi.");
       }
-    } catch (error) {
+    } catch {
       setResult("Terjadi kesalahan. Silakan coba lagi.");
     } finally {
       setIsSubmitting(false);

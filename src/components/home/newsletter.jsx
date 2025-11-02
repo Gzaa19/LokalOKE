@@ -11,7 +11,7 @@ export default function Newsletter() {
   return (
     <AnimatedContainer 
       variant="fadeIn" 
-      className="bg-gradient-to-r from-slate-500 via-slate-600 to-slate-700 py-12 sm:py-16 mt-10 md:mt-14"
+      className="bg-linear-to-r from-slate-500 via-slate-600 to-slate-700 py-12 sm:py-16 mt-10 md:mt-14"
     >
       <div className="container max-w-5xl mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">

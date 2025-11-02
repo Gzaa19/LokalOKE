@@ -30,7 +30,7 @@ export default function Hero() {
             </div>
 
             {/* Overlay dan konten */}
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#07416b88] via-black/40 to-black/50">
+            <div className="absolute inset-0 flex items-center justify-center bg-linear-to-br from-[#07416b88] via-black/40 to-black/50">
                 <div className="container flex justify-center">
                     <div className="flex flex-col items-center text-center text-white max-w-[900px] mx-auto px-5">
                         <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-[0.18em] sm:tracking-[0.25em] uppercase text-white/90 font-medium">

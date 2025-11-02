@@ -46,7 +46,7 @@ const PhotoGallery = ({
   });
 
   return (
-    <div className={`relative w-full ${galleryHeightClasses} bg-gray-100 rounded-lg overflow-hidden`}>
+    <div className={`relative w-full ${galleryHeightClasses} bg-gray-100 rounded-t-3xl lg:rounded-l-3xl lg:rounded-r-none lg:rounded-t-3xl overflow-hidden`}>
       {images && images.length > 0 ? (
         <>
           {/* Gambar utama */}

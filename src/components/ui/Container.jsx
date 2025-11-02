@@ -193,4 +193,5 @@ const AnimatedContainer = ({
 };
 
 export default AnimatedContainer;
+// eslint-disable-next-line react-refresh/only-export-components
 export { animationVariants, transitionPresets };

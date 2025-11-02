@@ -76,7 +76,7 @@ const UmkmDetail = () => {
           <h2 className="text-2xl font-bold text-gray-900">UMKM tidak ditemukan</h2>
           <Link 
             to="/" 
-            className="inline-flex items-center gap-2 mt-4 bg-gradient-to-r from-sky-600 to-sky-800 text-white px-4 py-2 rounded-lg"
+            className="inline-flex items-center gap-2 mt-4 bg-linear-to-r from-sky-600 to-sky-800 text-white px-4 py-2 rounded-lg"
           >
             <ArrowLeft className="w-4 h-4" />
             Kembali ke Beranda
@@ -94,9 +94,9 @@ const UmkmDetail = () => {
         <div className="mb-4 sm:mb-6">
           <Link 
             to="/" 
-            className="relative inline-flex items-center gap-2 bg-gradient-to-r from-sky-600 to-sky-800 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg overflow-hidden group transition-all duration-300 ease-out hover:scale-105"
+            className="relative inline-flex items-center gap-2 bg-linear-to-r from-sky-600 to-sky-800 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg overflow-hidden group transition-all duration-300 ease-out hover:scale-105"
           >
-            <span className="absolute inset-0 bg-gradient-to-r from-sky-700 to-sky-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out"></span>
+            <span className="absolute inset-0 bg-linear-to-r from-sky-700 to-sky-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out"></span>
             <ArrowLeft className="w-4 h-4 relative z-10" />
             <span className="relative z-10 text-sm sm:text-base">Kembali</span>
           </Link>
@@ -112,7 +112,7 @@ const UmkmDetail = () => {
                 goToImage={goToImage}
               />
 
-            <div className="bg-[#465C88] py-4 sm:py-6 px-4 sm:px-6 lg:px-8 h-full shadow-xl rounded-r-3xl">
+            <div className="bg-[#465C88] py-4 sm:py-6 px-4 sm:px-6 lg:px-8 h-full shadow-xl rounded-b-3xl lg:rounded-l-none lg:rounded-r-3xl lg:rounded-b-none">
                 <div>
                     <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-white">{umkm.name}</h2>
                     <p className="text-sm sm:text-base lg:text-lg text-gray-400 mt-1 sm:mt-2">{umkm.category}</p>

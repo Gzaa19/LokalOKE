@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 
 /**
@@ -178,7 +179,7 @@ const AnimatedButton = ({
     >
       {/* Shimmer effect background */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+        className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent"
         initial={{ x: '-100%', skewX: -15 }}
         whileHover={{ 
           x: '100%',

@@ -76,7 +76,6 @@ export const useResponsiveDesign = () => {
 
   // Get responsive classes based on current breakpoint
   const getResponsiveClasses = (classMap) => {
-    const currentBp = getCurrentBreakpoint();
     const orderedBreakpoints = ['xs', 'sm', 'md', 'lg', 'xl', '2xl'];
     
     let applicableClass = classMap.xs || classMap.default || '';
@@ -92,7 +91,6 @@ export const useResponsiveDesign = () => {
 
   // Get responsive values based on current breakpoint
   const getResponsiveValue = (valueMap) => {
-    const currentBp = getCurrentBreakpoint();
     const orderedBreakpoints = ['xs', 'sm', 'md', 'lg', 'xl', '2xl'];
     
     let applicableValue = valueMap.xs || valueMap.default;

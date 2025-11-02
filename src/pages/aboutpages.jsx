@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
@@ -64,7 +65,7 @@ const AboutPages = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 via-white to-green-50">
       <Navbar />
       
       <motion.div 
@@ -134,7 +135,7 @@ const AboutPages = () => {
                 }}
               >
                 <motion.div 
-                  className="bg-gradient-to-br from-blue-500 to-green-500 rounded-2xl p-8 text-white shadow-2xl"
+                  className="bg-linear-to-br from-blue-500 to-green-500 rounded-2xl p-8 text-white shadow-2xl"
                   animate={{
                     rotateX: mousePosition.y * -5,
                     rotateY: mousePosition.x * 5,
@@ -213,7 +214,7 @@ const AboutPages = () => {
                     transition={{ duration: 0.2 }}
                   >
                     <div className="flex items-start">
-                      <Lightbulb className="w-6 h-6 text-yellow-500 mr-3 mt-1 flex-shrink-0" />
+                      <Lightbulb className="w-6 h-6 text-yellow-500 mr-3 mt-1 shrink-0" />
                       <div>
                         <h4 className="font-semibold text-gray-800 mb-1">Fun Fact</h4>
                         <p className="text-sm text-gray-600">
@@ -231,7 +232,7 @@ const AboutPages = () => {
 
         {/* Vision Section */}
         <motion.section 
-          className="py-16 px-4 bg-gradient-to-r from-blue-600 to-green-600 text-white"
+          className="py-16 px-4 bg-linear-to-r from-blue-600 to-green-600 text-white"
           variants={itemVariants}
         >
           <div className="max-w-4xl mx-auto text-center">
@@ -316,7 +317,7 @@ const AboutPages = () => {
             </motion.p>
             
             <motion.button 
-              className="bg-gradient-to-r from-blue-500 to-green-500 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
+              className="bg-linear-to-r from-blue-500 to-green-500 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 10px 25px rgba(59, 130, 246, 0.3)"

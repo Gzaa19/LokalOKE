@@ -2,7 +2,7 @@ import { useKontak } from '../../hooks/useKontak';
 import AnimatedContainer from '../../components/ui/Container';
 import AnimatedButton from '../../components/ui/Button';
 
-export default function Kontak({ title, description, icon }) {
+export default function Kontak() {
     const { result, isSubmitting, showPopup, onSubmit, closePopup } = useKontak();
 
     return (

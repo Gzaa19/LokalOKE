@@ -3,7 +3,7 @@ import { useResponsiveDesign } from './useResponsiveDesign';
 
 export const useNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const { isMobileMenuOpen, toggleMobileMenu, closeMobileMenu, isMobile } = useResponsiveDesign();
+  const { isMobileMenuOpen, toggleMobileMenu, isMobile } = useResponsiveDesign();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
