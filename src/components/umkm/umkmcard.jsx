@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, Star } from 'lucide-react';
 import AnimatedCard from '../ui/Card';
 import AnimatedButton from '../ui/Button';
@@ -11,6 +11,7 @@ const UmkmCard = ({
   onMouseEnter, 
   onMouseLeave 
 }) => {
+  const location = useLocation();
   return (
     <AnimatedCard
       hoverEffect="lift"
@@ -82,8 +83,16 @@ const UmkmCard = ({
         </div>
       </div>
 
-      <Link to={`/umkm/${umkm.id}`} className="w-full mt-auto">
-        <AnimatedButton
+      <Link 
+        to={`/umkm/${umkm.id}`} 
+        state={{ from: location.pathname }}
+        className="w-full mt-auto"
+        onClick={() => {
+          // Simpan path saat ini ke localStorage sebagai backup
+          localStorage.setItem('previousPath', location.pathname);
+        }}
+      >
+        <button
           variant="scale"
           size="lg"
           className={`
@@ -103,7 +112,7 @@ const UmkmCard = ({
             Lihat Detail
             <ArrowRight size={20} />
           </span>
-        </AnimatedButton>
+        </button>
       </Link>
     </AnimatedCard>
   );
