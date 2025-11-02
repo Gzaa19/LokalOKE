@@ -1,102 +1,83 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Megaphone } from "lucide-react";
-import { useResponsiveDesign } from "../../hooks/useResponsiveDesign";
 
-export default function CTA() {
-  const { getResponsiveCtaStyles, getResponsiveClasses } = useResponsiveDesign();
-
-  // Shared button classes using responsive utilities
-  const baseButtonClasses = getResponsiveClasses({
-    default: "w-full font-medium px-6 py-3 rounded-full transition-all duration-300 text-sm",
-    sm: "w-full sm:w-auto font-medium px-6 sm:px-8 py-3 rounded-full transition-all duration-300 text-sm sm:text-base"
-  });
-
+const CTA = () => {
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.8,
         staggerChildren: 0.2
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 }
+      transition: { duration: 0.6 }
     }
   };
 
   return (
-    <motion.section 
-      className="py-16 px-4"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-    >
-      <div className="relative mx-auto max-w-4xl">
-        <motion.div 
-          className="bg-gradient-to-br from-sky-50 to-blue-50 border border-sky-200 px-4 py-12 sm:px-8 sm:py-16 md:px-16 md:py-20 text-center relative rounded-2xl shadow-lg"
-          style={getResponsiveCtaStyles()}
+    <>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        
+        * {
+          font-family: 'Poppins', sans-serif;
+        }
+      `}</style>
+      
+      <motion.section
+        className="flex flex-col items-center justify-center mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl w-full mt-2 mb-12 sm:mb-16 lg:mb-20"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <motion.div
+          className="flex flex-col items-center justify-center text-center rounded-xl sm:rounded-2xl py-12 sm:py-16 md:py-20 lg:py-24 px-6 sm:px-8 md:px-12 lg:px-16 w-full bg-[url('https://images.unsplash.com/photo-1633259584604-afdc243122ea?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170')] bg-cover bg-center bg-no-repeat relative"
           variants={itemVariants}
-          whileHover={{ scale: 1.02 }}
-          transition={{ duration: 0.3 }}
         >
-          <div className="mx-auto max-w-2xl">
-            <motion.div 
-              className="mb-4"
-              variants={itemVariants}
-            >
-              <span className="inline-flex items-center gap-2 bg-sky-700 text-white px-4 py-2 rounded-full text-sm font-medium animate-pulse">
-                <Megaphone className="w-5 h-5" />
-                BERGABUNG DENGAN KAMI
-              </span>
-            </motion.div>
-            
-            <motion.h2 
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-sky-900 mb-4 sm:mb-6"
-              variants={itemVariants}
-            >
-              Siap Bergabung dengan <span className="text-sky-700">LokalOKE</span>?
-            </motion.h2>
-            
-            <motion.p 
-              className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 max-w-xl mx-auto px-2"
-              variants={itemVariants}
-            >
-              Mari bersama-sama membangun ekosistem UMKM digital yang kuat dan berkelanjutan. 
-              Bergabunglah dengan ribuan UMKM lainnya dan rasakan kemudahan berbisnis di era digital.
-            </motion.p>
-            
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
-              variants={itemVariants}
-            >
-              <motion.button 
-                className={`${baseButtonClasses} bg-sky-700 hover:bg-sky-800 text-white transform hover:scale-105 shadow-lg hover:shadow-xl`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Mulai Sekarang
-              </motion.button>
-              <motion.button 
-                className={`${baseButtonClasses} border-2 border-sky-700 hover:border-sky-800 text-sky-700 hover:text-sky-800 bg-white hover:bg-sky-50`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Pelajari Lebih Lanjut
-              </motion.button>
-            </motion.div>
-          </div>
+          {/* Overlay untuk meningkatkan kontras teks */}
+          <div className="absolute inset-0 bg-black/40 rounded-xl sm:rounded-2xl"></div>
+          
+          <motion.h1
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-white max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl relative z-10 mb-3 sm:mb-4 leading-tight"
+            variants={itemVariants}
+          >
+            Kembangkan Bisnis UMKM Anda dengan Platform LokalOKE
+          </motion.h1>
+          
+          <motion.div
+            className="h-[2px] sm:h-[3px] w-20 sm:w-24 md:w-32 my-2 sm:my-3 bg-gradient-to-l from-transparent to-white relative z-10"
+            variants={itemVariants}
+          />
+          
+          <motion.p
+            className="text-xs sm:text-sm md:text-base lg:text-lg text-white max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl relative z-10 mt-2 sm:mt-3 md:mt-4 leading-relaxed"
+            variants={itemVariants}
+          >
+            Bergabunglah dengan komunitas UMKM terbesar di Indonesia. Dapatkan akses ke pasar yang lebih luas dan tingkatkan penjualan Anda.
+          </motion.p>
+          
+          <motion.button
+            className="px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 mt-4 sm:mt-5 md:mt-6 text-xs sm:text-sm md:text-base bg-white hover:scale-105 transition duration-300 rounded-full font-medium text-slate-800 relative z-10 shadow-lg hover:shadow-xl"
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Daftarkan Bisnis Anda
+          </motion.button>
         </motion.div>
-      </div>
-    </motion.section>
+      </motion.section>
+    </>
   );
-}
+};
+
+export default CTA;

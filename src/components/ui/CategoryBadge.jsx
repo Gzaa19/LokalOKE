@@ -7,30 +7,30 @@ const CategoryBadge = ({ category, isVisible = false, delay = 0 }) => {
   // Color palette untuk setiap kategori
   const categoryConfig = {
     'Kost': {
-      color: '#FACC15',
-      bgColor: 'rgba(250, 204, 21, 0.1)',
-      borderColor: 'rgba(250, 204, 21, 0.3)',
+      color: 'white',
+      bgColor: '#3b82f6',
+      borderColor: '#3b82f6',
       icon: Home,
       label: 'Kos'
     },
     'Toko Kelontong': {
-      color: '#EF4444',
-      bgColor: 'rgba(239, 68, 68, 0.1)',
-      borderColor: 'rgba(239, 68, 68, 0.3)',
+      color: 'white',
+      bgColor: '#22c55e',
+      borderColor: '#22c55e',
       icon: ShoppingBag,
       label: 'Toko Kelontong'
     },
     'Jasa': {
-      color: '#8B5CF6',
-      bgColor: 'rgba(139, 92, 246, 0.1)',
-      borderColor: 'rgba(139, 92, 246, 0.3)',
+      color: 'white',
+      bgColor: '#6b7280',
+      borderColor: '#6b7280',
       icon: Wrench,
       label: 'Jasa'
     },
     'Kuliner': {
-      color: '#854D0E',
-      bgColor: 'rgba(133, 77, 14, 0.1)',
-      borderColor: 'rgba(133, 77, 14, 0.3)',
+      color: 'white',
+      bgColor: '#f97316',
+      borderColor: '#f97316',
       icon: Utensils,
       label: 'Kuliner'
     }

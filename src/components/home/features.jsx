@@ -10,8 +10,8 @@ export default function Features() {
             className="container mx-auto px-4 space-y-6 pt-20 pb-5"
         >
             <div className="mx-auto flex max-w-232 flex-col items-center space-y-3 text-center">
-                <h2 className="font-bold text-2xl sm:text-3xl md:text-5xl lg:text-4xl leading-[1.2] mt-12 sm:mt-16">Semua Jadi Mudah & OKE</h2>
-                <p className="text-sm sm:text-base md:text-xl leading-6 sm:leading-7 max-w-[750px] text-slate-600">
+                <h2 className="font-bold text-2xl sm:text-3xl md:text-5xl lg:text-4xl leading-[1.2] mt-12 sm:mt-16 bg-gradient-to-r from-sky-700 via-sky-800 to-sky-900 bg-clip-text text-transparent">Semua Jadi Mudah & OKE</h2>
+                <p className="text-sm sm:text-base md:text-xl leading-6 sm:leading-7 max-w-[750px] text-gray-700 font-medium">
                     Kami merancang setiap fitur untuk membuat penjelajahan UMKM lokal jadi lebih cepat, akurat, dan menyenangkan.
                 </p>
             </div>
@@ -24,10 +24,10 @@ export default function Features() {
                     className="relative overflow-hidden rounded-xl border border-[#E8E8E8] bg-white/85 shadow-lg select-none p-3 md:p-4"
                 >
                   <div className="relative min-h-[75px] rounded-md p-6 md:p-7 lg:p-8">
-                    <FontAwesomeIcon icon={faMapLocationDot} className="absolute top-6 left-6 md:top-7 md:left-7 lg:top-8 lg:left-8 text-2xl text-black shrink-0 leading-none" />
+                    <FontAwesomeIcon icon={faMapLocationDot} className="absolute top-6 left-6 md:top-7 md:left-7 lg:top-8 lg:left-8 text-2xl text-sky-700 shrink-0 leading-none" />
                     <div className="space-y-2 flex-1 pt-10">
-                      <h3 className="font-bold text-base md:text-lg">Lokasi OKE</h3>
-                      <p className="text-sm text-muted-foreground">Temukan UMKM terdekat dengan mudah. Lihat lokasi pasti, jarak, dan rute terbaik untuk sampai ke tempat yang Anda inginkan.</p>
+                      <h3 className="font-bold text-base md:text-lg text-gray-800">Lokasi OKE</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">Temukan UMKM terdekat dengan mudah. Lihat lokasi pasti, jarak, dan rute terbaik untuk sampai ke tempat yang Anda inginkan.</p>
                     </div>
                   </div>
                 </AnimatedCard>
@@ -39,10 +39,10 @@ export default function Features() {
                     className="relative overflow-hidden rounded-xl border border-[#E8E8E8] bg-white/85 shadow-lg select-none p-3 md:p-4"
                 >
                   <div className="relative min-h-[75px] rounded-md p-6 md:p-7 lg:p-8">
-                    <FontAwesomeIcon icon={faCircleInfo} className="absolute top-6 left-6 md:top-7 md:left-7 lg:top-8 lg:left-8 text-2xl text-black shrink-0 leading-none" />
+                    <FontAwesomeIcon icon={faCircleInfo} className="absolute top-6 left-6 md:top-7 md:left-7 lg:top-8 lg:left-8 text-2xl text-sky-700 shrink-0 leading-none" />
                     <div className="space-y-2 flex-1 pt-10">
-                      <h3 className="font-bold text-base md:text-lg">Info Lengkap</h3>
-                      <p className="text-sm text-muted-foreground">Dapatkan informasi detail tentang produk, layanan, jam operasional, dan kontak. Semua yang Anda butuhkan dalam satu tempat.</p>
+                      <h3 className="font-bold text-base md:text-lg text-gray-800">Info Lengkap</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">Dapatkan informasi detail tentang produk, layanan, jam operasional, dan kontak. Semua yang Anda butuhkan dalam satu tempat.</p>
                     </div>
                   </div>
                 </AnimatedCard>
@@ -54,10 +54,10 @@ export default function Features() {
                     className="relative overflow-hidden rounded-xl border border-[#E8E8E8] bg-white/85 shadow-lg select-none p-3 md:p-4"
                 >
                   <div className="relative min-h-[75px] rounded-md p-6 md:p-7 lg:p-8">
-                    <FontAwesomeIcon icon={faStar} className="absolute top-6 left-6 md:top-7 md:left-7 lg:top-8 lg:left-8 text-2xl text-black shrink-0 leading-none" />
+                    <FontAwesomeIcon icon={faStar} className="absolute top-6 left-6 md:top-7 md:left-7 lg:top-8 lg:left-8 text-2xl text-sky-700 shrink-0 leading-none" />
                     <div className="space-y-2 flex-1 pt-10">
-                      <h3 className="font-bold text-base md:text-lg">Ulasan Jujur</h3>
-                      <p className="text-sm text-muted-foreground">Lihat apa kata komunitas. Baca ulasan dan rating jujur dari pengunjung lain untuk membantu Anda menentukan pilihan terbaik.</p>
+                      <h3 className="font-bold text-base md:text-lg text-gray-800">Ulasan Jujur</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">Lihat apa kata komunitas. Baca ulasan dan rating jujur dari pengunjung lain untuk membantu Anda menentukan pilihan terbaik.</p>
                     </div>
                   </div>
                 </AnimatedCard>
@@ -69,10 +69,10 @@ export default function Features() {
                     className="relative overflow-hidden rounded-xl border border-[#E8E8E8] bg-white/85 shadow-lg select-none p-3 md:p-4"
                 >
                   <div className="relative min-h-[75px] rounded-md p-6 md:p-7 lg:p-8">
-                    <FontAwesomeIcon icon={faMagnifyingGlass} className="absolute top-6 left-6 md:top-7 md:left-7 lg:top-8 lg:left-8 text-2xl text-black shrink-0 leading-none" />
+                    <FontAwesomeIcon icon={faMagnifyingGlass} className="absolute top-6 left-6 md:top-7 md:left-7 lg:top-8 lg:left-8 text-2xl text-sky-700 shrink-0 leading-none" />
                     <div className="space-y-2 flex-1 pt-10">
-                      <h3 className="font-bold text-base md:text-lg">Pencarian Mudah</h3>
-                      <p className="text-sm text-muted-foreground">Cari berdasarkan kategori, lokasi, atau nama. Filter canggih membantu Anda menemukan persis apa yang dicari dengan cepat.</p>
+                      <h3 className="font-bold text-base md:text-lg text-gray-800">Pencarian Mudah</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">Cari berdasarkan kategori, lokasi, atau nama. Filter canggih membantu Anda menemukan persis apa yang dicari dengan cepat.</p>
                     </div>
                   </div>
                 </AnimatedCard>
@@ -84,10 +84,10 @@ export default function Features() {
                     className="relative overflow-hidden rounded-xl border border-[#E8E8E8] bg-white/85 shadow-lg select-none p-3 md:p-4"
                 >
                   <div className="relative min-h-[75px] rounded-md p-6 md:p-7 lg:p-8">
-                    <FontAwesomeIcon icon={faPercent} className="absolute top-6 left-6 md:top-7 md:left-7 lg:top-8 lg:left-8 text-2xl text-black shrink-0 leading-none" />
+                    <FontAwesomeIcon icon={faPercent} className="absolute top-6 left-6 md:top-7 md:left-7 lg:top-8 lg:left-8 text-2xl text-sky-700 shrink-0 leading-none" />
                     <div className="space-y-2 flex-1 pt-10">
-                      <h3 className="font-bold text-base md:text-lg">Promo & Diskon</h3>
-                      <p className="text-sm text-muted-foreground">Jangan lewatkan penawaran menarik! Temukan promo eksklusif dan diskon khusus dari UMKM favorit Anda.</p>
+                      <h3 className="font-bold text-base md:text-lg text-gray-800">Promo & Diskon</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">Jangan lewatkan penawaran menarik! Temukan promo eksklusif dan diskon khusus dari UMKM favorit Anda.</p>
                     </div>
                   </div>
                 </AnimatedCard>
@@ -99,10 +99,10 @@ export default function Features() {
                     className="relative overflow-hidden rounded-xl border border-[#E8E8E8] bg-white/85 shadow-lg select-none p-3 md:p-4"
                 >
                   <div className="relative min-h-[75px] rounded-md p-6 md:p-7 lg:p-8">
-                    <FontAwesomeIcon icon={faHeart} className="absolute top-6 left-6 md:top-7 md:left-7 lg:top-8 lg:left-8 text-2xl text-black shrink-0 leading-none" />
+                    <FontAwesomeIcon icon={faHeart} className="absolute top-6 left-6 md:top-7 md:left-7 lg:top-8 lg:left-8 text-2xl text-sky-700 shrink-0 leading-none" />
                     <div className="space-y-2 flex-1 pt-10">
-                      <h3 className="font-bold text-base md:text-lg">100% Dukung Lokal</h3>
-                      <p className="text-sm text-muted-foreground">Setiap pencarian, kunjungan, dan ulasan Anda adalah bentuk dukungan nyata untuk pertumbuhan bisnis tetangga dan ekonomi lokal Anda.</p>
+                      <h3 className="font-bold text-base md:text-lg text-gray-800">100% Dukung Lokal</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">Setiap pencarian, kunjungan, dan ulasan Anda adalah bentuk dukungan nyata untuk pertumbuhan bisnis tetangga dan ekonomi lokal Anda.</p>
                     </div>
                   </div>
                 </AnimatedCard>

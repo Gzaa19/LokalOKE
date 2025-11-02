@@ -109,12 +109,24 @@ const UmkmDirectory = () => {
                         >
                             Kos
                         </button>
+                        {/*  TOKO KELONTONG */}
+                        <button
+                            onClick={() => setSelectedCategory('Toko Kelontong')}
+                            className={`
+                            py-3 px-4 sm:px-10 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-200 whitespace-nowrap
+                            ${selectedCategory === 'Toko Kelontong'
+                                ? 'bg-gradient-to-r from-sky-700 to-sky-900 text-white'
+                                : 'bg-gray-100 text-gray-700 border-2 border-sky-800 hover:bg-gradient-to-r from-sky-700 to-sky-900 hover:text-white'}
+                            `}
+                        >
+                            Toko Kelontong
+                        </button>
                     </div>
                 </div>
                 {renderWarungCards()}
                 
                 {/* Button Lihat Semua - Centered */}
-                <div className="flex justify-center mt-12 mb-8">
+                <div className="flex justify-center mt-12">
                     <Link
                         to="/umkm"
                         className="group inline-flex items-center gap-2 py-3 px-6 sm:px-8 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 bg-gradient-to-r from-green-600 to-green-800 text-white hover:from-green-700 hover:to-green-900 hover:shadow-lg hover:scale-105 transform cursor-pointer"

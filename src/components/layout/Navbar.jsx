@@ -9,7 +9,7 @@ const Navbar = () => {
         isSearchOpen,
         searchQuery,
         toggleMobileMenu,
-        toggleSearch,
+        toggleSearchOpen,
         handleSearchSubmit,
         handleSearchChange
     } = useNavbar();
@@ -106,13 +106,13 @@ const Navbar = () => {
                         <div className="relative flex items-center">
                             <button
                                 className="px-3 py-2 rounded-full text-white font-semibold text-sm bg-gradient-to-r from-sky-700 to-sky-900 transition-all hover:from-sky-800 hover:to-sky-950 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-white/40"
-                                onClick={toggleSearch} aria-label="Open search"
+                                onClick={toggleSearchOpen} aria-label="Open search"
                             >
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35m1.35-5.65a7 7 0 11-14 0 7 7 0 0114 0z" />
                                 </svg>
                             </button>
-                            <div className={`absolute left-1/2 -translate-x-1/2 -ml-48 top-full mt-5 z-50 transition-all duration-300 ${isSearchOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
+                            <div className={`absolute left-1/2 -translate-x-1/2 -ml-40 top-full mt-5 z-50 transition-all duration-300 ${isSearchOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
                                 <form onSubmit={handleSearchSubmit}>
                                     <div className="flex items-center bg-white/95 border border-white/40 rounded-xl shadow-lg px-3 py-2 w-[min(85vw,24rem)] max-w-sm">
                                         <input
@@ -141,13 +141,13 @@ const Navbar = () => {
                         <div className="relative">
                             <button
                                 className="px-3 py-2 rounded-full text-white font-semibold text-sm bg-gradient-to-r from-sky-700 to-sky-900 transition-all hover:from-sky-800 hover:to-sky-950 hover:shadow-md"
-                                onClick={toggleSearch} aria-label="Open search"
+                                onClick={toggleSearchOpen} aria-label="Open search"
                             >
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35m1.35-5.65a7 7 0 11-14 0 7 7 0 0114 0z" />
                                 </svg>
                             </button>
-                            <div className={`absolute left-1/2 -translate-x-1/2 -ml-28 top-full mt-5 z-50 transition-all duration-300 md:hidden ${isSearchOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
+                            <div className={`absolute left-1/2 -translate-x-1/2 -ml-32 top-full mt-5 z-50 transition-all duration-300 md:hidden ${isSearchOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
                                 <form onSubmit={handleSearchSubmit}>
                                     <div className="flex items-center bg-white/95 border border-white/40 rounded-xl shadow-lg px-3 py-2 w-[min(85vw,20rem)] max-w-xs mx-2">
                                         <input

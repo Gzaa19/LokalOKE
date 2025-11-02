@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useResponsiveDesign } from './useResponsiveDesign';
 
 export const useNavbar = () => {
@@ -6,6 +7,7 @@ export const useNavbar = () => {
   const { isMobileMenuOpen, toggleMobileMenu, isMobile } = useResponsiveDesign();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,8 +51,14 @@ export const useNavbar = () => {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    // Logic untuk handle search submit bisa ditambahkan di sini
-    console.log('Search query:', searchQuery);
+    if (searchQuery.trim()) {
+      // Navigate to UMKM page with search query
+      navigate(`/umkm?search=${encodeURIComponent(searchQuery.trim())}`);
+      // Close search dropdown
+      setIsSearchOpen(false);
+      // Clear search query
+      setSearchQuery('');
+    }
   };
 
   const handleSearchChange = (e) => {

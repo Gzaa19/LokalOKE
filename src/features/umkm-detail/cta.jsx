@@ -34,7 +34,7 @@ export default function CTA() {
                 
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
                     <button className={`${baseButtonClasses} bg-emerald-500 hover:bg-emerald-600 text-white transform hover:scale-105 shadow-lg hover:shadow-xl`}>
-                        Daftarkan Usahamu (Gratis)
+                        Daftarkan Bisnis Anda
                     </button>
                     <button className={`${baseButtonClasses} border-2 border-gray-400 hover:border-gray-500 text-gray-700 hover:text-gray-900 bg-gray-100 hover:bg-gray-300`}>
                         Pelajari Keuntungannya

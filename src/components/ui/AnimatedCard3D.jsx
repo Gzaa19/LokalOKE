@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import logoLokalOKE from '../../assets/logolokaloke.png';
 
 const AnimatedCard3D = ({ mousePosition, imageVariants }) => {
   return (
@@ -24,7 +25,7 @@ const AnimatedCard3D = ({ mousePosition, imageVariants }) => {
       }}
     >
       <motion.div 
-        className="bg-linear-to-br from-blue-500 to-green-500 rounded-2xl p-8 text-white shadow-2xl"
+        className="rounded-2xl shadow-2xl overflow-hidden bg-white"
         animate={{
           rotateX: mousePosition.y * -5,
           rotateY: mousePosition.x * 5,
@@ -35,18 +36,25 @@ const AnimatedCard3D = ({ mousePosition, imageVariants }) => {
           damping: 10
         }}
       >
-        <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 text-center">
-          <div className="text-6xl font-bold mb-2">UMKM</div>
-          <div className="text-xl">LOKAL</div>
-          <div className="mt-4 text-sm opacity-90">
-            Mendukung Ekonomi Kreatif Indonesia
-          </div>
-        </div>
+        <motion.div 
+          className="w-full h-full"
+          animate={{
+            scale: [1, 1.02, 1],
+          }}
+          transition={{
+            scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+          }}
+        >
+          <img 
+            src={logoLokalOKE} 
+            alt="LokalOKE Logo" 
+            className="w-full h-full object-contain p-8"
+          />
+        </motion.div>
       </motion.div>
       
-      {/* Decorative elements with mouse tracking */}
       <motion.div 
-        className="absolute -top-4 -right-4 w-20 h-20 bg-yellow-400 rounded-full opacity-80"
+        className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-80"
         animate={{ 
           scale: [1, 1.1, 1],
           rotate: [0, 180, 360],
@@ -61,7 +69,7 @@ const AnimatedCard3D = ({ mousePosition, imageVariants }) => {
         }}
       />
       <motion.div 
-        className="absolute -bottom-6 -left-6 w-16 h-16 bg-green-400 rounded-full opacity-70"
+        className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-full opacity-70"
         animate={{ 
           scale: [1, 1.2, 1],
           y: [0, -10, 0],

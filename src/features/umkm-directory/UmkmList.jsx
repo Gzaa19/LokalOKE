@@ -10,7 +10,7 @@ const UmkmList = ({
   hoveredCard,
   setHoveredCard
 }) => {
-  const { selectedCategory, filteredUMKM, categories, handleCategoryChange } = useUmkmList();
+  const { selectedCategory, searchQuery, filteredUMKM, categories, handleCategoryChange } = useUmkmList();
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
   useEffect(() => {
@@ -41,9 +41,21 @@ const UmkmList = ({
             text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl
             max-w-[90%] sm:max-w-full
             ">
-            UMKM POPULER
+            {searchQuery ? `HASIL PENCARIAN` : 'UMKM POPULER'}
           </h3>
         </div>
+
+        {/* Search Result Info */}
+        {searchQuery && (
+          <div className="mb-6 px-4">
+            <div className="bg-sky-50 border border-sky-200 rounded-lg p-4">
+              <p className="text-sky-800 text-sm">
+                Menampilkan <span className="font-semibold">{filteredUMKM.length}</span> hasil untuk pencarian: 
+                <span className="font-semibold ml-1">"{searchQuery}"</span>
+              </p>
+            </div>
+          </div>
+        )}
 
         <div className="flex flex-col lg:flex-row gap-8 mt-8 mb-10">
           {/* Filter Sidebar */}

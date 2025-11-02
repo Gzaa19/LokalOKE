@@ -33,7 +33,7 @@ const UmkmCard = ({
         />
         
         {/* Category Badge dengan animasi hover */}
-        <div className="absolute top-3 left-3">
+        <div className="absolute top-3 right-3">
           <CategoryBadge 
             category={umkm.category}
             isVisible={isHovered}
