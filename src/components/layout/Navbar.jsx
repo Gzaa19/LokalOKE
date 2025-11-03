@@ -82,6 +82,19 @@ const Navbar = () => {
                                     )}
                                     <span className={`${location.pathname !== '/kontak' ? 'relative z-10 group-hover:text-white' : ''}`}>Kontak</span>
                                 </Link>
+                                <Link 
+                                    to="/daftar-bisnis" 
+                                    className={`rounded-full font-semibold md:text-xs lg:text-sm md:px-3 md:py-1.5 lg:px-5 lg:py-2 transition-all ${
+                                        location.pathname === '/daftar-bisnis' 
+                                            ? 'text-white bg-gradient-to-r from-sky-700 to-sky-900' 
+                                            : 'relative overflow-hidden group text-sky-800 font-medium'
+                                    }`}
+                                >
+                                    {location.pathname !== '/daftar-bisnis' && (
+                                        <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out"></span>
+                                    )}
+                                    <span className={`${location.pathname !== '/daftar-bisnis' ? 'relative z-10 group-hover:text-white' : ''}`}>Daftar Bisnis</span>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -230,6 +243,19 @@ const Navbar = () => {
                             <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out" />
                         )}
                         <span className={`${location.pathname !== '/kontak' ? 'relative z-10 group-hover:text-white' : ''}`}>Kontak</span>
+                    </Link>
+                    <Link 
+                        to="/daftar-bisnis" 
+                        className={`block px-4 py-3 rounded-lg font-semibold transition-all duration-500 ease-out ${
+                            location.pathname === '/daftar-bisnis' 
+                                ? 'text-white bg-gradient-to-r from-sky-700 to-sky-900' 
+                                : 'relative overflow-hidden group font-medium text-sky-900 bg-gradient-to-r from-sky-600/10 to-sky-700/10 hover:from-sky-600/20 hover:to-sky-700/20 border border-sky-400/30'
+                        }`}
+                    >
+                        {location.pathname !== '/daftar-bisnis' && (
+                            <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r from-sky-700 to-sky-900 transition-all duration-950 ease-out" />
+                        )}
+                        <span className={`${location.pathname !== '/daftar-bisnis' ? 'relative z-10 group-hover:text-white' : ''}`}>Daftar Bisnis</span>
                     </Link>
                 </div>
             </div>

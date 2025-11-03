@@ -5,6 +5,7 @@ import UMKMDetail from './pages/detailpages'
 import ContactPage from './pages/contactpages'
 import UmkmPage from './pages/umkmpages'
 import AboutPage from './pages/aboutpages'
+import BusinessRegisterPage from './pages/businessregisterpages'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/umkm/:id" element={<UMKMDetail />} />
         <Route path="/tentang" element={<AboutPage />} />
         <Route path="/kontak" element={<ContactPage />} />
+        <Route path="/daftar-bisnis" element={<BusinessRegisterPage />} />
       </Routes>
     </Router>
   )

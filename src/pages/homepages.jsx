@@ -7,9 +7,11 @@ import Footer from '../components/layout/Footer';
 import UmkmDirectory from '../features/umkm-directory/UmkmDirectory';
 import Divider from '../components/ui/Divider';
 import { useScrollToTop } from '../hooks/useScrollToTop';
+import { useScrollToSection } from '../hooks/useScrollToSection';
 
 export default function HomePage() {
   useScrollToTop();
+  useScrollToSection(); 
 
   return (
     <>
@@ -17,7 +19,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <Features />
-        <UmkmDirectory />
+        <UmkmDirectory isHomePage={true} />
         <Divider variant="gradient" iconType="spinner" />
         <CTA />
         <Newsletter />

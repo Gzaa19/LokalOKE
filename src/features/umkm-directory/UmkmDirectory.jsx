@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingBag, Utensils, Wrench, Home, ArrowRight } from 'lucide-react';
 import { useUmkmCard } from '../../hooks/useUmkmCard';
+import { useHomeUmkmCards } from '../../hooks/useHomeUmkmCards';
 import UmkmCard from '../../components/umkm/umkmcard';
 import AnimatedContainer from '../../components/ui/Container';
 
-const UmkmDirectory = () => {
-    const { 
-        selectedCategory, 
-        setSelectedCategory, 
-        hoveredCard, 
-        setHoveredCard, 
-        filteredUmkmData 
-    } = useUmkmCard();
+export default function UmkmDirectory({ isHomePage = false }) {
+  const [homeHoveredCard, setHomeHoveredCard] = useState(null);
+  
+  const regularHook = useUmkmCard();
+  const homeHook = useHomeUmkmCards();
+  
+  const {
+    selectedCategory,
+    setSelectedCategory,
+    filteredUmkmData,
+    hoveredCard,
+    setHoveredCard
+  } = isHomePage ? {
+    selectedCategory: homeHook.selectedCategory,
+    setSelectedCategory: homeHook.setSelectedCategory,
+    filteredUmkmData: homeHook.filteredUmkmData,
+    hoveredCard: homeHoveredCard,
+    setHoveredCard: setHomeHoveredCard
+  } : regularHook;
 
     const renderWarungCards = () => (
         <AnimatedContainer 
@@ -139,5 +151,3 @@ const UmkmDirectory = () => {
         </section>
     );
 };
-
-export default UmkmDirectory;

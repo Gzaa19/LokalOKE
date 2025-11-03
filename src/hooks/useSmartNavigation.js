@@ -39,23 +39,19 @@ export const useSmartNavigation = () => {
         currentPath
       });
       
-      // Tentukan apakah dari homepage atau halaman UMKM
       const fromHomepage = sourceLocation === '/' || 
-                          sourceLocation?.includes('#umkm') ||
-                          (!sourceLocation);
+                        sourceLocation?.includes('#umkm') || 
+                        sourceLocation?.includes('/#umkm') ||
+                        (!sourceLocation);
       
       if (fromHomepage) {
-        // Jika dari homepage, kembali ke homepage dan scroll ke section UMKM
         navigate('/', { state: { scrollToUmkm: true } });
       } else {
-        // Jika dari halaman UMKM atau tidak jelas, kembali ke halaman UMKM
         navigate('/umkm');
       }
       
-      // Bersihkan localStorage setelah digunakan
       localStorage.removeItem('previousPath');
     } else {
-      // Untuk halaman lain, gunakan browser back
       window.history.back();
     }
   };
@@ -64,7 +60,6 @@ export const useSmartNavigation = () => {
     const currentPath = location.pathname;
     
     if (currentPath.startsWith('/umkm/')) {
-      // Tentukan teks berdasarkan dari mana user datang
       const fromState = location.state?.from;
       const fromLocalStorage = localStorage.getItem('previousPath');
       const lastNonDetailPath = localStorage.getItem('lastNonDetailPath');
@@ -82,6 +77,7 @@ export const useSmartNavigation = () => {
       
       const fromHomepage = sourceLocation === '/' || 
                           sourceLocation?.includes('/#umkm') ||
+                          sourceLocation?.includes('#umkm') ||
                           (!sourceLocation && previousPath === '/');
       
       return fromHomepage ? 'Kembali ke Beranda' : 'Kembali ke UMKM';

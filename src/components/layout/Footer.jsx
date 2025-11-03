@@ -8,10 +8,11 @@ export default function Footer() {
         </div>
 
         <nav className="flex justify-center gap-6 sm:gap-8 text-slate-300 text-sm mb-6">
-          <a href="#beranda" className="hover:text-white transition-colors">Beranda</a>
-          <a href="#tentang-kami" className="hover:text-white transition-colors">Tentang Kami</a>
-          <a href="#faq" className="hover:text-white transition-colors">UMKM</a>
-          <a href="#kontak" className="hover:text-white transition-colors">Kontak</a>
+          <a href="/beranda" className="hover:text-white transition-colors">Beranda</a>
+          <a href="/tentang-kami" className="hover:text-white transition-colors">Tentang Kami</a>
+          <a href="/umkm" className="hover:text-white transition-colors">UMKM</a>
+          <a href="/kontak" className="hover:text-white transition-colors">Kontak</a>
+          <a href="/daftar-bisnis" className="hover:text-white transition-colors">Daftar Bisnis</a>
         </nav>
 
         <div className="flex justify-center items-center gap-5 text-slate-300 mb-6">

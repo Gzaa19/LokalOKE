@@ -1,7 +1,10 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
+import { useNavigate } from 'react-router-dom';
 
 const CTA = () => {
+  const navigate = useNavigate();
+  
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -71,6 +74,7 @@ const CTA = () => {
             variants={itemVariants}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => navigate('/daftar-bisnis')}
           >
             Daftarkan Bisnis Anda
           </motion.button>

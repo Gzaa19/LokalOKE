@@ -1,10 +1,11 @@
 import { Megaphone } from "lucide-react";
 import { useResponsiveDesign } from "../../hooks/useResponsiveDesign";
+import { useNavigate } from 'react-router-dom';
 
 export default function CTA() {
+  const navigate = useNavigate();
   const { getResponsiveCtaStyles, getResponsiveClasses } = useResponsiveDesign();
 
-  // Shared button classes using responsive utilities
   const baseButtonClasses = getResponsiveClasses({
     default: "w-full font-medium px-6 py-3 rounded-full transition-all duration-300 text-sm",
     sm: "w-full sm:w-auto font-medium px-6 sm:px-8 py-3 rounded-full transition-all duration-300 text-sm sm:text-base"
@@ -33,7 +34,10 @@ export default function CTA() {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-                    <button className={`${baseButtonClasses} bg-emerald-500 hover:bg-emerald-600 text-white transform hover:scale-105 shadow-lg hover:shadow-xl`}>
+                    <button 
+                        className={`${baseButtonClasses} bg-emerald-500 hover:bg-emerald-600 text-white transform hover:scale-105 shadow-lg hover:shadow-xl`}
+                        onClick={() => navigate('/daftar-bisnis')}
+                    >
                         Daftarkan Bisnis Anda
                     </button>
                     <button className={`${baseButtonClasses} border-2 border-gray-400 hover:border-gray-500 text-gray-700 hover:text-gray-900 bg-gray-100 hover:bg-gray-300`}>

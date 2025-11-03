@@ -53,6 +53,10 @@ const UmkmDetail = () => {
               <span className="font-medium">Rating: </span>
               <span>{umkm.rating}/5</span>
             </div>
+            <div className="flex items-center gap-2">
+              <span className="font-medium">Jam Operasional: </span>
+              <span className="break-all">{umkm.jamOperasional}</span>
+            </div>
             <div>
               <span className="font-medium">Kisaran Harga: </span>
               <span>{umkm.priceRange}</span>

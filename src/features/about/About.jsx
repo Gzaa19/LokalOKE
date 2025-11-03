@@ -100,7 +100,7 @@ const About = () => {
                                                 Filosofi
                                             </h4>
                                             <p className="text-sm text-gray-600">
-                                                Menekankan bahwa UMKM lokal itu "OKE"—mereka penting, berharga, dan kini mudah ditemukan (Lokasi OKE, Informasi OKE). Nama ini mudah diingat, catchy, dan langsung mengkomunikasikan misi utama untuk mendukung bisnis lokal.
+                                                Menekankan bahwa UMKM lokal itu "OKE" mereka penting, berharga, dan kini mudah ditemukan (Lokasi OKE, Informasi OKE). Nama ini mudah diingat, catchy, dan langsung mengkomunikasikan misi utama untuk mendukung bisnis lokal.
                                             </p>
                                         </div>
                                     </div>
@@ -192,7 +192,7 @@ const About = () => {
                                         <span className="text-2xl font-bold">2</span>
                                     </motion.div>
                                     <p className="text-sky-100 font-medium">
-                                        Info Lengkap Dapatkan semua informasi detail yang Anda butuhkan mulai dari produk, layanan, jam operasional, hingga kontak—semuanya dalam satu tempat.
+                                        Info Lengkap Dapatkan semua informasi detail yang Anda butuhkan mulai dari produk, layanan, jam operasional, hingga kontak semuanya dalam satu tempat.
                                     </p>
                                 </motion.div>
 

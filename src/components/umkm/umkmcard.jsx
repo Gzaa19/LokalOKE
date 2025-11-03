@@ -32,7 +32,6 @@ const UmkmCard = ({
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         
-        {/* Category Badge dengan animasi hover */}
         <div className="absolute top-3 right-3">
           <CategoryBadge 
             category={umkm.category}
@@ -45,7 +44,7 @@ const UmkmCard = ({
       <div className="p-4 flex flex-col grow justify-between">
         <div className="flex flex-col">
           <div className="flex justify-between items-start mb-1">
-            <h3 className="text-lg font-bold text-gray-900 line-clamp-2" title={umkm.name}>
+            <h3 className="text-lg font-bold text-gray-900 line-clamp-1" title={umkm.name}>
               {umkm.name}
             </h3>
             <div className="flex items-center text-sm font-semibold text-yellow-600 ml-4 shrink-0">
