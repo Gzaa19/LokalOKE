@@ -32,8 +32,8 @@ const umkmData = [
     address: "Jl. Mulawarman Tim. No.34, Kramas, Kec. Tembalang, Kota Semarang, Jawa Tengah 50278",
     phone: "0897-7995-274",
     images: [
-      "/src/assets/Toko_1/Toko_1-1.jpg",
-      "/src/assets/Toko_1/Toko_1-2.jpg"
+      "/src/assets/UMKM_1/Kuliner_1-1.jpg",
+      "/src/assets/UMKM_1/Kuliner_1-2.jpg"
     ],
     location: {
       lat: -7.067943719679567,
@@ -89,9 +89,9 @@ const umkmData = [
     address: "Jl. Jatimulyo No.1A, Tembalang, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50277",
     phone: "0842-3456-7890",
     images: [
-      "/src/assets/Toko_4/Toko_4-1.jpg",
-      "/src/assets/Toko_4/Toko_4-2.jpg",
-      "/src/assets/Toko_4/Toko_4-3.jpg"
+      "/src/assets/UMKM_4/Kuliner_4-1.jpg",
+      "/src/assets/UMKM_4/Kuliner_4-2.jpg",
+      "/src/assets/UMKM_4/Kuliner_4-3.jpg"
     ],
     location: {
       lat: -6.2701,
@@ -159,20 +159,20 @@ const umkmData = [
   },
   {
     id: "8",
-    name: "Kost Putri Alesha",
+    name: "Kost Omah Sultan",
     category: "Kost",
     description: "Kost Khusus Putri (Pilihan Lengkap) Tersedia beberapa tipe kamar sesuai kebutuhan Anda. Setiap kamar dilengkapi dengan AC, Kamar Mandi Dalam, Kasur, Lemari, dan Meja Belajar. Fasilitas umum dengan WiFi Kencang Gratis, dan Parkiran Motor.",
-    address: "Jl. Gerungsari No.1/no.7, Bulusan, Kec. Tembalang, Kota Semarang, Jawa Tengah 50277",
-    phone: "0878-9012-3456",
+    address: "Jl. Gondang Timur IV No.52, RT.01/RW.06, Bulusan, Kec. Tembalang, Kota Semarang, Jawa Tengah 50277",
+    phone: "0822-2537-9537",
     images: [
-      "/src/assets/hero4.jpg",
-      "/src/assets/hero4.jpg"
+      "/src/assets/UMKM_8/Kost_8-1.png",
+      "/src/assets/UMKM_8/Kost_8-2.png"
     ],
     location: {
-      lat: -7.056885352618713,
-      lng: 110.44525598383011
+      lat: -7.0648381412869075,
+      lng: 110.44469556883696
     },
-    rating: 4.8,
+    rating: 4.6,
     jamOperasional: "24 Jam",
     priceRange: "Rp 800.000 - Rp 1.500.000"
   },
@@ -241,9 +241,9 @@ const umkmData = [
     address: "Jl. Mulawarman Raya No.51, Kramas, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50268",
     phone: "082322991258",
     images: [
-      "/src/assets/Toko_12/Toko_12-2.png",
-      "/src/assets/Toko_12/Toko_12-1.png",
-      "/src/assets/Toko_12/Toko_12-3.png"
+      "/src/assets/UMKM_12/Jasa_12-2.png",
+      "/src/assets/UMKM_12/Jasa_12-1.png",
+      "/src/assets/UMKM_12/Jasa_12-3.png"
     ],
     location: {
       lat: -6.1521,
