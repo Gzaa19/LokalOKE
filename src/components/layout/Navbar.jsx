@@ -100,22 +100,6 @@ const Navbar = () => {
                     </div>
 
                     <div className="hidden md:flex items-center gap-2">
-                        <button className="px-3 py-2 rounded-full text-white font-semibold text-sm bg-gradient-to-r from-sky-700 to-sky-900 transition-all hover:from-sky-800 hover:to-sky-950 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-white/40" aria-label="Toggle theme">
-                            <svg
-                                className="w-5 h-5"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                                />
-                            </svg>
-                        </button>
-
                         <div className="relative flex items-center">
                             <button
                                 className="px-3 py-2 rounded-full text-white font-semibold text-sm bg-gradient-to-r from-sky-700 to-sky-900 transition-all hover:from-sky-800 hover:to-sky-950 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-white/40"
@@ -146,11 +130,6 @@ const Navbar = () => {
                     </div>
 
                     <div className="md:hidden flex items-center gap-2">
-                        <button className="px-3 py-2 rounded-full text-white font-semibold text-sm bg-gradient-to-r from-sky-700 to-sky-900 transition-all hover:from-sky-800 hover:to-sky-950 hover:shadow-md" aria-label="Toggle theme">
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                            </svg>
-                        </button>
                         <div className="relative">
                             <button
                                 className="px-3 py-2 rounded-full text-white font-semibold text-sm bg-gradient-to-r from-sky-700 to-sky-900 transition-all hover:from-sky-800 hover:to-sky-950 hover:shadow-md"

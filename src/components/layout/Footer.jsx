@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-linear-to-r from-slate-700 via-slate-800 to-slate-900 py-12">
+    <footer className="bg-linear-to-r from-slate-700 via-slate-800 to-slate-900 py-12 relative z-50">
       <div className="max-w-5xl mx-auto px-4 text-center">
         <div className="flex flex-col items-center justify-center gap-1 mb-6">
             <span className="font-russo text-white text-2xl md:text-3xl drop-shadow-xl transition-all duration-500 tracking-[0.40em]">LOKALOKE</span>
