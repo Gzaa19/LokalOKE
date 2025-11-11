@@ -6,6 +6,7 @@ import ContactPage from './pages/contactpages'
 import UmkmPage from './pages/umkmpages'
 import AboutPage from './pages/aboutpages'
 import BusinessRegisterPage from './pages/businessregisterpages'
+import ChatLOKA from './features/LOKA/chatLOKA.jsx'
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
         <Route path="/kontak" element={<ContactPage />} />
         <Route path="/daftar-bisnis" element={<BusinessRegisterPage />} />
       </Routes>
+      {/* Global floating chat bubble */}
+      <ChatLOKA />
     </Router>
   )
 }
