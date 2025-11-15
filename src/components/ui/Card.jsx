@@ -1,18 +1,5 @@
-// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-
-/**
- * AnimatedCard - Komponen card dengan animasi hover dan entrance
- * 
- * @param {string} hoverEffect - Jenis efek hover (lift, scale, tilt, glow)
- * @param {string} entranceAnimation - Animasi masuk (fadeIn, slideUp, scaleIn)
- * @param {number} delay - Delay animasi masuk
- * @param {boolean} clickable - Apakah card bisa diklik
- * @param {string} className - CSS classes tambahan
- * @param {object} style - Inline styles
- * @param {function} onClick - Click handler
- * @param {ReactNode} children - Card content
- */
+ 
 const AnimatedCard = ({
   hoverEffect = 'lift',
   entranceAnimation = 'fadeIn',
@@ -24,7 +11,6 @@ const AnimatedCard = ({
   children,
   ...props
 }) => {
-  // Entrance animation variants
   const entranceVariants = {
     fadeIn: {
       initial: { opacity: 0 },
@@ -53,7 +39,6 @@ const AnimatedCard = ({
     }
   };
 
-  // Hover effect variants
   const hoverVariants = {
     lift: {
       hover: {
@@ -87,14 +72,12 @@ const AnimatedCard = ({
     }
   };
 
-  // Combine variants
   const cardVariants = {
     ...entranceVariants[entranceAnimation],
     ...hoverVariants[hoverEffect],
     tap: clickable ? { scale: 0.98 } : {}
   };
 
-  // Base card classes
   const baseClasses = `
     bg-white rounded-lg shadow-md border border-gray-200
     ${clickable ? 'cursor-pointer' : ''}

@@ -1,19 +1,4 @@
-// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-
-/**
- * AnimatedButton - Komponen button dengan animasi hover dan tap yang lebih bagus
- * 
- * @param {string} variant - Jenis animasi button (bounce, pulse, ripple, magnetic, morphing)
- * @param {string} size - Ukuran button (sm, md, lg)
- * @param {string} color - Warna button (primary, secondary, success, danger)
- * @param {boolean} disabled - Status disabled
- * @param {boolean} loading - Status loading
- * @param {string} className - CSS classes tambahan
- * @param {object} style - Inline styles
- * @param {function} onClick - Click handler
- * @param {ReactNode} children - Button content
- */
 const AnimatedButton = ({
   variant = 'bounce',
   size = 'md',
@@ -26,7 +11,6 @@ const AnimatedButton = ({
   children,
   ...props
 }) => {
-  // Animation variants untuk berbagai jenis button yang lebih bagus
   const buttonVariants = {
     bounce: {
       initial: { scale: 1 },
@@ -125,14 +109,12 @@ const AnimatedButton = ({
     }
   };
 
-  // Size configurations
   const sizeClasses = {
     sm: 'px-3 py-1.5 text-sm',
     md: 'px-4 py-2 text-base',
     lg: 'px-6 py-3 text-lg'
   };
 
-  // Color configurations
   const colorClasses = {
     primary: 'bg-gradient-to-r from-sky-700 to-sky-900 text-white hover:from-sky-800 hover:to-sky-950',
     secondary: 'bg-gray-600 text-white hover:bg-gray-700',
@@ -140,7 +122,6 @@ const AnimatedButton = ({
     danger: 'bg-red-600 text-white hover:bg-red-700'
   };
 
-  // Base classes
   const baseClasses = `
     relative inline-flex items-center justify-center
     font-medium rounded-lg
@@ -151,7 +132,6 @@ const AnimatedButton = ({
     cursor-pointer
   `;
 
-  // Combine all classes
   const buttonClasses = `
     ${baseClasses}
     ${sizeClasses[size]}
@@ -159,7 +139,6 @@ const AnimatedButton = ({
     ${className}
   `.trim().replace(/\s+/g, ' ');
 
-  // Handle click dengan loading state
   const handleClick = (e) => {
     if (disabled || loading) return;
     onClick?.(e);
@@ -177,7 +156,6 @@ const AnimatedButton = ({
       disabled={disabled || loading}
       {...props}
     >
-      {/* Shimmer effect background */}
       <motion.div
         className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent"
         initial={{ x: '-100%', skewX: -15 }}
@@ -187,7 +165,6 @@ const AnimatedButton = ({
         }}
       />
       
-      {/* Particle effect untuk variant ripple */}
       {variant === 'ripple' && (
         <>
           {[...Array(3)].map((_, i) => (
@@ -210,7 +187,6 @@ const AnimatedButton = ({
         </>
       )}
       
-      {/* Button content */}
       <span className="relative z-10 flex items-center gap-2">
         {loading && (
           <motion.div

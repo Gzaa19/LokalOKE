@@ -1,5 +1,3 @@
-// About.jsx
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Lightbulb, Target, Users, Award, LibraryBigIcon, CrownIcon } from 'lucide-react';
@@ -27,7 +25,6 @@ const About = () => {
             initial="hidden"
             animate="visible"
         >
-            {/* Header Section */}
             <motion.section
                 className="py-16 px-4 text-center"
                 variants={itemVariants}
@@ -57,11 +54,9 @@ const About = () => {
                     </motion.p>
                 </div>
             </motion.section>
-             {/* Main Content Section */}
             <motion.section className="py-16 px-4" variants={itemVariants}>
                 <div className="max-w-6xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-12 items-center"> 
-                      {/* Image */}
                         <AnimatedCard3D
                             mousePosition={mousePosition}
                             imageVariants={imageVariants}
@@ -110,7 +105,6 @@ const About = () => {
                     </div>
                 </div>
             </motion.section>
-            {/* Vision Section */}
             <motion.section
                 className="py-16 px-4"
                 variants={itemVariants}
@@ -126,7 +120,6 @@ const About = () => {
                         transition={{ duration: 0.3 }}
                     >
                         <div className="px-8 py-16 md:px-16 md:py-20 text-center relative">
-                            {/* Background Pattern */}
                             <div className="absolute inset-0 opacity-10">
                                 <div className="absolute top-10 left-10 w-20 h-20 border border-white/30 rounded-full"></div>
                                 <div className="absolute top-20 right-16 w-16 h-16 border border-white/20 rounded-full"></div>
@@ -155,7 +148,6 @@ const About = () => {
                                 Bagi kami, "OKE" berarti:
                             </motion.p>
 
-                            {/* Stats/Features */}
                             <motion.div
                                 className="grid md:grid-cols-3 gap-8 md:gap-12 relative z-10"
                                 variants={containerVariants}
@@ -273,7 +265,6 @@ const About = () => {
                 </div>
             </motion.section>
             
-            {/* Mission Statement Section */}
             <motion.section
                 className="py-12 px-4"
                 variants={itemVariants}
@@ -312,7 +303,6 @@ const About = () => {
                 </div>
             </motion.section>
             
-            {/* Our Team Section */}
             <motion.section
                 className="py-12 px-4"
                 variants={itemVariants}
@@ -344,9 +334,7 @@ const About = () => {
                             LokalOKE dan mendukung pertumbuhan UMKM Indonesia
                         </motion.p>
                     </motion.div>
-                    {/* PERUBAHAN: 
-
-            */}
+                    
                     <motion.div
                         className="grid md:grid-cols-3 gap-x-20 gap-y-12 max-w-4xl mx-auto"
                         variants={containerVariants}
@@ -364,7 +352,6 @@ const About = () => {
                         ))}
                     </motion.div>
                     
-                    {/* Trusted Companies Section */}
                     <motion.div 
                         className="mt-16 pt-16 border-t border-gray-200"
                         variants={itemVariants}
@@ -386,7 +373,6 @@ const About = () => {
                         `}
                         </style>
                         <div className="overflow-hidden w-full relative max-w-7xl mx-auto select-none">
-                            {/* Subtle gradient overlays */}
                             <div className="absolute left-0 top-0 h-full w-24 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent" />
                             
                             <div className="marquee-inner flex will-change-transform min-w-[200%]" style={{ animationDuration: "25s" }}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import AnimatedContainer from '../../../components/ui/Container';
-import UmkmCard from '../../../components/umkm/umkmcard';
+import AnimatedContainer from './Container';
+import UmkmCard from '../umkm/umkmcard';
 
 const UmkmCardGrid = ({ items, hoveredCard, setHoveredCard, animationKey }) => (
   <AnimatedContainer

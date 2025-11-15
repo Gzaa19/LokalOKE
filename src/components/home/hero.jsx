@@ -1,5 +1,4 @@
 export default function Hero() {
-    // URL gambar dari Pinterest
     const heroImg1 = 'https://i.pinimg.com/736x/7c/c7/9d/7cc79d1380ddb1c4968e266286b9aba2.jpg';
     const heroImg2 = 'https://i.pinimg.com/1200x/33/3a/60/333a6009e79964ef5c625db241ce3460.jpg';
     const heroImg3 = 'https://i.pinimg.com/1200x/af/5e/84/af5e84b51f1b73f474283569ae9a4efc.jpg';
@@ -29,7 +28,6 @@ export default function Hero() {
                 />
             </div>
 
-            {/* Overlay dan konten */}
             <div className="absolute inset-0 flex items-center justify-center bg-linear-to-br from-[#07416b88] via-black/40 to-black/50">
                 <div className="container flex justify-center">
                     <div className="flex flex-col items-center text-center text-white max-w-[900px] mx-auto px-5">

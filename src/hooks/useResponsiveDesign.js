@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react';
 
 export const useResponsiveDesign = () => {
-  // Screen size state
   const [screenSize, setScreenSize] = useState({
     width: typeof window !== 'undefined' ? window.innerWidth : 1024,
     height: typeof window !== 'undefined' ? window.innerHeight : 768
   });
 
-  // Breakpoint definitions (following Tailwind CSS conventions)
   const breakpoints = {
     xs: 0,
     sm: 640,
@@ -17,7 +15,6 @@ export const useResponsiveDesign = () => {
     '2xl': 1536
   };
 
-  // Update screen size on window resize
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
@@ -29,19 +26,15 @@ export const useResponsiveDesign = () => {
     };
 
     window.addEventListener('resize', handleResize);
-    
-    // Initial call to set correct size
     handleResize();
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Check if screen matches specific breakpoint
   const isBreakpoint = (breakpoint) => {
     return screenSize.width >= breakpoints[breakpoint];
   };
 
-  // Get current breakpoint
   const getCurrentBreakpoint = () => {
     const { width } = screenSize;
     if (width >= breakpoints['2xl']) return '2xl';
@@ -52,12 +45,10 @@ export const useResponsiveDesign = () => {
     return 'xs';
   };
 
-  // Mobile detection
   const isMobile = screenSize.width < breakpoints.md;
   const isTablet = screenSize.width >= breakpoints.md && screenSize.width < breakpoints.lg;
   const isDesktop = screenSize.width >= breakpoints.lg;
 
-  // Responsive styles for CTA component (extracted from cta.jsx)
   const getResponsiveCtaStyles = () => {
     const ctaBreakpoints = [
       { maxWidth: 640, clipSize: 30, shadowSize: "5px 5px 12px 1px", opacity: 0.2 },
@@ -74,7 +65,6 @@ export const useResponsiveDesign = () => {
     };
   };
 
-  // Get responsive classes based on current breakpoint
   const getResponsiveClasses = (classMap) => {
     const currentBp = getCurrentBreakpoint();
     const orderedBreakpoints = ['xs', 'sm', 'md', 'lg', 'xl', '2xl'];
@@ -90,7 +80,6 @@ export const useResponsiveDesign = () => {
     return applicableClass;
   };
 
-  // Get responsive values based on current breakpoint
   const getResponsiveValue = (valueMap) => {
     const currentBp = getCurrentBreakpoint();
     const orderedBreakpoints = ['xs', 'sm', 'md', 'lg', 'xl', '2xl'];
@@ -106,7 +95,6 @@ export const useResponsiveDesign = () => {
     return applicableValue;
   };
 
-  // Mobile menu utilities
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -117,14 +105,12 @@ export const useResponsiveDesign = () => {
     setIsMobileMenuOpen(false);
   };
 
-  // Close mobile menu when screen becomes desktop
   useEffect(() => {
     if (isDesktop && isMobileMenuOpen) {
       setIsMobileMenuOpen(false);
     }
   }, [isDesktop, isMobileMenuOpen]);
 
-  // Responsive grid columns
   const getGridColumns = (config) => {
     return getResponsiveValue({
       xs: config.mobile || 1,
@@ -136,7 +122,6 @@ export const useResponsiveDesign = () => {
     });
   };
 
-  // Responsive spacing
   const getResponsiveSpacing = (config) => {
     return getResponsiveValue({
       xs: config.mobile || config.default,
@@ -149,29 +134,18 @@ export const useResponsiveDesign = () => {
   };
 
   return {
-    // Screen information
     screenSize,
     currentBreakpoint: getCurrentBreakpoint(),
-    
-    // Device type checks
     isMobile,
     isTablet,
     isDesktop,
-    
-    // Breakpoint utilities
     isBreakpoint,
     breakpoints,
-    
-    // Responsive utilities
     getResponsiveClasses,
     getResponsiveValue,
     getGridColumns,
     getResponsiveSpacing,
-    
-    // Specific component utilities
     getResponsiveCtaStyles,
-    
-    // Mobile menu utilities
     isMobileMenuOpen,
     toggleMobileMenu,
     closeMobileMenu

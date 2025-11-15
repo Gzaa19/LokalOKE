@@ -72,7 +72,6 @@ export default function UmkmDirectory({ isHomePage = false }) {
 
                 <div className="w-full px-4 mt-8 mb-10">
                     <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 max-w-4xl mx-auto">
-                        {/* SEMUA */}
                         <button
                             onClick={() => setSelectedCategory('Semua')}
                             className={`
@@ -84,7 +83,6 @@ export default function UmkmDirectory({ isHomePage = false }) {
                         >
                             Semua
                         </button>
-                        {/* KULINER */}
                         <button
                             onClick={() => setSelectedCategory('Kuliner')}
                             className={`
@@ -96,8 +94,6 @@ export default function UmkmDirectory({ isHomePage = false }) {
                         >
                             Kuliner
                         </button>
-
-                        {/* JASA */}
                         <button
                             onClick={() => setSelectedCategory('Jasa')}
                             className={`
@@ -109,7 +105,6 @@ export default function UmkmDirectory({ isHomePage = false }) {
                         >
                             Jasa
                         </button>
-                        {/* KOS */}
                         <button
                             onClick={() => setSelectedCategory('Kos')}
                             className={`
@@ -121,7 +116,6 @@ export default function UmkmDirectory({ isHomePage = false }) {
                         >
                             Kos
                         </button>
-                        {/*  TOKO KELONTONG */}
                         <button
                             onClick={() => setSelectedCategory('Toko Kelontong')}
                             className={`
@@ -137,7 +131,6 @@ export default function UmkmDirectory({ isHomePage = false }) {
                 </div>
                 {renderWarungCards()}
                 
-                {/* Button Lihat Semua - Centered */}
                 <div className="flex justify-center mt-12">
                     <Link
                         to="/umkm"

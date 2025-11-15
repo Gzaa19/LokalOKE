@@ -1,9 +1,6 @@
-// components/ui/TeamCard.jsx (File Baru/Modifikasi)
-
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// Menerima props baru: instagram, github, linkedin
 export default function TeamCard({ name, role, imgSrc, delay = 0.1, instagram, github, linkedin }) {
   return (
     <motion.div
@@ -22,7 +19,6 @@ export default function TeamCard({ name, role, imgSrc, delay = 0.1, instagram, g
       
       <div className="flex justify-center space-x-3">
         
-        {/* PERUBAHAN: Render kondisional jika prop instagram ada */}
         {instagram && (
           <a href={instagram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors" aria-label="Instagram">
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -31,7 +27,6 @@ export default function TeamCard({ name, role, imgSrc, delay = 0.1, instagram, g
           </a>
         )}
         
-        {/* PERUBAHAN: Render kondisional jika prop github ada */}
         {github && (
           <a href={github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-800 transition-colors" aria-label="GitHub">
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -39,8 +34,7 @@ export default function TeamCard({ name, role, imgSrc, delay = 0.1, instagram, g
             </svg>
           </a>
         )}
-
-        {/* PERUBAHAN: Render kondisional jika prop linkedin ada */}
+        
         {linkedin && (
           <a href={linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors" aria-label="LinkedIn">
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">

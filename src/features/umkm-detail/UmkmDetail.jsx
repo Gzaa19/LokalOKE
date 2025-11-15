@@ -23,7 +23,6 @@ const UmkmDetail = () => {
 
   const { goBack, getBackButtonText } = useSmartNavigation();
 
-  // Pastikan halaman selalu mulai dari atas saat masuk ke halaman detail
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

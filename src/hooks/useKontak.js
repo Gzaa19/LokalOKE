@@ -41,7 +41,6 @@ export const useKontak = () => {
     setResult("");
   };
 
-  // Auto-close popup after 4 seconds
   useEffect(() => {
     if (showPopup && result) {
       const timer = setTimeout(() => {
@@ -53,12 +52,9 @@ export const useKontak = () => {
   }, [showPopup, result]);
 
   return {
-    // State
     result,
     isSubmitting,
     showPopup,
-    
-    // Actions
     onSubmit,
     closePopup
   };

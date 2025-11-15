@@ -12,7 +12,6 @@ export default function Kontak() {
             className="min-h-screen py-16 px-4"
         >
             <div className="max-w-7xl mx-auto">
-                {/* Header Section */}
                 <div className="text-center mb-16">
                     <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mt-10 mb-6">
                         Mari <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-blue-600">Terhubung!</span>
@@ -23,7 +22,6 @@ export default function Kontak() {
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-12 items-start">
-                    {/* Contact Info Section */}
                     <div className="space-y-8">
                         <div className="bg-white rounded-2xl p-8 shadow-xl border border-slate-100">
                             <h2 className="text-2xl font-bold text-slate-900 mb-6">Informasi Kontak</h2>
@@ -54,22 +52,21 @@ export default function Kontak() {
                             </div>
                         </div>
 
-                        {/* Additional Info Card */}
                         <div className="bg-gradient-to-br from-sky-500 to-blue-600 rounded-2xl p-8 text-white">
                             <h3 className="text-2xl font-bold mb-4">Jadikan Bisnis Lokal Anda "Pasti OKE!"</h3>
                             <span className="text-lg leading-relaxed">Naik kelas bersama LokalOKE. Masukkan data Anda pada form di samping, dan mari kita mulai kembangkan bisnis Anda bersama.</span>
                         </div>
                     </div>
 
-                    {/* Contact Form Section */}
                     <div className="bg-white rounded-2xl p-8 shadow-xl border border-slate-100">
                         <h2 className="text-2xl font-bold text-slate-900 mb-6">Kirim Pesan</h2>
 
                         <form onSubmit={onSubmit} className="space-y-6">
                             <div className="grid md:grid-cols-2 gap-4">
                                 <div>
-                                    <label className="block text-sm font-semibold text-slate-700 mb-2">Nama Lengkap</label>
+                                    <label htmlFor="contact-name" className="block text-sm font-semibold text-slate-700 mb-2">Nama Lengkap</label>
                                     <input 
+                                        id='contact-name'
                                         type='text' 
                                         name='name' 
                                         placeholder='Masukkan nama lengkap Anda'
@@ -78,8 +75,9 @@ export default function Kontak() {
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-semibold text-slate-700 mb-2">Email</label>
+                                    <label htmlFor="contact-email" className="block text-sm font-semibold text-slate-700 mb-2">Email</label>
                                     <input 
+                                        id='contact-email'
                                         type='email' 
                                         name='email' 
                                         placeholder='nama@email.com'
@@ -90,8 +88,9 @@ export default function Kontak() {
                             </div>
                             
                             <div>
-                                <label className="block text-sm font-semibold text-slate-700 mb-2">Perihal</label>
+                                <label htmlFor="contact-subject" className="block text-sm font-semibold text-slate-700 mb-2">Perihal</label>
                                 <input 
+                                    id='contact-subject'
                                     type='text' 
                                     name='subject' 
                                     placeholder='Contoh: Pendaftaran UMKM / Masukan / Kerjasama'
@@ -101,8 +100,9 @@ export default function Kontak() {
                             </div>
                             
                             <div>
-                                <label className="block text-sm font-semibold text-slate-700 mb-2">Pesan</label>
+                                <label htmlFor="contact-message" className="block text-sm font-semibold text-slate-700 mb-2">Pesan</label>
                                 <textarea 
+                                    id='contact-message'
                                     name='message' 
                                     placeholder='Tuliskan pesan, pertanyaan, atau masukan Anda di sini...' 
                                     rows="6"
@@ -137,7 +137,6 @@ export default function Kontak() {
                 </div>
             </div>
 
-            {/* Enhanced Popup */}
             {showPopup && result && (
                 <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
                     <div className={`max-w-md w-full rounded-2xl shadow-2xl transform transition-all duration-300 ease-out animate-in zoom-in-95 ${

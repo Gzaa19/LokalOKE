@@ -24,25 +24,15 @@ export const useUmkmDetail = () => {
     setCurrentImageIndex(index);
   };
 
-  // URL untuk embed Google Maps
   const googleMapsUrl = `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${umkm?.location?.lat},${umkm?.location?.lng}&zoom=15`;
-  
-  // URL untuk link ke Google Maps
   const mapsLink = `https://www.google.com/maps?q=${umkm?.location?.lat},${umkm?.location?.lng}&hl=id&z=15`;
 
   return {
-    // Data
     umkm,
-    
-    // State
     currentImageIndex,
     activeTab,
-    
-    // Computed values
     googleMapsUrl,
     mapsLink,
-    
-    // Actions
     nextImage,
     prevImage,
     goToImage,

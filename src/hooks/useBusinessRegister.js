@@ -52,12 +52,9 @@ export const useBusinessRegister = () => {
   }, [showPopup, result]);
 
   return {
-    // State
     result,
     isSubmitting,
     showPopup,
-    
-    // Actions
     onSubmit,
     closePopup
   };

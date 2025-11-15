@@ -84,13 +84,11 @@ const Divider = ({
       viewport={{ once: true, amount: 0.3 }}
     >
       <div className="flex items-center w-full max-w-4xl">
-        {/* Left line */}
         <motion.div 
           className={`flex-1 h-px ${getDividerClasses()}`}
           variants={containerVariants}
         />
         
-        {/* Center icon */}
         {showIcon && (
           <motion.div 
             className="mx-6 flex items-center justify-center"
@@ -102,7 +100,6 @@ const Divider = ({
           </motion.div>
         )}
         
-        {/* Right line */}
         <motion.div 
           className={`flex-1 h-px ${getDividerClasses()}`}
           variants={containerVariants}

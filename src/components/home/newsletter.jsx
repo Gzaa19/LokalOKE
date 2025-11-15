@@ -27,12 +27,14 @@ export default function Newsletter() {
 
           <form onSubmit={handleSubscribe} className="w-full lg:flex-1">
             <div className="flex items-stretch rounded-lg overflow-hidden shadow-md border border-slate-600 max-w-md sm:max-w-lg md:max-w-lg lg:max-w-xl mx-auto">
+              <label htmlFor="newsletter-email" className="sr-only">Email</label>
               <input
+                id="newsletter-email"
+                name="email"
                 type="email"
                 value={email}
                 onChange={handleEmailChange}
                 placeholder="Masukan Email Anda"
-                aria-label="Email address"
                 className="w-full bg-slate-700 text-white placeholder:text-slate-400 px-3 py-2 sm:py-2.5 md:py-3 outline-none focus:ring-2 focus:ring-emerald-400"
                 required
                 disabled={isSubmitting}
@@ -62,7 +64,6 @@ export default function Newsletter() {
         </div>
       </div>
 
-      {/* Enhanced Popup */}
       {showPopup && result && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="relative max-w-md w-full">

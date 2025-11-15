@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import { useResponsiveDesign } from '../../../hooks/useResponsiveDesign';
+import { useResponsiveDesign } from '../../hooks/useResponsiveDesign';
 
 const SHUFFLE_DURATION = 0.15;
 

@@ -42,7 +42,6 @@ export const useNavbar = () => {
     setIsSearchOpen(false);
   };
 
-  // Close search when clicking outside or on mobile menu toggle
   useEffect(() => {
     if (isMobileMenuOpen && isSearchOpen) {
       setIsSearchOpen(false);
@@ -52,11 +51,8 @@ export const useNavbar = () => {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      // Navigate to UMKM page with search query
       navigate(`/umkm?search=${encodeURIComponent(searchQuery.trim())}`);
-      // Close search dropdown
       setIsSearchOpen(false);
-      // Clear search query
       setSearchQuery('');
     }
   };

@@ -3,8 +3,6 @@ import { umkmData } from '../Data/umkm.js';
 
 export function useHomeUmkmCards() {
   const [selectedCategory, setSelectedCategory] = useState('Semua');
-
-  // Fungsi untuk mengkategorikan UMKM berdasarkan kategori
   const categorizeUmkm = (data) => {
     const categories = {
       kuliner: [],

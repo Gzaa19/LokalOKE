@@ -7,8 +7,6 @@ export const useAbout = () => {
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
       const { innerWidth, innerHeight } = window;
-      
-      // Normalize mouse position to -1 to 1 range
       const x = (clientX / innerWidth - 0.5) * 2;
       const y = (clientY / innerHeight - 0.5) * 2;
       
@@ -19,7 +17,6 @@ export const useAbout = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

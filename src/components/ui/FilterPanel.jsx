@@ -90,8 +90,10 @@ const FilterPanel = ({
 
       <div className="space-y-4">
         <div>
-          <label className="mb-2 block text-xs font-semibold text-slate-500">Harga Minimum</label>
+          <label htmlFor="price-min" className="mb-2 block text-xs font-semibold text-slate-500">Harga Minimum</label>
           <input
+            id="price-min"
+            name="price-min"
             type="range"
             min={priceRangeLimits.min}
             max={priceRangeLimits.max}
@@ -103,8 +105,10 @@ const FilterPanel = ({
           />
         </div>
         <div>
-          <label className="mb-2 block text-xs font-semibold text-slate-500">Harga Maksimum</label>
+          <label htmlFor="price-max" className="mb-2 block text-xs font-semibold text-slate-500">Harga Maksimum</label>
           <input
+            id="price-max"
+            name="price-max"
             type="range"
             min={priceRangeLimits.min}
             max={priceRangeLimits.max}

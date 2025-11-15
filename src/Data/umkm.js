@@ -23,6 +23,9 @@ const categories = [
   "Toko Kelontong",
 ];
 
+// Helper to resolve asset URLs at build-time so they work in production
+const asset = (p) => new URL(`../assets/${p}`, import.meta.url).href;
+
 const umkmData = [
   {
     id: "1",
@@ -32,8 +35,8 @@ const umkmData = [
     address: "Jl. Mulawarman Tim. No.34, Kramas, Kec. Tembalang, Kota Semarang, Jawa Tengah 50278",
     phone: "0897-7995-274",
     images: [
-      "/src/assets/UMKM_1/Kuliner_1-1.jpg",
-      "/src/assets/UMKM_1/Kuliner_1-2.jpg"
+      asset('UMKM_1/Kuliner_1-1.jpg'),
+      asset('UMKM_1/Kuliner_1-2.jpg')
     ],
     location: {
       lat: -7.067943719679567,
@@ -51,8 +54,8 @@ const umkmData = [
     address: "Jl. Gondang Raya, Tembalang, Kec. Tembalang, Kota Semarang, Jawa Tengah 55712",
     phone: "0821-9876-5432",
     images: [
-      "/src/assets/hero4.jpg",
-      "/src/assets/hero4.jpg"
+      asset('hero4.jpg'),
+      asset('hero4.jpg')
     ],
     location: {
       lat: -7.062236486526275,
@@ -70,8 +73,8 @@ const umkmData = [
     address: "Jl. Mulawarman Utara Dalam II, Bulusan, Kec. Tembalang, Kota Semarang, Jawa Tengah 50277",
     phone: "0813-2844-8929",
     images: [
-      "/src/assets/hero4.jpg",
-      "/src/assets/hero4.jpg"
+      asset('hero4.jpg'),
+      asset('hero4.jpg')
     ],
     location: {
       lat: -7.066817363154133,
@@ -85,17 +88,17 @@ const umkmData = [
     id: "4",
     name: "Warung Makan Mama Ros",
     category: "Kuliner",
-    description: "Produksi keramik handmade untuk dekorasi dan peralatan rumah tangga. Setiap produk dibuat dengan detail dan finishing berkualitas tinggi.",
+    description: "Warung Makan Mama Ros adalah warung makan yang menyajikan berbagai macam makanan khas Semarang. Warung ini memiliki berbagai macam menu, mulai dari makanan ringan, makanan berat, hingga minuman segar. Warung ini juga memiliki berbagai macam layanan, seperti layanan antar, layanan pick up, dan layanan layanan lainnya.",
     address: "Jl. Jatimulyo No.1A, Tembalang, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50277",
     phone: "0842-3456-7890",
     images: [
-      "/src/assets/UMKM_4/Kuliner_4-1.jpg",
-      "/src/assets/UMKM_4/Kuliner_4-2.jpg",
-      "/src/assets/UMKM_4/Kuliner_4-3.jpg"
+      asset('UMKM_4/Kuliner_4-1.jpg'),
+      asset('UMKM_4/Kuliner_4-2.jpg'),
+      asset('UMKM_4/Kuliner_4-3.jpg')
     ],
     location: {
-      lat: -6.2701,
-      lng: 106.8967,
+      lat: -7.0583890899717066,
+      lng: 110.43507375373504
     },
     rating: 4.1,
     jamOperasional: "24 Jam",
@@ -109,8 +112,8 @@ const umkmData = [
     address: "Jl. Gerung No.25, Bulusan, Kec. Tembalang, Kota Semarang, Jawa Tengah 50277",
     phone: "0895-3094-2567",
     images: [
-      "/src/assets/hero4.jpg",
-      "/src/assets/hero4.jpg"
+      asset('hero4.jpg'),
+      asset('hero4.jpg')
     ],
     location: {
       lat: -7.05693315773418,
@@ -128,12 +131,12 @@ const umkmData = [
     address: "Jl. Mulawarman Tim. No.34, Kramas, Kec. Tembalang, Kota Semarang, Jawa Tengah 50278r",
     phone: "0822-3456-7891",
     images: [
-      "/src/assets/hero4.jpg",
-      "/src/assets/hero4.jpg"
+      asset('hero4.jpg'),
+      asset('hero4.jpg')
     ],
     location: {
-      lat: -6.2608,
-      lng: 106.8844,
+      lat: -7.067992583369558,
+      lng: 110.44226381326033
     },
     rating: 4.4,
     priceRange: "Rp 1.000 - Rp 50.000"
@@ -146,8 +149,8 @@ const umkmData = [
     address: "Jl. Klentengsari Sel., Pedalangan, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50268",
     phone: "0812-2506-0984",
     images: [
-      "/src/assets/hero4.jpg",
-      "/src/assets/hero4.jpg"
+      asset('hero4.jpg'),
+      asset('hero4.jpg')
     ],
     location: {
       lat: -7.058554187823217,
@@ -161,12 +164,12 @@ const umkmData = [
     id: "8",
     name: "Kost Omah Sultan",
     category: "Kost",
-    description: "Kost Khusus Putri (Pilihan Lengkap) Tersedia beberapa tipe kamar sesuai kebutuhan Anda. Setiap kamar dilengkapi dengan AC, Kamar Mandi Dalam, Kasur, Lemari, dan Meja Belajar. Fasilitas umum dengan WiFi Kencang Gratis, dan Parkiran Motor.",
+    description: "Kost Khusus Putra (Pilihan Lengkap) Tersedia beberapa tipe kamar sesuai kebutuhan Anda. Setiap kamar dilengkapi dengan AC, Kamar Mandi Dalam, Kasur, Lemari, dan Meja Belajar. Fasilitas umum dengan WiFi Kencang Gratis, dan Parkiran Motor.",
     address: "Jl. Gondang Timur IV No.52, RT.01/RW.06, Bulusan, Kec. Tembalang, Kota Semarang, Jawa Tengah 50277",
     phone: "0822-2537-9537",
     images: [
-      "/src/assets/UMKM_8/Kost_8-1.png",
-      "/src/assets/UMKM_8/Kost_8-2.png"
+      asset('UMKM_8/Kost_8-1.png'),
+      asset('UMKM_8/Kost_8-2.png')
     ],
     location: {
       lat: -7.0648381412869075,
@@ -184,12 +187,12 @@ const umkmData = [
     address: "Jl. Mulawarman III No.20A, RT.02/RW.01, Kramas, Kec. Tembalang, Kota Semarang, Jawa Tengah 50278",
     phone: "0831-2345-6789",
     images: [
-      "/src/assets/hero4.jpg",
-      "/src/assets/hero4.jpg"
+      asset('hero4.jpg'),
+      asset('hero4.jpg')
     ],
     location: {
-      lat: -7.0567,
-      lng: 110.4387,
+      lat: -7.068753114366359,
+      lng: 110.43773165418627
     },
     rating: 4.7,
     jamOperasional: "24 Jam",
@@ -203,12 +206,12 @@ const umkmData = [
     address: "Jl. Mulawarman V No.12, Bulusan, Kec. Tembalang, Kota Semarang, Jawa Tengah 50278",
     phone: "-",
     images: [
-      "/src/assets/hero4.jpg",
-      "/src/assets/hero4.jpg"
+      asset('hero4.jpg'),
+      asset('hero4.jpg')
     ],
     location: {
-      lat: -6.1862,
-      lng: 106.7987
+      lat: -7.0673515611971585,
+      lng: 110.43962833068896
     },
     rating: 4.3,
     jamOperasional: "07.30 am - 04.30 pm",
@@ -222,12 +225,12 @@ const umkmData = [
     address: "Jl. Bulusan IV, Bulusan, Kec. Tembalang, Kota Semarang, Jawa Tengah 50277",
     phone: "085187507018",
     images: [
-      "/src/assets/hero4.jpg",
-      "/src/assets/hero4.jpg"
+      asset('hero4.jpg'),
+      asset('hero4.jpg')
     ],
     location: {
-      lat: -6.2897,
-      lng: 106.7891,
+      lat: -7.059708300582209,
+      lng: 110.44695505188217
     },
     rating: 4.8,
     jamOperasional: "08.00 am - 08.00 pm",
@@ -241,13 +244,13 @@ const umkmData = [
     address: "Jl. Mulawarman Raya No.51, Kramas, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50268",
     phone: "082322991258",
     images: [
-      "/src/assets/UMKM_12/Jasa_12-2.png",
-      "/src/assets/UMKM_12/Jasa_12-1.png",
-      "/src/assets/UMKM_12/Jasa_12-3.png"
+      asset('UMKM_12/Jasa_12-2.png'),
+      asset('UMKM_12/Jasa_12-1.png'),
+      asset('UMKM_12/Jasa_12-3.png')
     ],
     location: {
-      lat: -6.1521,
-      lng: 106.8789,
+      lat: -7.063784307943054,
+      lng: 110.4380991114073
     },
     rating: 4.7,
     jamOperasional: "07.00 am - 11.00 pm",

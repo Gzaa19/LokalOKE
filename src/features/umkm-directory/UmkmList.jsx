@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Filter } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useUmkmList } from '../../hooks/useUmkmList';
-import FilterPanel from './components/FilterPanel';
-import ListingHeader from './components/ListingHeader';
-import SearchSummary from './components/SearchSummary';
-import EmptyState from './components/EmptyState';
-import UmkmCardGrid from './components/UmkmCardGrid';
+import FilterPanel from '../../components/ui/FilterPanel';
+import ListingHeader from '../../components/ui/ListingHeader';
+import SearchSummary from '../../components/ui/SearchSummary';
+import EmptyState from '../../components/ui/EmptyState';
+import UmkmCardGrid from '../../components/ui/UmkmCardGrid';
 
 const UmkmList = ({ hoveredCard, setHoveredCard }) => {
   const {
@@ -135,6 +135,12 @@ const UmkmList = ({ hoveredCard, setHoveredCard }) => {
     max: formatCurrency(priceRangeLimits.max)
   };
 
+  // Header should indicate search context when query or any filter is active
+  const isFilteringActive =
+    selectedCategory !== 'Semua' ||
+    selectedPriceRange[0] > priceRangeLimits.min ||
+    selectedPriceRange[1] < priceRangeLimits.max;
+
   const filterPanelProps = {
     categories,
     selectedCategory,
@@ -156,7 +162,7 @@ const UmkmList = ({ hoveredCard, setHoveredCard }) => {
       transition={{ duration: 0.5, ease: 'easeOut' }}
     >
       <div className="w-full px-8 xl:px-16">
-        <ListingHeader hasQuery={Boolean(searchQuery)} />
+        <ListingHeader hasQuery={Boolean(searchQuery) || isFilteringActive} />
 
         <SearchSummary count={filteredUMKM.length} query={searchQuery} />
 

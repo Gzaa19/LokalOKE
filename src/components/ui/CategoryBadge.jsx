@@ -1,10 +1,8 @@
 import React from 'react';
-// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { Home, ShoppingBag, Utensils, Wrench } from 'lucide-react';
 
 const CategoryBadge = ({ category, isVisible = false, delay = 0 }) => {
-  // Color palette untuk setiap kategori
   const categoryConfig = {
     'Kost': {
       color: 'white',

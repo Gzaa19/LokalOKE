@@ -87,7 +87,7 @@ const Navbar = () => {
                         <span className="font-russo text-sky-800 text-2xl md:text-3xl tracking-wide drop-shadow-sm transition-all duration-500" aria-label="LokalOKE">{brandText}</span>
                     </div>
 
-                    <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center">
+                    <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center">
                         <div className="bg-white/80 border-white/50 shadow-sm backdrop-blur-sm rounded-full md:px-2 lg:px-3 md:py-1.5 lg:py-2 flex items-center md:space-x-1 lg:space-x-2 whitespace-nowrap transition-all duration-300">
                             {NAV_LINKS.map(({ path, label }) => {
                                 const isActive = location.pathname === path;
@@ -111,7 +111,7 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    <div className="hidden md:flex items-center gap-2">
+                    <div className="hidden lg:flex items-center gap-2">
                         <div className="relative flex items-center">
                             <button
                                 className="px-3 py-2 rounded-full text-white font-semibold text-sm bg-linear-to-r from-sky-700 to-sky-900 transition-all hover:from-sky-800 hover:to-sky-950 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-white/40"
@@ -124,12 +124,14 @@ const Navbar = () => {
                             <div className={`absolute left-1/2 -translate-x-1/2 -ml-40 top-full mt-5 z-50 transition-all duration-300 ${isSearchOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
                                 <form onSubmit={handleSearchSubmit}>
                                     <div className="flex items-center bg-white/95 border border-white/40 rounded-xl shadow-lg px-3 py-2 w-[min(85vw,24rem)] max-w-sm">
+                                        <label htmlFor="navbar-search-desktop" className="sr-only">Cari UMKM</label>
                                         <input
+                                            id="navbar-search-desktop"
+                                            name="search"
                                             type="text"
                                             value={searchQuery}
                                             onChange={handleSearchChange}
                                             placeholder="Temukan UMKM di LOKALOKE....."
-                                            aria-label="Search input"
                                             className="flex-1 rounded-md px-2 py-2 text-sm outline-none bg-transparent text-slate-900"
                                         />
                                         <button type="submit" className="ml-2 px-3 py-2 rounded-lg text-white font-semibold text-sm bg-linear-to-r from-sky-700 to-sky-900 transition-all hover:from-sky-800 hover:to-sky-950">
@@ -141,7 +143,7 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    <div className="md:hidden flex items-center gap-2">
+                    <div className="flex md:flex lg:hidden items-center gap-2">
                         <div className="relative">
                             <button
                                 className="px-3 py-2 rounded-full text-white font-semibold text-sm bg-linear-to-r from-sky-700 to-sky-900 transition-all hover:from-sky-800 hover:to-sky-950 hover:shadow-md"
@@ -151,15 +153,17 @@ const Navbar = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35m1.35-5.65a7 7 0 11-14 0 7 7 0 0114 0z" />
                                 </svg>
                             </button>
-                            <div className={`absolute left-1/2 -translate-x-1/2 -ml-32 top-full mt-5 z-50 transition-all duration-300 md:hidden ${isSearchOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
+                            <div className={`absolute left-1/2 -translate-x-1/2 -ml-32 top-full mt-5 z-50 transition-all duration-300 lg:hidden ${isSearchOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
                                 <form onSubmit={handleSearchSubmit}>
                                     <div className="flex items-center bg-white/95 border border-white/40 rounded-xl shadow-lg px-3 py-2 w-[min(85vw,20rem)] max-w-xs mx-2">
+                                        <label htmlFor="navbar-search-mobile" className="sr-only">Cari UMKM</label>
                                         <input
+                                            id="navbar-search-mobile"
+                                            name="search"
                                             type="text"
                                             value={searchQuery}
                                             onChange={handleSearchChange}
                                             placeholder="Temukan UMKM di LOKALOKE....."
-                                            aria-label="Search input"
                                             className="flex-1 rounded-md px-2 py-2 text-sm outline-none bg-transparent text-slate-900"
                                         />
                                         <button type="submit" className="ml-2 px-3 py-2 rounded-lg text-white font-semibold text-sm bg-linear-to-r from-sky-700 to-sky-900 transition-all hover:from-sky-800 hover:to-sky-950">
@@ -189,10 +193,9 @@ const Navbar = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -14 }}
                         transition={{ duration: 0.25, ease: 'easeOut' }}
-                        className="md:hidden fixed top-16 left-0 right-0 z-40"
+                        className="lg:hidden fixed top-16 left-0 right-0 z-40"
                     >
                         <div className="px-4 pt-3 pb-4 space-y-2 backdrop-blur-xl transition-all duration-700 bg-white/90 border-t border-white/40 shadow-lg">
-                            {/* Stagger each link so the mobile menu reveals items sequentially */}
                             {NAV_LINKS.map(({ path, label }, index) => {
                                 const isActive = location.pathname === path;
                                 return (
@@ -226,5 +229,4 @@ const Navbar = () => {
         </nav>
     );
 };
-
 export default Navbar;

@@ -15,7 +15,6 @@ export default function BusinessRegister() {
             className="min-h-screen py-16 px-4"
         >
             <div className="max-w-7xl mx-auto">
-                {/* Header Section */}
                 <div className="text-center mb-16">
                     <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mt-10 mb-6">
                         Daftarkan <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-blue-600">Bisnis Anda!</span>
@@ -26,7 +25,6 @@ export default function BusinessRegister() {
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-12 items-start">
-                    {/* Info Section */}
                     <div className="space-y-8">
                         <div className="bg-white rounded-2xl p-8 shadow-xl border border-slate-100">
                             <h2 className="text-2xl font-bold text-slate-900 mb-6">Mengapa Bergabung dengan LokalOKE?</h2>
@@ -75,10 +73,11 @@ export default function BusinessRegister() {
 
                         <form onSubmit={onSubmit} className="space-y-6">
                             <div>
-                                <label className="block text-sm font-semibold text-slate-700 mb-2">
+                                <label htmlFor="business-name" className="block text-sm font-semibold text-slate-700 mb-2">
                                     Nama UMKM <span className="text-red-500">*</span>
                                 </label>
                                 <input 
+                                    id='business-name'
                                     type='text' 
                                     name='businessName'
                                     placeholder='Contoh: Warung Makan Bu Sari'
@@ -88,10 +87,11 @@ export default function BusinessRegister() {
                             </div>
                             
                             <div>
-                                <label className="block text-sm font-semibold text-slate-700 mb-2">
+                                <label htmlFor="business-category" className="block text-sm font-semibold text-slate-700 mb-2">
                                     Kategori Bisnis <span className="text-red-500">*</span>
                                 </label>
                                 <select 
+                                    id='business-category'
                                     name='category'
                                     className="w-full text-slate-900 rounded-xl py-3 px-4 border-2 border-slate-200 text-sm outline-none focus:border-sky-500 focus:ring-4 focus:ring-sky-100 transition-all duration-200 bg-slate-50 focus:bg-white" 
                                     required
@@ -104,10 +104,11 @@ export default function BusinessRegister() {
                             </div>
                             
                             <div>
-                                <label className="block text-sm font-semibold text-slate-700 mb-2">
+                                <label htmlFor="business-address" className="block text-sm font-semibold text-slate-700 mb-2">
                                     Alamat / Lokasi <span className="text-red-500">*</span>
                                 </label>
                                 <textarea 
+                                    id='business-address'
                                     name='address'
                                     placeholder='Contoh: Jl. Mulawarman No. 123, Tembalang, Semarang' 
                                     rows="3"
@@ -117,10 +118,11 @@ export default function BusinessRegister() {
                             </div>
                             
                             <div>
-                                <label className="block text-sm font-semibold text-slate-700 mb-2">
+                                <label htmlFor="business-phone" className="block text-sm font-semibold text-slate-700 mb-2">
                                     Nomor Telepon / WhatsApp <span className="text-red-500">*</span>
                                 </label>
                                 <input 
+                                    id='business-phone'
                                     type='tel' 
                                     name='phone'
                                     placeholder='Contoh: 0812-3456-7890'

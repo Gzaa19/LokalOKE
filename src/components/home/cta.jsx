@@ -47,7 +47,6 @@ const CTA = () => {
           className="flex flex-col items-center justify-center text-center rounded-xl sm:rounded-2xl py-12 sm:py-16 md:py-20 lg:py-24 px-6 sm:px-8 md:px-12 lg:px-16 w-full bg-[url('https://images.unsplash.com/photo-1633259584604-afdc243122ea?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170')] bg-cover bg-center bg-no-repeat relative"
           variants={itemVariants}
         >
-          {/* Overlay untuk meningkatkan kontras teks */}
           <div className="absolute inset-0 bg-black/40 rounded-xl sm:rounded-2xl"></div>
           
           <motion.h1

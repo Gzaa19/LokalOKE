@@ -14,7 +14,6 @@ export const useNewsletter = () => {
     setResult("");
     setShowPopup(false);
 
-    // Create form data for Web3Forms API
     const formData = new FormData();
     formData.append("access_key", "69a48724-faef-4053-814c-59c73b649b3c");
     formData.append("email", email);
@@ -41,7 +40,7 @@ Terima kasih!`);
 
       if (data.success) {
         setResult("Berhasil berlangganan! Terima kasih telah bergabung dengan komunitas LokalOKE.");
-        setEmail(''); // Reset email setelah berhasil
+        setEmail('');
       } else {
         setResult("Terjadi kesalahan saat berlangganan. Silakan coba lagi.");
       }
@@ -62,7 +61,6 @@ Terima kasih!`);
     setResult("");
   };
 
-  // Auto-close popup after 4 seconds
   useEffect(() => {
     if (showPopup && result) {
       const timer = setTimeout(() => {
@@ -74,13 +72,10 @@ Terima kasih!`);
   }, [showPopup, result]);
 
   return {
-    // State
     email,
     result,
     isSubmitting,
     showPopup,
-    
-    // Actions
     handleSubscribe,
     handleEmailChange,
     closePopup

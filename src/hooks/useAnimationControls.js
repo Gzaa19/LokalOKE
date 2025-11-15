@@ -1,16 +1,5 @@
 import { useAnimation, useInView } from 'framer-motion';
 import { useRef, useEffect, useState, useCallback } from 'react';
-
-/**
- * useAnimationControls - Hook untuk kontrol animasi yang kompleks
- * 
- * @param {object} options - Konfigurasi animasi
- * @param {boolean} options.triggerOnce - Apakah animasi hanya dipicu sekali
- * @param {number} options.threshold - Threshold untuk intersection observer
- * @param {number} options.delay - Delay sebelum animasi dimulai
- * @param {function} options.onStart - Callback saat animasi dimulai
- * @param {function} options.onComplete - Callback saat animasi selesai
- */
 export const useAnimationControls = (options = {}) => {
   const {
     triggerOnce = true,
@@ -29,7 +18,6 @@ export const useAnimationControls = (options = {}) => {
   
   const [animationState, setAnimationState] = useState('idle');
 
-  // Trigger animasi saat element masuk viewport
   useEffect(() => {
     if (isInView) {
       const timer = setTimeout(() => {
@@ -46,7 +34,6 @@ export const useAnimationControls = (options = {}) => {
     }
   }, [isInView, controls, delay, onStart, onComplete]);
 
-  // Method untuk kontrol manual
   const startAnimation = useCallback((variants) => {
     setAnimationState('animating');
     onStart?.();
@@ -78,13 +65,6 @@ export const useAnimationControls = (options = {}) => {
   };
 };
 
-/**
- * useScrollAnimation - Hook untuk animasi berdasarkan scroll
- * 
- * @param {object} options - Konfigurasi scroll animation
- * @param {number} options.offset - Offset dari viewport
- * @param {boolean} options.smooth - Apakah menggunakan smooth scrolling
- */
 export const useScrollAnimation = (options = {}) => {
   const { smooth = true } = options;
   const [scrollY, setScrollY] = useState(0);
@@ -100,14 +80,13 @@ export const useScrollAnimation = (options = {}) => {
     };
 
     const throttledHandleScroll = smooth 
-      ? throttle(handleScroll, 16) // ~60fps
+      ? throttle(handleScroll, 16)
       : handleScroll;
 
     window.addEventListener('scroll', throttledHandleScroll);
     return () => window.removeEventListener('scroll', throttledHandleScroll);
   }, [smooth]);
 
-  // Helper function untuk scroll ke element
   const scrollToElement = useCallback((elementId, behavior = 'smooth') => {
     const element = document.getElementById(elementId);
     if (element) {
@@ -122,12 +101,6 @@ export const useScrollAnimation = (options = {}) => {
   };
 };
 
-/**
- * useSequentialAnimation - Hook untuk animasi berurutan
- * 
- * @param {Array} animations - Array konfigurasi animasi
- * @param {object} options - Opsi tambahan
- */
 export const useSequentialAnimation = (animations = [], options = {}) => {
   const { autoStart = false, loop = false } = options;
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -178,12 +151,6 @@ export const useSequentialAnimation = (animations = [], options = {}) => {
   };
 };
 
-/**
- * useHoverAnimation - Hook untuk animasi hover yang kompleks
- * 
- * @param {object} hoverVariants - Variants untuk hover state
- * @param {object} options - Opsi tambahan
- */
 export const useHoverAnimation = (hoverVariants = {}, options = {}) => {
   const { delay = 0, duration = 0.3 } = options;
   const [isHovered, setIsHovered] = useState(false);
@@ -215,12 +182,6 @@ export const useHoverAnimation = (hoverVariants = {}, options = {}) => {
   };
 };
 
-/**
- * useStaggerAnimation - Hook untuk stagger animation
- * 
- * @param {number} itemCount - Jumlah item yang akan di-animate
- * @param {object} options - Opsi stagger
- */
 export const useStaggerAnimation = (itemCount, options = {}) => {
   const { 
     staggerDelay = 0.1, 
@@ -266,7 +227,6 @@ export const useStaggerAnimation = (itemCount, options = {}) => {
   };
 };
 
-// Utility function untuk throttling
 function throttle(func, limit) {
   let inThrottle;
   return function() {

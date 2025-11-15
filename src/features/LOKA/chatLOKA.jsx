@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Send, Bot, User, Loader2, MessageCircle, X } from 'lucide-react';
 import { useChatBot } from '../../hooks/useChatLOKA.js';
 import AnimatedContainer from '../../components/ui/Container';
+import Input from '../../components/ui/Input.jsx';
+import AnimatedButton from '../../components/ui/Button.jsx';
 
 export default function ChatLOKA() {
   const { messages, isLoading, handleSend } = useChatBot();
@@ -35,38 +37,27 @@ export default function ChatLOKA() {
 
   return (
     <>
-      {/* Floating Chat Bubble Button */}
       <button
         aria-label="Buka LOKA Chat"
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-50 rounded-full p-4 shadow-xl bg-gradient-to-r from-sky-500 to-blue-600 text-white hover:from-sky-600 hover:to-blue-700 transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-sky-200"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 rounded-full p-3 sm:p-4 shadow-xl bg-gradient-to-r from-sky-700 to-sky-900 text-white hover:from-sky-800 hover:to-sky-950 transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-sky-200"
       >
-        <MessageCircle className="w-7 h-7" />
+        <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7" />
       </button>
 
-      {/* Popup Modal */}
       {isOpen && (
-        <div className="fixed inset-0 z-50">
-          {/* Overlay */}
-          <div
-            className="absolute inset-0 bg-black/40"
-            onClick={() => setIsOpen(false)}
-          />
-
-          {/* Chat Window */}
           <AnimatedContainer
             variant="fadeIn"
-            className="absolute bottom-20 right-6 w-[360px] sm:w-[420px] bg-white rounded-2xl shadow-2xl border border-sky-100 overflow-hidden"
+            className="fixed bottom-24 sm:bottom-20 right-2 sm:right-6 z-[9999] w-[88vw] sm:w-[360px] bg-white/95 rounded-2xl shadow-2xl border border-sky-100 overflow-hidden"
           >
-            {/* Header */}
-            <div className="flex items-center justify-between px-4 py-3 border-b border-sky-100 bg-gradient-to-r from-sky-50 to-blue-50">
+            <div className="flex items-center justify-between px-3 py-2 sm:px-4 sm:py-3 border-b border-sky-100 bg-white/80">
               <div className="flex items-center gap-2">
-                <div className="bg-gradient-to-r from-sky-500 to-blue-600 p-2 rounded-full">
+                <div className="bg-gradient-to-r from-sky-700 to-sky-900 p-2 rounded-full">
                   <Bot className="w-5 h-5 text-white" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-sm font-semibold text-sky-900">LOKA Assistant</span>
-                  <span className="text-xs text-sky-600">Online • Siap membantu</span>
+                  <span className="text-xs sm:text-sm font-semibold text-sky-900">LOKA Assistant</span>
+                  <span className="text-[11px] sm:text-xs text-sky-700">Online • Siap membantu</span>
                 </div>
               </div>
               <button
@@ -78,25 +69,24 @@ export default function ChatLOKA() {
               </button>
             </div>
 
-            {/* Messages Area */}
-            <div className="max-h-[55vh] h-[300px] overflow-y-auto p-4 space-y-4 bg-white">
-              {messages.map((message) => (
-                <div
-                  key={message.id}
-                  className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+            <div className="max-h-[60vh] h-[42vh] sm:h-[280px] overflow-y-auto p-3 sm:p-3 space-y-3 sm:space-y-3 bg-white/90">
+                {messages.map((message) => (
+                  <div
+                    key={message.id}
+                    className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-[80%] px-4 py-3 rounded-2xl ${
+                    className={`max-w-[82%] sm:max-w-[76%] px-3 py-2.5 sm:px-3 sm:py-2.5 rounded-2xl ${
                       message.sender === 'user'
-                        ? 'bg-gradient-to-r from-sky-500 to-blue-600 text-white'
-                        : 'bg-sky-100 text-sky-900 border border-sky-200'
+                        ? 'bg-gradient-to-r from-sky-700 to-sky-900 text-white'
+                        : 'bg-sky-100 text-sky-900 border border-sky-300'
                     }`}
                   >
                     <div className="flex items-start gap-2">
                       {message.sender === 'bot' && (
-                        <Bot className="w-4 h-4 mt-1 text-sky-600 flex-shrink-0" />
+                        <Bot className="w-4 h-4 mt-1 text-sky-700 flex-shrink-0" />
                       )}
-                      <p className="text-sm leading-relaxed">{message.text}</p>
+                      <p className="text-[12px] sm:text-[13px] leading-relaxed">{message.text}</p>
                       {message.sender === 'user' && (
                         <User className="w-4 h-4 mt-1 text-white/80 flex-shrink-0" />
                       )}
@@ -107,10 +97,14 @@ export default function ChatLOKA() {
 
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="bg-sky-100 text-sky-900 border border-sky-200 px-4 py-3 rounded-2xl max-w-[70%]">
+                  <div className="bg-sky-100 text-sky-900 border border-sky-300 px-3 py-2.5 rounded-2xl max-w-[60%]">
                     <div className="flex items-center gap-2">
-                      <Loader2 className="w-4 h-4 animate-spin text-sky-600" />
-                      <p className="text-sm">LOKA sedang mengetik...</p>
+                      <Bot className="w-4 h-4 text-sky-700" />
+                      <div className="typing-dots" aria-label="Bot sedang mengetik">
+                        <span className="typing-dot" />
+                        <span className="typing-dot" />
+                        <span className="typing-dot" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -119,31 +113,38 @@ export default function ChatLOKA() {
               <div ref={messagesEndRef} />
             </div>
 
-            {/* Input Area */}
-            <div className="border-t border-sky-200 p-3 bg-sky-50">
-              <form onSubmit={handleSubmit} className="flex gap-2">
-                <input
-                  type="text"
-                  value={inputMessage}
-                  onChange={(e) => setInputMessage(e.target.value)}
-                  placeholder="Tanyakan sesuatu tentang UMKM..."
-                  className="flex-1 px-3 py-2.5 rounded-xl border border-sky-300 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent text-sky-900 placeholder-sky-400"
-                  disabled={isLoading}
-                />
-                <button
+            <div className="border-t border-sky-200 p-2.5 sm:p-3 bg-sky-50/90">
+              <form onSubmit={handleSubmit} className="flex gap-2 items-center">
+                <div className="flex-1">
+                  <label htmlFor="loka-chat-input" className="sr-only">Pesan</label>
+                  <Input
+                    id="loka-chat-input"
+                    type="text"
+                    value={inputMessage}
+                    onChange={(e) => setInputMessage(e.target.value)}
+                    placeholder="Tanyakan sesuatu tentang UMKM..."
+                    disabled={isLoading}
+                    size="medium"
+                    variant="default"
+                    className="w-full bg-white/90 border-sky-300 focus:ring-sky-700 focus:border-sky-700 text-sky-900 placeholder-sky-500"
+                  />
+                </div>
+                <AnimatedButton
                   type="submit"
+                  color="primary"
+                  size="md"
+                  variant="bounce"
                   disabled={isLoading || !inputMessage.trim()}
-                  className="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 disabled:from-sky-300 disabled:to-blue-400 text-white px-4 py-2.5 rounded-xl transition-all duration-200 disabled:cursor-not-allowed flex items-center justify-center"
+                  className="rounded-xl px-3 sm:px-4 py-2"
                 >
                   {isLoading ? (
                     <Loader2 className="w-5 h-5 animate-spin" />
                   ) : (
                     <Send className="w-5 h-5" />
                   )}
-                </button>
+                </AnimatedButton>
               </form>
 
-              {/* Quick Suggestions */}
               <div className="mt-3 flex flex-wrap gap-2">
                 {suggestions.map((suggestion, index) => (
                   <button
@@ -155,7 +156,7 @@ export default function ChatLOKA() {
                         setInputMessage('');
                       }, 100);
                     }}
-                    className="bg-white text-sky-700 border border-sky-300 hover:border-sky-500 px-3 py-1.5 rounded-xl text-xs transition-all duration-200 hover:shadow-sm"
+                    className="bg-white/90 text-sky-800 border border-sky-300 hover:border-sky-600 px-2.5 sm:px-3 py-1.5 rounded-xl text-[11px] sm:text-xs transition-all duration-200 hover:shadow-sm"
                     disabled={isLoading}
                   >
                     {suggestion}
@@ -164,7 +165,6 @@ export default function ChatLOKA() {
               </div>
             </div>
           </AnimatedContainer>
-        </div>
       )}
     </>
   );

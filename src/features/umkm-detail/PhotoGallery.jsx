@@ -12,14 +12,12 @@ const PhotoGallery = ({
 }) => {
   const { getResponsiveClasses } = useResponsiveDesign();
 
-  // Tetapkan tinggi galeri agar konsisten di semua gambar dan breakpoint
   const galleryHeightClasses = getResponsiveClasses({
     default: "h-[400px]",
     sm: "h-[500px]",
     lg: "h-[625px]"
   });
 
-  // Responsive button positioning and size
   const buttonClasses = getResponsiveClasses({
     default: "absolute top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-1.5 rounded-full hover:bg-opacity-70 transition-all z-10",
     sm: "absolute top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-1.5 sm:p-2 rounded-full hover:bg-opacity-70 transition-all z-10"
@@ -49,33 +47,26 @@ const PhotoGallery = ({
     <div className={`relative w-full ${galleryHeightClasses} bg-gray-100 rounded-t-3xl lg:rounded-l-3xl lg:rounded-r-none lg:rounded-t-3xl overflow-hidden`}>
       {images && images.length > 0 ? (
         <>
-          {/* Gambar utama */}
           <img
             src={images[currentImageIndex]}
             alt={`${name} - ${currentImageIndex + 1}`}
             className="w-full h-full object-cover"
           />
 
-          {/* Tombol navigasi - hanya tampil jika ada lebih dari 1 gambar */}
           {images.length > 1 && (
             <>
-              {/* Tombol Previous */}
               <button
                 onClick={prevImage}
                 className={`${buttonClasses} ${leftButtonPosition}`}
               >
                 <ChevronLeft className={iconSize} />
               </button>
-
-              {/* Tombol Next */}
               <button
                 onClick={nextImage}
                 className={`${buttonClasses} ${rightButtonPosition}`}
               >
                 <ChevronRight className={iconSize} />
               </button>
-
-              {/* Indikator */}
               <div className={`flex items-center justify-center gap-3 absolute ${indicatorPosition} left-0 right-0 mx-auto z-10`}>
                 {images.map((_, index) => (
                   <div

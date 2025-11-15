@@ -86,7 +86,6 @@ const UmkmCard = ({
         state={{ from: location.pathname }}
         className="w-full mt-auto"
         onClick={() => {
-          // Simpan path saat ini ke localStorage sebagai backup
           localStorage.setItem('previousPath', location.pathname);
         }}
       >

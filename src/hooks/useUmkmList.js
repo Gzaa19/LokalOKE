@@ -1,6 +1,6 @@
-import { useState, useMemo } from "react";
-import { useSearchParams } from "react-router-dom";
-import { umkmData, categories } from "../Data/umkm";
+import { useState, useMemo } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { umkmData, categories } from '../Data/umkm';
 
 const PRICE_STEP = 1000;
 
@@ -9,13 +9,13 @@ const parsePriceRange = (priceRange) => {
     return { min: 0, max: 0 };
   }
 
-  const matches = priceRange.match(/\d[\d\.\,]*/g);
+  const matches = priceRange.match(/\d[\d\.,]*/g);
   if (!matches) {
     return { min: 0, max: 0 };
   }
 
   const values = matches
-    .map((value) => Number(value.replace(/[\.\,]/g, "")))
+    .map((value) => Number(value.replace(/[\.,]/g, '')))
     .filter((value) => Number.isFinite(value));
 
   if (!values.length) {
@@ -24,12 +24,12 @@ const parsePriceRange = (priceRange) => {
 
   return {
     min: Math.min(...values),
-    max: Math.max(...values)
+    max: Math.max(...values),
   };
 };
 
 export const useUmkmList = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Semua");
+  const [selectedCategory, setSelectedCategory] = useState('Semua');
   const [searchParams] = useSearchParams();
   const searchQuery = searchParams.get('search') || '';
 
@@ -44,7 +44,7 @@ export const useUmkmList = () => {
       return {
         ...umkm,
         priceMin: min,
-        priceMax: max
+        priceMax: max,
       };
     });
 
@@ -55,31 +55,27 @@ export const useUmkmList = () => {
     return {
       list,
       minPrice: globalMin === Number.POSITIVE_INFINITY ? 0 : globalMin,
-      maxPrice: globalMax
+      maxPrice: globalMax,
     };
   }, []);
 
   const [selectedPriceRange, setSelectedPriceRange] = useState(() => [minPrice, maxPrice]);
 
-  // Filter UMKM berdasarkan kategori dan pencarian
   const filteredUMKM = umkmWithPrice.filter((umkm) => {
-    // Filter berdasarkan kategori
-    const categoryMatch = selectedCategory === "Semua" ||
-      (selectedCategory === "Kuliner" && ['Makanan', 'Kedai Kopi', 'Minuman'].includes(umkm.category)) ||
-      (selectedCategory === "Jasa" && umkm.category === 'Jasa') ||
-      (selectedCategory === "Kos" && umkm.category === 'Kost') ||
+    const categoryMatch =
+      selectedCategory === 'Semua' ||
+      (selectedCategory === 'Kuliner' && ['Makanan', 'Kedai Kopi', 'Minuman'].includes(umkm.category)) ||
+      (selectedCategory === 'Jasa' && umkm.category === 'Jasa') ||
+      (selectedCategory === 'Kos' && ['kost', 'kos'].includes((umkm.category || '').toLowerCase())) ||
       umkm.category.toLowerCase() === selectedCategory.toLowerCase();
 
-    // Filter berdasarkan pencarian
-    const searchMatch = !searchQuery || 
-      umkm.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      umkm.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      umkm.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (umkm.description && umkm.description.toLowerCase().includes(searchQuery.toLowerCase()));
+    const searchMatch =
+      !searchQuery || umkm.name.toLowerCase().includes(searchQuery.toLowerCase());
 
-    const priceMatch = umkm.priceMax === 0 && umkm.priceMin === 0
-      ? true
-      : (umkm.priceMax >= selectedPriceRange[0] && umkm.priceMin <= selectedPriceRange[1]);
+    const priceMatch =
+      umkm.priceMax === 0 && umkm.priceMin === 0
+        ? true
+        : umkm.priceMax >= selectedPriceRange[0] && umkm.priceMin <= selectedPriceRange[1];
 
     return categoryMatch && searchMatch && priceMatch;
   });
@@ -95,7 +91,10 @@ export const useUmkmList = () => {
 
     if (safeMax - safeMin < PRICE_STEP) {
       const midpoint = safeMin + (safeMax - safeMin) / 2;
-      const adjustedMin = Math.max(minPrice, Math.floor((midpoint - PRICE_STEP / 2) / PRICE_STEP) * PRICE_STEP);
+      const adjustedMin = Math.max(
+        minPrice,
+        Math.floor((midpoint - PRICE_STEP / 2) / PRICE_STEP) * PRICE_STEP,
+      );
       const adjustedMax = Math.min(maxPrice, adjustedMin + PRICE_STEP);
       setSelectedPriceRange([adjustedMin, adjustedMax]);
       return;
@@ -105,19 +104,16 @@ export const useUmkmList = () => {
   };
 
   return {
-    // State
     selectedCategory,
     selectedPriceRange,
     searchQuery,
 
-    // Computed values
     filteredUMKM,
     categories,
     priceRangeLimits: { min: minPrice, max: maxPrice },
     priceStep: PRICE_STEP,
 
-    // Actions
     handleCategoryChange,
-    handlePriceRangeChange
+    handlePriceRangeChange,
   };
 };
