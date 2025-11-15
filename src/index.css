@@ -14,6 +14,10 @@
   font-family: 'Russo One', sans-serif;
 }
 
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
 /* Prevent horizontal overflow globally - but allow flexible widths */
 *, *::before, *::after {
   box-sizing: border-box;
