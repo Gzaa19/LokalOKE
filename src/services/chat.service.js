@@ -26,7 +26,6 @@ export async function sendMessageToBot(userMessage) {
       if (lower.includes('daftar')) {
         return "Isi formulir pada halaman 'Daftar Bisnis' untuk memulai.";
       }
-      // Jawaban diarahkan ke penjelasan di content section Features pada beranda
       if ((lower.includes('keuntungan') || lower.includes('manfaat')) && (lower.includes('lokaloke') || lower.includes('lokal oke') || lower.includes('bergabung'))) {
         return 'Lokasi OKE: Temukan UMKM terdekat dengan mudah. Lihat lokasi pasti, jarak, dan rute terbaik untuk sampai ke tempat yang Anda inginkan Info Lengkap di sini.';
       }
