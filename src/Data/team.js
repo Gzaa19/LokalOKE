@@ -6,15 +6,15 @@ export const teamMembers = [
     role: 'Web Development',
     imgSrc: asset('gjaaa.jpg'),
     github: 'https://github.com/Gzaa19',
-    linkedin: 'https://linkedin.com/in/gazaalghozali',
-    instagram: 'https://instagram.com/gazaalghozali',
+    linkedin: 'https://www.linkedin.com/in/gazaalghozali',
+    instagram: 'https://www.instagram.com/gazaalghozali',
   },
   {
     name: 'Fariq Faqy Rozzaqy',
     role: 'Web Development',
     imgSrc: asset('Fariq.jpg'),
     github: 'https://github.com/fariqfaqy',
-    linkedin: 'https://linkedin.com/in/fariqfqy',
+    linkedin: 'https://www.linkedin.com/in/fariq-faqy-b6208433b/',
     instagram: 'https://www.instagram.com/zzaqy._/',
   },
   {
@@ -22,7 +22,7 @@ export const teamMembers = [
     role: 'Web Development',
     imgSrc: asset('Fauzan.jpg'),
     github: 'https://github.com/FauzanHadi44',
-    linkedin: 'https://linkedin.com/in/fauzanhadii/',
-    instagram: 'https://instagram.com/fauzanhadiiiii/',
+    linkedin: 'https://www.linkedin.com/in/fauzanhadii/',
+    instagram: 'https://www.instagram.com/fauzanhadiiiii/',
   }
 ];
