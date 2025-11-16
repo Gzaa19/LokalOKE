@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, Star } from 'lucide-react';
 import AnimatedCard from '../ui/Card';
@@ -11,6 +11,35 @@ const UmkmCard = ({
   onMouseLeave 
 }) => {
   const location = useLocation();
+  const [supportsHover, setSupportsHover] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+    const updateHoverSupport = (event) => {
+      setSupportsHover(event.matches);
+    };
+
+    setSupportsHover(mediaQuery.matches);
+
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', updateHoverSupport);
+    } else if (typeof mediaQuery.addListener === 'function') {
+      mediaQuery.addListener(updateHoverSupport);
+    }
+
+    return () => {
+      if (typeof mediaQuery.removeEventListener === 'function') {
+        mediaQuery.removeEventListener('change', updateHoverSupport);
+      } else if (typeof mediaQuery.removeListener === 'function') {
+        mediaQuery.removeListener(updateHoverSupport);
+      }
+    };
+  }, []);
   return (
     <AnimatedCard
       hoverEffect="lift"
@@ -100,8 +129,10 @@ const UmkmCard = ({
             rounded-br-[50px] bl rounded-tr-none rounded-tl-none cursor-pointer
             opacity-100 translate-x-0 scale-100 shadow-xl
             transition-all duration-300
-            md:pointer-events-none md:opacity-0 md:translate-x-4 md:scale-95 md:shadow-none
-            md:group-hover:pointer-events-auto md:group-hover:opacity-100 md:group-hover:translate-x-0 md:group-hover:scale-100 md:group-hover:shadow-xl
+            ${supportsHover
+              ? 'md:pointer-events-none md:opacity-0 md:translate-x-4 md:scale-95 md:shadow-none md:group-hover:pointer-events-auto md:group-hover:opacity-100 md:group-hover:translate-x-0 md:group-hover:scale-100 md:group-hover:shadow-xl'
+              : 'md:pointer-events-auto md:opacity-100 md:translate-x-0 md:scale-100 md:shadow-xl'
+            }
           `}
           aria-label={`Lihat detail untuk ${umkm.name}`}
         >

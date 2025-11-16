@@ -21,21 +21,21 @@ const UmkmList = ({ hoveredCard, setHoveredCard }) => {
     handlePriceRangeChange
   } = useUmkmList();
 
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [isWideLayout, setIsWideLayout] = useState(false);
   const [isFilterPanelOpen, setIsFilterPanelOpen] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
-      setIsDesktop(true);
+      setIsWideLayout(true);
       setIsFilterPanelOpen(true);
       return;
     }
 
-    const mediaQuery = window.matchMedia('(min-width: 1024px)');
+    const mediaQuery = window.matchMedia('(min-width: 820px)');
 
     const handleViewportChange = (event) => {
       const matches = event.matches;
-      setIsDesktop(matches);
+      setIsWideLayout(matches);
       setIsFilterPanelOpen(matches);
     };
 
@@ -121,7 +121,7 @@ const UmkmList = ({ hoveredCard, setHoveredCard }) => {
   const handleCategorySelect = (category) => {
     handleCategoryChange(category);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    if (!isDesktop) {
+    if (!isWideLayout) {
       setIsFilterPanelOpen(false);
     }
   };
@@ -167,7 +167,7 @@ const UmkmList = ({ hoveredCard, setHoveredCard }) => {
         <SearchSummary count={filteredUMKM.length} query={searchQuery} />
 
         <AnimatePresence>
-          {!isDesktop && isFilterPanelOpen && (
+          {!isWideLayout && isFilterPanelOpen && (
             <motion.aside
               key="mobile-filter"
               initial={{ x: -260, opacity: 0 }}
@@ -185,21 +185,23 @@ const UmkmList = ({ hoveredCard, setHoveredCard }) => {
           )}
         </AnimatePresence>
 
-        <div className="lg:hidden mb-4 flex px-4">
-          <button
-            type="button"
-            onClick={toggleFilterPanel}
-            className="flex h-11 w-11 items-center justify-center rounded-xl border border-sky-100 bg-white text-sky-600 shadow-md hover:bg-sky-50 transition-colors"
-            aria-expanded={isFilterPanelOpen}
-            aria-label={isFilterPanelOpen ? 'Sembunyikan filter' : 'Tampilkan filter'}
-          >
-            <Filter className="w-5 h-5" />
-          </button>
-        </div>
+        {!isWideLayout && (
+          <div className="mb-4 flex px-4">
+            <button
+              type="button"
+              onClick={toggleFilterPanel}
+              className="flex h-11 w-11 items-center justify-center rounded-xl border border-sky-100 bg-white text-sky-600 shadow-md hover:bg-sky-50 transition-colors"
+              aria-expanded={isFilterPanelOpen}
+              aria-label={isFilterPanelOpen ? 'Sembunyikan filter' : 'Tampilkan filter'}
+            >
+              <Filter className="w-5 h-5" />
+            </button>
+          </div>
+        )}
 
-        <div className="flex flex-col lg:flex-row gap-8 mb-8">
-          {isDesktop && (
-            <div className="lg:w-64">
+        <div className={`flex ${isWideLayout ? 'flex-row' : 'flex-col'} gap-8 mb-8`}>
+          {isWideLayout && (
+            <div className={isWideLayout ? 'w-64 shrink-0' : 'w-full'}>
               <FilterPanel
                 {...filterPanelProps}
                 useStickyLayout
@@ -208,7 +210,7 @@ const UmkmList = ({ hoveredCard, setHoveredCard }) => {
           )}
 
           <motion.div
-            className="lg:w-5/6 p-0"
+            className={`${isWideLayout ? 'flex-1' : 'w-full'} p-0`}
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
