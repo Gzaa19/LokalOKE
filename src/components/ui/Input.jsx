@@ -1,4 +1,4 @@
-import React, { useId } from 'react';
+import React from 'react';
 
 const Input = ({ 
   type = 'text',
@@ -37,18 +37,15 @@ const Input = ({
     : 'hover:border-gray-400';
   
   const inputClasses = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${errorClasses} ${disabledClasses} ${className}`;
-  const generatedId = useId();
-  const inputId = props.id || generatedId;
   
   return (
     <div className="w-full">
       {label && (
-        <label htmlFor={inputId} className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 mb-1">
           {label}
         </label>
       )}
       <input
-        id={inputId}
         type={type}
         placeholder={placeholder}
         value={value}

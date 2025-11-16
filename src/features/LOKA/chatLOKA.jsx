@@ -12,9 +12,8 @@ export default function ChatLOKA() {
   const messagesEndRef = useRef(null);
   const suggestions = [
     'Apa itu UMKM?',
-    'Bagaimana cara daftar UMKM di LokalOKE?',
-    'Apa keuntungan bergabung dengan LokalOKE?',
-    'Bagaimana cara meningkatkan penjualan UMKM?'
+    'Bagaimana cara daftar di LokalOKE?',
+    'Apa keuntungan bergabung di LokalOKE?',
   ];
 
   const scrollToBottom = () => {
@@ -116,9 +115,7 @@ export default function ChatLOKA() {
             <div className="border-t border-sky-200 p-2.5 sm:p-3 bg-sky-50/90">
               <form onSubmit={handleSubmit} className="flex gap-2 items-center">
                 <div className="flex-1">
-                  <label htmlFor="loka-chat-input" className="sr-only">Pesan</label>
                   <Input
-                    id="loka-chat-input"
                     type="text"
                     value={inputMessage}
                     onChange={(e) => setInputMessage(e.target.value)}

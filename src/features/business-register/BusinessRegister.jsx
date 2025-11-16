@@ -1,5 +1,5 @@
 import React from 'react';
-import { Store, MapPin, Phone, Send, Building2 } from 'lucide-react';
+import { MapPin, Info ,Star, Send, Search } from 'lucide-react';
 import AnimatedContainer from '../../components/ui/Container';
 import { categories } from '../../Data/umkm';
 import { useBusinessRegister } from '../../hooks/useBusinessRegister';
@@ -32,31 +32,41 @@ export default function BusinessRegister() {
                             <div className="space-y-6">
                                 <div className="flex items-start group">
                                     <div className="bg-gradient-to-br from-sky-500 to-blue-600 h-12 w-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-200">
-                                        <Store className="w-6 h-6 text-white" />
+                                        <MapPin className="w-6 h-6 text-white" />
                                     </div>
                                     <div className="ml-4">
-                                        <h3 className="font-semibold text-slate-900">Jangkauan Lebih Luas</h3>
-                                        <p className="text-slate-600">Tampilkan bisnis Anda kepada ribuan calon pelanggan di platform kami</p>
+                                        <h3 className="font-semibold text-slate-900">Lokasi OKE</h3>
+                                        <p className="text-slate-600">Temukan UMKM terdekat dengan mudah.</p>
                                     </div>
                                 </div>
 
                                 <div className="flex items-start group">
                                     <div className="bg-gradient-to-br from-purple-500 to-indigo-600 h-12 w-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-200">
-                                        <MapPin className="w-6 h-6 text-white" />
+                                        <Info className="w-6 h-6 text-white" />
                                     </div>
                                     <div className="ml-4">
-                                        <h3 className="font-semibold text-slate-900">Mudah Ditemukan</h3>
-                                        <p className="text-slate-600">Pelanggan dapat menemukan lokasi bisnis Anda dengan mudah melalui peta interaktif</p>
+                                        <h3 className="font-semibold text-slate-900">Info Lengkap</h3>
+                                        <p className="text-slate-600">Dapatkan informasi detail tentang produk, layanan, jam operasional, dan kontak.</p>
                                     </div>
                                 </div>
 
                                 <div className="flex items-start group">
                                     <div className="bg-gradient-to-br from-emerald-500 to-green-600 h-12 w-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-200">
-                                        <Building2 className="w-6 h-6 text-white" />
+                                        <Search className="w-6 h-6 text-white" />
                                     </div>
                                     <div className="ml-4">
-                                        <h3 className="font-semibold text-slate-900">Gratis & Mudah</h3>
-                                        <p className="text-slate-600">Pendaftaran gratis tanpa biaya tersembunyi, proses verifikasi cepat</p>
+                                        <h3 className="font-semibold text-slate-900">Pencarian Mudah</h3>
+                                        <p className="text-slate-600">Cari berdasarkan kategori, lokasi, atau nama.</p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start group">
+                                    <div className="bg-gradient-to-br from-yellow-300 to-yellow-400 h-12 w-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-200">
+                                        <Star className="w-6 h-6 text-white" />
+                                    </div>
+                                    <div className="ml-4">
+                                        <h3 className="font-semibold text-slate-900">Ulasan Jujur</h3>
+                                        <p className="text-slate-600">Dapatkan ulasan dari pelanggan yang sudah berbelanja.</p>
                                     </div>
                                 </div>
                             </div>
@@ -73,11 +83,10 @@ export default function BusinessRegister() {
 
                         <form onSubmit={onSubmit} className="space-y-6">
                             <div>
-                                <label htmlFor="business-name" className="block text-sm font-semibold text-slate-700 mb-2">
+                                <label className="block text-sm font-semibold text-slate-700 mb-2">
                                     Nama UMKM <span className="text-red-500">*</span>
                                 </label>
                                 <input 
-                                    id='business-name'
                                     type='text' 
                                     name='businessName'
                                     placeholder='Contoh: Warung Makan Bu Sari'
@@ -87,11 +96,10 @@ export default function BusinessRegister() {
                             </div>
                             
                             <div>
-                                <label htmlFor="business-category" className="block text-sm font-semibold text-slate-700 mb-2">
+                                <label className="block text-sm font-semibold text-slate-700 mb-2">
                                     Kategori Bisnis <span className="text-red-500">*</span>
                                 </label>
                                 <select 
-                                    id='business-category'
                                     name='category'
                                     className="w-full text-slate-900 rounded-xl py-3 px-4 border-2 border-slate-200 text-sm outline-none focus:border-sky-500 focus:ring-4 focus:ring-sky-100 transition-all duration-200 bg-slate-50 focus:bg-white" 
                                     required
@@ -104,11 +112,10 @@ export default function BusinessRegister() {
                             </div>
                             
                             <div>
-                                <label htmlFor="business-address" className="block text-sm font-semibold text-slate-700 mb-2">
+                                <label className="block text-sm font-semibold text-slate-700 mb-2">
                                     Alamat / Lokasi <span className="text-red-500">*</span>
                                 </label>
                                 <textarea 
-                                    id='business-address'
                                     name='address'
                                     placeholder='Contoh: Jl. Mulawarman No. 123, Tembalang, Semarang' 
                                     rows="3"
@@ -118,11 +125,10 @@ export default function BusinessRegister() {
                             </div>
                             
                             <div>
-                                <label htmlFor="business-phone" className="block text-sm font-semibold text-slate-700 mb-2">
+                                <label className="block text-sm font-semibold text-slate-700 mb-2">
                                     Nomor Telepon / WhatsApp <span className="text-red-500">*</span>
                                 </label>
                                 <input 
-                                    id='business-phone'
                                     type='tel' 
                                     name='phone'
                                     placeholder='Contoh: 0812-3456-7890'

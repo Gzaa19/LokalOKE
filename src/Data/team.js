@@ -13,15 +13,16 @@ export const teamMembers = [
     name: 'Fariq Faqy Rozzaqy',
     role: 'Web Development',
     imgSrc: asset('Fariq.jpg'),
-    github: 'https://github.com/fariqfqy',
+    github: 'https://github.com/fariqfaqy',
     linkedin: 'https://linkedin.com/in/fariqfqy',
+    instagram: 'https://www.instagram.com/zzaqy._/',
   },
   {
     name: 'Fauzan Hadi',
     role: 'Web Development',
     imgSrc: asset('Fauzan.jpg'),
-    github: 'https://github.com/fauzanhadi',
-    linkedin: 'https://linkedin.com/in/fauzanhadi',
-    instagram: 'https://instagram.com/fauzanhadi',
+    github: 'https://github.com/FauzanHadi44',
+    linkedin: 'https://linkedin.com/in/fauzanhadii/',
+    instagram: 'https://instagram.com/fauzanhadiiiii/',
   }
 ];

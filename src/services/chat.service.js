@@ -23,13 +23,14 @@ export async function sendMessageToBot(userMessage) {
       if (lower.includes('umkm')) {
         return 'UMKM adalah usaha mikro, kecil, dan menengah. Saya bisa bantu jelaskan lebih lanjut atau cara bergabung di LokalOKE.';
       }
-      if (lower.includes('daftar') || lower.includes('bergabung')) {
-        return 'Untuk mendaftar UMKM di LokalOKE, buka menu "Daftar Bisnis", isi formulir, dan tunggu verifikasi. Butuh panduan langkah demi langkah?';
+      if (lower.includes('daftar')) {
+        return "Isi formulir pada halaman 'Daftar Bisnis' untuk memulai.";
       }
-      if (lower.includes('keuntungan') || lower.includes('manfaat')) {
-        return 'Keuntungan bergabung di LokalOKE: eksposur lebih besar, tools promosi, dan dukungan komunitas. Mau lihat detailnya?';
+      // Jawaban diarahkan ke penjelasan di content section Features pada beranda
+      if ((lower.includes('keuntungan') || lower.includes('manfaat')) && (lower.includes('lokaloke') || lower.includes('lokal oke') || lower.includes('bergabung'))) {
+        return 'Lokasi OKE: Temukan UMKM terdekat dengan mudah. Lihat lokasi pasti, jarak, dan rute terbaik untuk sampai ke tempat yang Anda inginkan Info Lengkap di sini.';
       }
-      return 'Belum bisa terhubung ke server /api/chat di lingkungan pengembangan. Saya memberi jawaban sementara agar Anda tetap bisa melanjutkan.';
+      return 'Belum bisa terhubung ke server di lingkungan pengembangan. Saya memberi jawaban sementara agar Anda tetap bisa melanjutkan.';
     }
     return 'Maaf, sepertinya Loka sedang ada masalah. Coba lagi nanti.';
   }

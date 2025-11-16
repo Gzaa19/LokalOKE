@@ -23,7 +23,6 @@ const categories = [
   "Toko Kelontong",
 ];
 
-// Helper to resolve asset URLs at build-time so they work in production
 const asset = (p) => new URL(`../assets/${p}`, import.meta.url).href;
 
 const umkmData = [
@@ -54,8 +53,9 @@ const umkmData = [
     address: "Jl. Gondang Raya, Tembalang, Kec. Tembalang, Kota Semarang, Jawa Tengah 55712",
     phone: "0821-9876-5432",
     images: [
-      asset('hero4.jpg'),
-      asset('hero4.jpg')
+      asset('Kuliner_2-1.png'),
+      asset('Kuliner_2-2.png'),
+      asset('Kuliner_2-3.png')
     ],
     location: {
       lat: -7.062236486526275,
@@ -73,8 +73,8 @@ const umkmData = [
     address: "Jl. Mulawarman Utara Dalam II, Bulusan, Kec. Tembalang, Kota Semarang, Jawa Tengah 50277",
     phone: "0813-2844-8929",
     images: [
-      asset('hero4.jpg'),
-      asset('hero4.jpg')
+      asset('Kuliner_3-1.png'),
+      asset('Kuliner_3-2.png')
     ],
     location: {
       lat: -7.066817363154133,
@@ -112,8 +112,8 @@ const umkmData = [
     address: "Jl. Gerung No.25, Bulusan, Kec. Tembalang, Kota Semarang, Jawa Tengah 50277",
     phone: "0895-3094-2567",
     images: [
-      asset('hero4.jpg'),
-      asset('hero4.jpg')
+      asset('Toko_5-1.png'),
+      asset('Toko_5-2.png')
     ],
     location: {
       lat: -7.05693315773418,
@@ -131,8 +131,8 @@ const umkmData = [
     address: "Jl. Mulawarman Tim. No.34, Kramas, Kec. Tembalang, Kota Semarang, Jawa Tengah 50278r",
     phone: "0822-3456-7891",
     images: [
-      asset('hero4.jpg'),
-      asset('hero4.jpg')
+      asset('Toko_6-1.png'),
+      asset('Toko_6-2.png')
     ],
     location: {
       lat: -7.067992583369558,
@@ -149,8 +149,9 @@ const umkmData = [
     address: "Jl. Klentengsari Sel., Pedalangan, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50268",
     phone: "0812-2506-0984",
     images: [
-      asset('hero4.jpg'),
-      asset('hero4.jpg')
+      asset('Kost_7-1.png'),
+      asset('Kost_7-2.png'),
+      asset('Kost_7-3.png')
     ],
     location: {
       lat: -7.058554187823217,
@@ -187,8 +188,8 @@ const umkmData = [
     address: "Jl. Mulawarman III No.20A, RT.02/RW.01, Kramas, Kec. Tembalang, Kota Semarang, Jawa Tengah 50278",
     phone: "0831-2345-6789",
     images: [
-      asset('hero4.jpg'),
-      asset('hero4.jpg')
+      asset('Kost_9-1.png'),
+      asset('Kost_9-2.png')
     ],
     location: {
       lat: -7.068753114366359,
@@ -206,8 +207,9 @@ const umkmData = [
     address: "Jl. Mulawarman V No.12, Bulusan, Kec. Tembalang, Kota Semarang, Jawa Tengah 50278",
     phone: "-",
     images: [
-      asset('hero4.jpg'),
-      asset('hero4.jpg')
+      asset('Jasa_10-1.png'),
+      asset('Jasa_10-2.png'),
+      asset('Jasa_10-3.png'),
     ],
     location: {
       lat: -7.0673515611971585,
@@ -225,8 +227,9 @@ const umkmData = [
     address: "Jl. Bulusan IV, Bulusan, Kec. Tembalang, Kota Semarang, Jawa Tengah 50277",
     phone: "085187507018",
     images: [
-      asset('hero4.jpg'),
-      asset('hero4.jpg')
+      asset('Jasa_11-1.png'),
+      asset('Jasa_11-2.png'),
+      asset('Jasa_11-3.png')
     ],
     location: {
       lat: -7.059708300582209,

@@ -124,14 +124,12 @@ const Navbar = () => {
                             <div className={`absolute left-1/2 -translate-x-1/2 -ml-40 top-full mt-5 z-50 transition-all duration-300 ${isSearchOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
                                 <form onSubmit={handleSearchSubmit}>
                                     <div className="flex items-center bg-white/95 border border-white/40 rounded-xl shadow-lg px-3 py-2 w-[min(85vw,24rem)] max-w-sm">
-                                        <label htmlFor="navbar-search-desktop" className="sr-only">Cari UMKM</label>
                                         <input
-                                            id="navbar-search-desktop"
-                                            name="search"
                                             type="text"
                                             value={searchQuery}
                                             onChange={handleSearchChange}
                                             placeholder="Temukan UMKM di LOKALOKE....."
+                                            aria-label="Search input"
                                             className="flex-1 rounded-md px-2 py-2 text-sm outline-none bg-transparent text-slate-900"
                                         />
                                         <button type="submit" className="ml-2 px-3 py-2 rounded-lg text-white font-semibold text-sm bg-linear-to-r from-sky-700 to-sky-900 transition-all hover:from-sky-800 hover:to-sky-950">
@@ -156,14 +154,12 @@ const Navbar = () => {
                             <div className={`absolute left-1/2 -translate-x-1/2 -ml-32 top-full mt-5 z-50 transition-all duration-300 lg:hidden ${isSearchOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
                                 <form onSubmit={handleSearchSubmit}>
                                     <div className="flex items-center bg-white/95 border border-white/40 rounded-xl shadow-lg px-3 py-2 w-[min(85vw,20rem)] max-w-xs mx-2">
-                                        <label htmlFor="navbar-search-mobile" className="sr-only">Cari UMKM</label>
                                         <input
-                                            id="navbar-search-mobile"
-                                            name="search"
                                             type="text"
                                             value={searchQuery}
                                             onChange={handleSearchChange}
                                             placeholder="Temukan UMKM di LOKALOKE....."
+                                            aria-label="Search input"
                                             className="flex-1 rounded-md px-2 py-2 text-sm outline-none bg-transparent text-slate-900"
                                         />
                                         <button type="submit" className="ml-2 px-3 py-2 rounded-lg text-white font-semibold text-sm bg-linear-to-r from-sky-700 to-sky-900 transition-all hover:from-sky-800 hover:to-sky-950">

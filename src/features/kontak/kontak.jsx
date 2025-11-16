@@ -64,9 +64,8 @@ export default function Kontak() {
                         <form onSubmit={onSubmit} className="space-y-6">
                             <div className="grid md:grid-cols-2 gap-4">
                                 <div>
-                                    <label htmlFor="contact-name" className="block text-sm font-semibold text-slate-700 mb-2">Nama Lengkap</label>
+                                    <label className="block text-sm font-semibold text-slate-700 mb-2">Nama Lengkap</label>
                                     <input 
-                                        id='contact-name'
                                         type='text' 
                                         name='name' 
                                         placeholder='Masukkan nama lengkap Anda'
@@ -75,9 +74,8 @@ export default function Kontak() {
                                     />
                                 </div>
                                 <div>
-                                    <label htmlFor="contact-email" className="block text-sm font-semibold text-slate-700 mb-2">Email</label>
+                                    <label className="block text-sm font-semibold text-slate-700 mb-2">Email</label>
                                     <input 
-                                        id='contact-email'
                                         type='email' 
                                         name='email' 
                                         placeholder='nama@email.com'
@@ -88,9 +86,8 @@ export default function Kontak() {
                             </div>
                             
                             <div>
-                                <label htmlFor="contact-subject" className="block text-sm font-semibold text-slate-700 mb-2">Perihal</label>
+                                <label className="block text-sm font-semibold text-slate-700 mb-2">Perihal</label>
                                 <input 
-                                    id='contact-subject'
                                     type='text' 
                                     name='subject' 
                                     placeholder='Contoh: Pendaftaran UMKM / Masukan / Kerjasama'
@@ -100,9 +97,8 @@ export default function Kontak() {
                             </div>
                             
                             <div>
-                                <label htmlFor="contact-message" className="block text-sm font-semibold text-slate-700 mb-2">Pesan</label>
+                                <label className="block text-sm font-semibold text-slate-700 mb-2">Pesan</label>
                                 <textarea 
-                                    id='contact-message'
                                     name='message' 
                                     placeholder='Tuliskan pesan, pertanyaan, atau masukan Anda di sini...' 
                                     rows="6"
