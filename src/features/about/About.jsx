@@ -149,7 +149,7 @@ const About = () => {
                             </motion.p>
 
                             <motion.div
-                                className="grid md:grid-cols-3 gap-8 md:gap-12 relative z-10"
+                                className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 relative z-10"
                                 variants={containerVariants}
                             >
                                 <motion.div

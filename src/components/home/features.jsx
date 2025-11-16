@@ -16,7 +16,7 @@ export default function Features() {
                 </p>
             </div>
 
-            <div className="mx-auto grid justify-center gap-6 sm:grid-cols-2 md:max-w-6xl md:grid-cols-3">
+            <div className="mx-auto grid justify-center gap-6 sm:grid-cols-2 md:max-w-6xl md:grid-cols-2 lg:grid-cols-3">
                 <AnimatedCard
                     hoverEffect="lift"
                     entranceAnimation="slideUp"

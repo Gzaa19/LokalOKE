@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Info ,Star, Send, Search } from 'lucide-react';
+import { MapPin, Info ,Star, Send, Search, Percent, Heart } from 'lucide-react';
 import AnimatedContainer from '../../components/ui/Container';
 import { categories } from '../../Data/umkm';
 import { useBusinessRegister } from '../../hooks/useBusinessRegister';
@@ -12,7 +12,7 @@ export default function BusinessRegister() {
     return (
         <AnimatedContainer 
             variant="fadeIn" 
-            className="min-h-screen py-16 px-4"
+            className="py-12 md:py-16 px-4"
         >
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
@@ -29,44 +29,58 @@ export default function BusinessRegister() {
                         <div className="bg-white rounded-2xl p-8 shadow-xl border border-slate-100">
                             <h2 className="text-2xl font-bold text-slate-900 mb-6">Mengapa Bergabung dengan LokalOKE?</h2>
                             
-                            <div className="space-y-6">
-                                <div className="flex items-start group">
+                            <div className="grid md:grid-cols-2 gap-6 md:gap-x-8">
+                                <div className="flex items-center gap-4 group">
                                     <div className="bg-gradient-to-br from-sky-500 to-blue-600 h-12 w-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-200">
                                         <MapPin className="w-6 h-6 text-white" />
                                     </div>
-                                    <div className="ml-4">
+                                    <div>
                                         <h3 className="font-semibold text-slate-900">Lokasi OKE</h3>
-                                        <p className="text-slate-600">Temukan UMKM terdekat dengan mudah.</p>
                                     </div>
                                 </div>
 
-                                <div className="flex items-start group">
+                                <div className="flex items-center gap-4 group">
                                     <div className="bg-gradient-to-br from-purple-500 to-indigo-600 h-12 w-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-200">
                                         <Info className="w-6 h-6 text-white" />
                                     </div>
-                                    <div className="ml-4">
+                                    <div>
                                         <h3 className="font-semibold text-slate-900">Info Lengkap</h3>
-                                        <p className="text-slate-600">Dapatkan informasi detail tentang produk, layanan, jam operasional, dan kontak.</p>
                                     </div>
                                 </div>
 
-                                <div className="flex items-start group">
+                                <div className="flex items-center gap-4 group">
+                                    <div className="bg-gradient-to-br from-emerald-500 to-green-600 h-12 w-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-200">
+                                        <Star className="w-6 h-6 text-white" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-semibold text-slate-900">Ulasan Jujur</h3>
+                                    </div>
+                                </div>
+                                
+                                <div className="flex items-center gap-4 group">
                                     <div className="bg-gradient-to-br from-emerald-500 to-green-600 h-12 w-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-200">
                                         <Search className="w-6 h-6 text-white" />
                                     </div>
-                                    <div className="ml-4">
+                                    <div>
                                         <h3 className="font-semibold text-slate-900">Pencarian Mudah</h3>
-                                        <p className="text-slate-600">Cari berdasarkan kategori, lokasi, atau nama.</p>
                                     </div>
                                 </div>
 
-                                <div className="flex items-start group">
+                                <div className="flex items-center gap-4 group">
                                     <div className="bg-gradient-to-br from-yellow-300 to-yellow-400 h-12 w-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-200">
-                                        <Star className="w-6 h-6 text-white" />
+                                        <Percent className="w-6 h-6 text-white" />
                                     </div>
-                                    <div className="ml-4">
-                                        <h3 className="font-semibold text-slate-900">Ulasan Jujur</h3>
-                                        <p className="text-slate-600">Dapatkan ulasan dari pelanggan yang sudah berbelanja.</p>
+                                    <div>
+                                        <h3 className="font-semibold text-slate-900">Promo & Diskon</h3>
+                                    </div>
+                                </div>
+                                
+                                <div className="flex items-center gap-4 group">
+                                    <div className="bg-gradient-to-br from-rose-500 to-pink-600 h-12 w-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-200">
+                                        <Heart className="w-6 h-6 text-white" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-semibold text-slate-900">100% Dukung Lokal</h3>
                                     </div>
                                 </div>
                             </div>

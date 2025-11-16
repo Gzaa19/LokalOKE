@@ -9,7 +9,7 @@ export default function Kontak() {
     return (
         <AnimatedContainer 
             variant="fadeIn" 
-            className="min-h-screen py-16 px-4"
+            className="py-12 md:py-16 px-4"
         >
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
