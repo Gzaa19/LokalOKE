@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Footer() {
   return (
     <footer className="bg-linear-to-r from-slate-700 via-slate-800 to-slate-900 py-12 relative z-50">
@@ -8,11 +10,11 @@ export default function Footer() {
         </div>
 
         <nav className="flex justify-center gap-6 sm:gap-8 text-slate-300 text-sm mb-6">
-          <a href="/beranda" className="hover:text-white transition-colors">Beranda</a>
-          <a href="/tentang-kami" className="hover:text-white transition-colors">Tentang Kami</a>
-          <a href="/umkm" className="hover:text-white transition-colors">UMKM</a>
-          <a href="/kontak" className="hover:text-white transition-colors">Kontak</a>
-          <a href="/daftar-bisnis" className="hover:text-white transition-colors">Daftar Bisnis</a>
+          <Link to="/" className="hover:text-white transition-colors">Beranda</Link>
+          <Link to="/tentang" className="hover:text-white transition-colors">Tentang Kami</Link>
+          <Link to="/umkm" className="hover:text-white transition-colors">UMKM</Link>
+          <Link to="/kontak" className="hover:text-white transition-colors">Kontak</Link>
+          <Link to="/daftar-bisnis" className="hover:text-white transition-colors">Daftar Bisnis</Link>
         </nav>
 
         <div className="flex justify-center items-center gap-5 text-slate-300 mb-6">

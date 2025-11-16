@@ -78,7 +78,7 @@ export default function Kontak() {
                                     <input 
                                         type='email' 
                                         name='email' 
-                                        placeholder='nama@email.com'
+                                        placeholder='nama@gmail.com'
                                         className="w-full text-slate-900 rounded-xl py-3 px-4 border-2 border-slate-200 text-sm outline-none focus:border-sky-500 focus:ring-4 focus:ring-sky-100 transition-all duration-200 bg-slate-50 focus:bg-white" 
                                         required
                                     />
