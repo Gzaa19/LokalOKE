@@ -35,8 +35,8 @@ const umkmData = [
     address: "Jl. Mulawarman Tim. No.34, Kramas, Kec. Tembalang, Kota Semarang, Jawa Tengah 50278",
     phone: "0897-7995-274",
     images: [
-      asset('UMKM_1/Kuliner_1-1.jpg'),
-      asset('UMKM_1/Kuliner_1-2.jpg')
+      asset('Kuliner_1-1.jpg'),
+      asset('Kuliner_1-2.jpg')
     ],
     location: {
       lat: -7.067943719679567,
@@ -92,9 +92,9 @@ const umkmData = [
     address: "Jl. Jatimulyo No.1A, Tembalang, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50277",
     phone: "0842-3456-7890",
     images: [
-      asset('UMKM_4/Kuliner_4-1.jpg'),
-      asset('UMKM_4/Kuliner_4-2.jpg'),
-      asset('UMKM_4/Kuliner_4-3.jpg')
+      asset('Kuliner_4-1.jpg'),
+      asset('Kuliner_4-2.jpg'),
+      asset('Kuliner_4-3.jpg')
     ],
     location: {
       lat: -7.0583890899717066,
@@ -168,8 +168,8 @@ const umkmData = [
     address: "Jl. Gondang Timur IV No.52, RT.01/RW.06, Bulusan, Kec. Tembalang, Kota Semarang, Jawa Tengah 50277",
     phone: "0822-2537-9537",
     images: [
-      asset('UMKM_8/Kost_8-1.png'),
-      asset('UMKM_8/Kost_8-2.png')
+      asset('Kost_8-1.png'),
+      asset('Kost_8-2.png')
     ],
     location: {
       lat: -7.0648381412869075,
@@ -244,9 +244,9 @@ const umkmData = [
     address: "Jl. Mulawarman Raya No.51, Kramas, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50268",
     phone: "082322991258",
     images: [
-      asset('UMKM_12/Jasa_12-2.png'),
-      asset('UMKM_12/Jasa_12-1.png'),
-      asset('UMKM_12/Jasa_12-3.png')
+      asset('Jasa_12-2.png'),
+      asset('Jasa_12-1.png'),
+      asset('Jasa_12-3.png')
     ],
     location: {
       lat: -7.063784307943054,
